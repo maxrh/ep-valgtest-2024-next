@@ -20,7 +20,7 @@ export default function SwipeVoter() {
     const router = useRouter()
     const { addVote, clearVotes } = useContext(VoteContext);  // Destructure the addVote function
     const [current, setCurrent] = useState(0);
-    const [direction, setDirection] = useState(300); // Start assuming exit to the right (enter from left)
+    const [direction, setDirection] = useState(0); // Start assuming exit to the right (enter from left)
     const [initialized, setInitialized] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false); // State to handle thank you message visibility
     const [redirectDelay, setRedirectDelay] = useState(3000); // Duration in milliseconds
