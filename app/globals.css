@@ -53,7 +53,7 @@ body {
   object-fit: cover;
 }
 
-/* arrows */
+/* swipe buttons */
 div.swiper-button-prev,
 div.swiper-button-next {
   color: #002176;

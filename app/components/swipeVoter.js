@@ -63,15 +63,17 @@ export default function SwipeVoter() {
                             handleSwipe(offset.x > 0 ? 'uenig' : 'enig');
                         }
                     }}
-                    className="h-full w-full flex items-center justify-center absolute top-0 left-0 cursor-grab"
+                    className="h-full w-full absolute top-0 left-0 cursor-grab"
                 >
-                    <div className="max-w-4xl text-left">
-                        <div className="font-semibold mb-4">Spørgsmål {current + 1} of {qlist.length}</div>
-                        <h1 className="text-5xl leading-tight font-bold">{qlist[current]?.text}</h1>
+                    <div className="h-full w-full p-14 flex items-center justify-center">
+                        <div className="max-w-4xl text-left">
+                            <div className="font-semibold mb-4">Spørgsmål {current + 1} of {qlist.length}</div>
+                            <h1 className="text-xl  md:text-5xl leading-tight font-bold">{qlist[current]?.text}</h1>
+                        </div>
                     </div>
                 </motion.div>
             </AnimatePresence>
-            <div className="flex justify-between w-full pointer-events-none absolute left-0">
+            <div className="justify-between w-full pointer-events-none absolute left-0 hidden lg:flex ">
                 <button onClick={() => handleSwipe('uenig')} className="bg-gray-300 px-8 py-4 pointer-events-auto">Uenig</button>
                 <button onClick={() => handleSwipe('enig')} className="bg-gray-300 px-8 py-4 pointer-events-auto">Enig</button>
             </div>
