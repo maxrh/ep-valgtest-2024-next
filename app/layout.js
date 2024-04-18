@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "./components/ui/siteHeader";
+import VoteContextProvider from "./context/voteContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,8 +14,10 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<SiteHeader />
-				{children}
+				<VoteContextProvider>
+					<SiteHeader />
+					{children}
+				</VoteContextProvider>
 			</body>
 		</html>
 	);
