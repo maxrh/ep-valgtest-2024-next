@@ -69,7 +69,7 @@ export default function SwipeVoter() {
                 {showThankYou ? (
                         <div className="flex flex-col items-center justify-center max-w-4xl">
                             <h1 className="text-xl md:text-3xl font-bold mb-4">Tak for din deltagelse!</h1>
-                            <p className='mb-4'>Du viderstilles til dit resultat ...</p>
+                            <p className='mb-4'>Du viderestilles til dit resultat ...</p>
                             <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700 max-w-40">
                                 <motion.div
                                     initial={{ width: '0%' }}
