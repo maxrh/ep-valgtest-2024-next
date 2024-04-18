@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const qlist = [
@@ -18,6 +18,12 @@ const qlist = [
 export default function SwipeVoter() {
     const [current, setCurrent] = useState(0);
     const [direction, setDirection] = useState(300); // Start assuming exit to the right (enter from left)
+    const [initialized, setInitialized] = useState(false);
+
+    useEffect(() => {
+        // Force a rerender by changing a state after the component mounts
+        setInitialized(true);
+    }, []);
 
     const handleSwipe = (dir, fromButton = false) => {
         const newDirection = dir === 'uenig' ? 300 : -300;
@@ -43,14 +49,18 @@ export default function SwipeVoter() {
         return Math.abs(offset) * velocity;
     };
 
+    if (!initialized) {
+        return null; // Render nothing until the component is ready
+    }
+
     return (
         <div className="flex flex-col items-center justify-center h-screen w-screen relative overflow-hidden">
             
             <AnimatePresence initial={false}>
                 <motion.div
                     key={current}
-                    initial={{ opacity: 0, x: -direction }} // Enter from the opposite direction
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -direction, scale: 0.5 }} // Enter from the opposite direction
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
                     exit={{ opacity: 0 }} 
                     transition={{
                         opacity: { duration: 0.3 },
