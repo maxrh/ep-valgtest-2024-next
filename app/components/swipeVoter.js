@@ -82,8 +82,8 @@ export default function SwipeVoter() {
                     ) : (
                     <motion.div
                         key={current}
-                        initial={{ opacity: 0, x: -direction }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, x: -direction, scale: 0.3}}
+                        animate={{ opacity: 1, x: 0, scale: 1}}
                         exit={{ opacity: 0 }}
                         transition={{
                             opacity: { duration: 0.3 },
