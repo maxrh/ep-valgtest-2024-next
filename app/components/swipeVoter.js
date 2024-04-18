@@ -1,8 +1,9 @@
 "use client"
 
 import { useRouter } from 'next/navigation'
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
+import { VoteContext } from '../context/voteContext';
 
 const qlist = [
     { id: 1, text: "Biodiversitet og natur skal prioriteres på højde med klima og andre politikområder." },
@@ -13,11 +14,11 @@ const qlist = [
     { id: 6, text: "Virksomheder med stor indtjening i Europa skal beskattes hårdere, bl.a. gennem en mindstesats for selskabsskat i EU." },
     { id: 7, text: "Medlemslandene skal i højere grad forpligtes på at overholde de af EU vedtagne initiativer og principper, bl.a. gennem tilbageholdelse af midler eller tildeling af store bøder." },
     { id: 8, text: "Medlemslandene skal bidrage med færre penge til EU\'s budget." },
-
 ];
 
 export default function SwipeVoter() {
     const router = useRouter()
+    const { addVote, clearVotes } = useContext(VoteContext);  // Destructure the addVote function
     const [current, setCurrent] = useState(0);
     const [direction, setDirection] = useState(300); // Start assuming exit to the right (enter from left)
     const [initialized, setInitialized] = useState(false);
@@ -25,12 +26,14 @@ export default function SwipeVoter() {
     const [redirectDelay, setRedirectDelay] = useState(3000); // Duration in milliseconds
 
     useEffect(() => {
+        clearVotes();  // Reset vote data on component mount
         setInitialized(true);
     }, []);
 
     const handleSwipe = (dir, fromButton = false) => {
-        const newDirection = dir === 'uenig' ? 300 : -300;
+        const newDirection = dir === 'uenig' ? -300 : 300;
         setDirection(newDirection);
+        addVote(current, dir);  // Save the vote
 
         if (fromButton) {
             setTimeout(() => {
@@ -67,8 +70,16 @@ export default function SwipeVoter() {
             
             <AnimatePresence initial={false}>
                 {showThankYou ? (
-                        <div className="flex flex-col items-center justify-center max-w-4xl">
-                            <h1 className="text-xl md:text-3xl font-bold mb-4">Tak for din deltagelse!</h1>
+                        <motion.div 
+                            initial={{ opacity: 0, x: -direction}}
+                            animate={{ opacity: 1, x: 0}}
+                            transition={{ 
+                                opacity: { duration: 0.3 },
+                                x: { type: 'spring', stiffness: 260, damping: 10 } 
+                            }}
+                            className="flex flex-col items-center justify-center max-w-4xl"
+                        >
+                            <h1 className="text-xl md:text-4xl leading-tight font-bold mb-6">Tak for din deltagelse!</h1>
                             <p className='mb-4'>Du viderestilles til dit resultat ...</p>
                             <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700 max-w-40">
                                 <motion.div
@@ -78,7 +89,7 @@ export default function SwipeVoter() {
                                     className="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500"
                                 ></motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     ) : (
                     <motion.div
                         key={current}
@@ -93,7 +104,7 @@ export default function SwipeVoter() {
                         onDragEnd={(e, { offset, velocity }) => {
                             const swipe = swipePower(offset.x, velocity.x);
                             if (Math.abs(swipe) > swipeConfidenceThreshold) {
-                                handleSwipe(offset.x > 0 ? 'uenig' : 'enig');
+                                handleSwipe(offset.x > 0 ? 'enig' : 'uenig');
                             }
                         }}
                         className="h-full w-full absolute top-0 left-0 cursor-grab"
