@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from 'next/navigation'
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -16,12 +17,14 @@ const qlist = [
 ];
 
 export default function SwipeVoter() {
+    const router = useRouter()
     const [current, setCurrent] = useState(0);
     const [direction, setDirection] = useState(300); // Start assuming exit to the right (enter from left)
     const [initialized, setInitialized] = useState(false);
+    const [showThankYou, setShowThankYou] = useState(false); // State to handle thank you message visibility
+    const [redirectDelay, setRedirectDelay] = useState(3000); // Duration in milliseconds
 
     useEffect(() => {
-        // Force a rerender by changing a state after the component mounts
         setInitialized(true);
     }, []);
 
@@ -40,7 +43,13 @@ export default function SwipeVoter() {
 
     const changeSlide = () => {
         let newCurrent = current + 1;
-        if (newCurrent >= qlist.length) newCurrent = 0;
+        if (newCurrent >= qlist.length) {
+            setShowThankYou(true);
+            setTimeout(() => {
+                router.push('/resultat');
+            }, redirectDelay);
+            return;
+        }
         setCurrent(newCurrent);
     };
 
@@ -57,31 +66,46 @@ export default function SwipeVoter() {
         <div className="flex flex-col items-center justify-center h-screen w-screen relative overflow-hidden">
             
             <AnimatePresence initial={false}>
-                <motion.div
-                    key={current}
-                    initial={{ opacity: 0, x: -direction, scale: 0.5 }} // Enter from the opposite direction
-                    animate={{ opacity: 1, x: 0, scale: 1 }}
-                    exit={{ opacity: 0 }} 
-                    transition={{
-                        opacity: { duration: 0.3 },
-                        x: { type: 'spring', stiffness: 260, damping: 10 }
-                    }}
-                    drag="x"
-                    onDragEnd={(e, { offset, velocity }) => {
-                        const swipe = swipePower(offset.x, velocity.x);
-                        if (Math.abs(swipe) > swipeConfidenceThreshold) {
-                            handleSwipe(offset.x > 0 ? 'uenig' : 'enig');
-                        }
-                    }}
-                    className="h-full w-full absolute top-0 left-0 cursor-grab"
-                >
-                    <div className="h-full w-full p-14 flex items-center justify-center">
-                        <div className="max-w-4xl text-left">
-                            <div className="font-semibold mb-4">Spørgsmål {current + 1} of {qlist.length}</div>
-                            <h1 className="text-xl  md:text-5xl leading-tight font-bold">{qlist[current]?.text}</h1>
+                {showThankYou ? (
+                        <div className="flex flex-col items-center justify-center max-w-4xl">
+                            <h1 className="text-xl md:text-3xl font-bold mb-4">Tak for din deltagelse!</h1>
+                            <p className='mb-4'>Du viderestilles til dit resultat ...</p>
+                            <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700 max-w-40">
+                                <motion.div
+                                    initial={{ width: '0%' }}
+                                    animate={{ width: '100%' }}
+                                    transition={{ duration: redirectDelay / 1000, ease: "linear" }}
+                                    className="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500"
+                                ></motion.div>
+                            </div>
                         </div>
-                    </div>
-                </motion.div>
+                    ) : (
+                    <motion.div
+                        key={current}
+                        initial={{ opacity: 0, x: -direction }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{
+                            opacity: { duration: 0.3 },
+                            x: { type: 'spring', stiffness: 260, damping: 10 }
+                        }}
+                        drag="x"
+                        onDragEnd={(e, { offset, velocity }) => {
+                            const swipe = swipePower(offset.x, velocity.x);
+                            if (Math.abs(swipe) > swipeConfidenceThreshold) {
+                                handleSwipe(offset.x > 0 ? 'uenig' : 'enig');
+                            }
+                        }}
+                        className="h-full w-full absolute top-0 left-0 cursor-grab"
+                    >
+                        <div className="h-full w-full p-14 flex items-center justify-center">
+                            <div className="max-w-4xl text-left">
+                                <div className="font-semibold mb-4">Question {current + 1} of {qlist.length}</div>
+                                <h1 className="text-xl md:text-5xl leading-tight font-bold">{qlist[current]?.text}</h1>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
             </AnimatePresence>
             <div className="justify-between w-full pointer-events-none absolute left-0 hidden lg:flex ">
                 <button onClick={() => handleSwipe('uenig')} className="bg-gray-300 px-8 py-4 pointer-events-auto">Uenig</button>
