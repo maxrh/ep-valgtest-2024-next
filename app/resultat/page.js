@@ -88,8 +88,7 @@ export default function Resultat() {
                                 className=" bg-slate-100"
                             >
                                 <motion.div
-                                    variants={{ collapsed: { scale: 1 }, open: { scale: 1 } }}
-                                    transition={{ duration: 0.8 }}
+                                    layout  // Adding layout can help manage size changes more smoothly
                                     className="p-8"
                                 >
                                     <p className="mb-4 text-sm">Hvorfor man skal stemme på {result.name} til det kommende EP-valg?</p>
