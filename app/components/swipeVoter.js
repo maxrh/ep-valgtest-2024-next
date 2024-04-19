@@ -29,7 +29,7 @@ const qlist = [
     { id: 20, img: "20.jpg", text: "EU\'s borgere skal kunne stemme direkte på lovforslag." },
     { id: 21, img: "21.jpg", text: "EU skal arbejde for en fredsaftale mellem Ukraine og Rusland." },
 
-];
+]
 
 export default function SwipeVoter() {
     const router = useRouter()
@@ -41,7 +41,7 @@ export default function SwipeVoter() {
     const [redirectDelay, setRedirectDelay] = useState(3000); // Duration in milliseconds
 
     useEffect(() => {
-        clearVotes();  // Reset vote data on component mount
+        clearVotes();  
         setInitialized(true);
     }, []);
 
@@ -81,6 +81,7 @@ export default function SwipeVoter() {
 
     // const progressPercentage = (current / (qlist.length)) * 100; // Calculate progress to be full 100% at the last slide
     const progressPercentage = (current / qlist.length) * 100;
+    const nextImageIndex = current + 1 < qlist.length ? current + 1 : null;
 
     if (!initialized) {
         return null; // Render nothing until the component is ready
@@ -153,7 +154,21 @@ export default function SwipeVoter() {
                                         width={1440}
                                         height={900}
                                         className='object-cover w-full h-full opacity-60'
+                                        priority
                                     />
+
+                                    {/* Preload next image but keep it invisible */}
+                                    {nextImageIndex !== null && (
+                                        <Image
+                                            src={`/images/slides/${qlist[nextImageIndex].img}`}
+                                            alt={qlist[nextImageIndex].text}
+                                            width={1440}
+                                            height={900}
+                                            className='object-cover w-full h-full'
+                                            style={{ visibility: 'hidden', position: 'absolute', top: 0 }}
+                                            priority // also prioritize this, but it's hidden
+                                        />
+                                    )}
 
                                 </motion.div>
                             )}
