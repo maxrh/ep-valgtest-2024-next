@@ -43,62 +43,63 @@ export default function Resultat() {
 
 	return (
 		<main className="flex flex-col items-center min-h-screen px-14 py-32">
-			
-            <h1 className="text-3xl font-bold mb-4">Resultat</h1>
-            <p className="mb-8">Du er mest enig med {sortedResults[0]?.name} fra {sortedResults[0]?.party}</p>
-            <div id="accordion-collapse" data-accordion="collapse" className="w-full max-w-2xl overflow-hidden">
+			<h1 className="text-7xl font-bold mb-8 text-gray-700">Resultat</h1>
+
+            <div id="accordion-collapse" data-accordion="collapse" className="w-full max-w-2xl overflow-hidden rounded-lg">
                 {sortedResults.map((result, index) => (
-                    <div key={index} className="mb-1 rounded-lg bg-white overflow-hidden">
-                    <motion.header
-                        initial={false}
-                        animate={{ backgroundColor: expanded === index ? "#fff" : "#fff" }}
-                        onClick={() => toggleItem(index)}
-                        className="w-full flex items-center justify-between p-3 cursor-pointer relative"
-                    >
-                        <div className="flex items-center">
-                            <div className="rounded-full h-10 w-10 overflow-hidden relative mr-6">
-                                <Image 
-                                    src={`/images/kandidater/${result.img}`} 
-                                    alt={result.name} 
-                                    layout="fill"
-                                    objectFit="cover"
-                                />
+                    <div key={index} className="overflow-hidden">
+                        <motion.header
+                            initial={false}
+                            animate={{ 
+                                backgroundColor: expanded === index ? "#0d1220" : "#0d1220",
+                            }}
+                            onClick={() => toggleItem(index)}
+                            className="w-full flex items-center justify-between px-4 py-4 cursor-pointer relative text-gray-50"
+                        >
+                            <div className="flex items-center">
+                                <div className="rounded-full h-10 w-10 overflow-hidden relative mr-6 mb-1">
+                                    <Image 
+                                        src={`/images/kandidater/${result.img}`} 
+                                        alt={result.name} 
+                                        layout="fill"
+                                        objectFit="cover"
+                                    />
+                                </div>
+                                <h2 className="font-semibold ">{result.name} <span className="font-light">({result.party})</span></h2>
                             </div>
-                            <h2 className="font-bold">{result.name} <span className="font-normal">({result.party})</span></h2>
-                        </div>
-                        <span className="font-bold">{result.matchPercentage}%</span>
-                        <div className="w-full h-1 absolute bottom-0 left-0 z-0 ">
-                            <div 
-                                className="h-full" 
-                                style={{
-                                    backgroundColor: partyColors[result.party] || '#aaa',  // Default to '#333' if the party color is not found
-                                    width: `${result.matchPercentage}%`
-                                }}
-                            ></div>
-                        </div>
-                    </motion.header>
-                    <AnimatePresence mode="wait "initial={false}>
-                        {expanded === index && (
-                            <motion.section
-                                key="content"
-                                initial="collapsed"
-                                animate="open"
-                                exit="collapsed"
-                                variants={variants}
-                                transition={{ duration: 0.3, ease: easeInOut }}
-                                className=" bg-slate-100"
-                            >
-                                <motion.div
-                                    layout  // Adding layout can help manage size changes more smoothly
-                                    className="p-8"
+                            <span className="font-bold mx-2">{result.matchPercentage}%</span>
+                            <div className="w-full h-1 absolute bottom-0 left-0 z-0 bg-gray-950/50 ">
+                                <div 
+                                    className="h-full rounded-r-lg" 
+                                    style={{
+                                        backgroundColor: partyColors[result.party] || 'rgb(31 41 55)',  // Default to '#333' if the party color is not found
+                                        width: `${result.matchPercentage}%`
+                                    }}
+                                ></div>
+                            </div>
+                        </motion.header>
+                        <AnimatePresence mode="wait "initial={false}>
+                            {expanded === index && (
+                                <motion.section
+                                    key="content"
+                                    initial="collapsed"
+                                    animate="open"
+                                    exit="collapsed"
+                                    variants={variants}
+                                    transition={{ duration: 0.3, ease: easeInOut }}
+                                    className=" bg-gray-950/15 text-gray-200"
                                 >
-                                    <p className="mb-4 text-sm">Hvorfor man skal stemme på {result.name} til det kommende EP-valg?</p>
-                                    <p className="font-medium">{`"${result.comment}"`}</p>
-                                </motion.div>
-                            </motion.section>
-                        )}
-                    </AnimatePresence>
-                </div>
+                                    <motion.div
+                                        layout  // Adding layout can help manage size changes more smoothly
+                                        className="p-8 pb-12 "
+                                    >
+                                        <p className="mb-4 text-sm">Hvorfor man skal stemme på {result.name} til det kommende EP-valg?</p>
+                                        <p className="font-medium">{`"${result.comment}"`}</p>
+                                    </motion.div>
+                                </motion.section>
+                            )}
+                        </AnimatePresence>
+                    </div>
                 ))}
             </div>
 		</main>
