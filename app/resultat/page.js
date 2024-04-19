@@ -93,7 +93,7 @@ export default function Resultat() {
                                     className="p-8"
                                 >
                                     <p className="mb-4 text-sm">Hvorfor man skal stemme på {result.name} til det kommende EP-valg?</p>
-                                    <p className="font-medium">"{result.comment}"</p>
+                                    <p className="font-medium">{`"${result.comment}"`}</p>
                                 </motion.div>
                             </motion.section>
                         )}
