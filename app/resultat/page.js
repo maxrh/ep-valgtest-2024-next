@@ -3,7 +3,7 @@
 import { VoteContext } from "../context/voteContext";
 import { useContext, useState, useEffect } from "react";
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, easeIn, easeInOut } from 'framer-motion';
 
 
 const partyColors = {
@@ -24,6 +24,7 @@ export default function Resultat() {
     const { matchResults } = useContext(VoteContext); 
     const [expanded, setExpanded] = useState(0); 
 
+    console.log(expanded)
     const sortedResults = matchResults.sort((a, b) => b.matchPercentage - a.matchPercentage);
 
     // Toggle accordion item
@@ -76,7 +77,7 @@ export default function Resultat() {
                             ></div>
                         </div>
                     </motion.header>
-                    <AnimatePresence initial={false}>
+                    <AnimatePresence mode="wait "initial={false}>
                         {expanded === index && (
                             <motion.section
                                 key="content"
@@ -84,7 +85,7 @@ export default function Resultat() {
                                 animate="open"
                                 exit="collapsed"
                                 variants={variants}
-                                transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                                transition={{ duration: 0.3, ease: easeInOut }}
                                 className=" bg-slate-100"
                             >
                                 <motion.div
