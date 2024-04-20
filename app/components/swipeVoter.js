@@ -151,7 +151,9 @@ export default function SwipeVoter() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -100 }}
                         transition={{
-                            type: 'spring', stiffness: 260, damping: 10 
+                            delay: .5,
+                            duration: 0.3,
+                            ease: 'easeInOut'
                         }}
                         onClick={() => handleSwipe('uenig')} 
                         className="pointer-events-auto items-center justify-center absolute left-0 hidden md:flex z-10 -ml-4"
@@ -166,8 +168,9 @@ export default function SwipeVoter() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 100 }}
                         transition={{
-                            opacity: { duration: 0.3 },
-                            x: { type: 'spring', stiffness: 260, damping: 10 }
+                            delay: .5,
+                            duration: 0.3,
+                            ease: 'easeInOut'
                         }}
                         onClick={() => handleSwipe('enig')} 
                         className="pointer-events-auto items-center justify-center absolute right-0 hidden md:flex z-10 -mr-4"
@@ -179,7 +182,13 @@ export default function SwipeVoter() {
                 </>
             )}
 
-            <div className="flex flex-col items-end justify-center w-full z-10 mt-4 absolute bottom-0 p-14">
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 1, duration: 0.3 }}
+                className="flex flex-col items-end justify-center w-full z-10 mt-4 absolute bottom-0 p-14"
+            >
                 <div className="font-semibold mb-4 text-slate-50">{current + 1 > slides.length ? slides.length : current + 1} af {slides.length}</div>
                 <div className="w-full bg-slate-50/20 rounded-full h-1.5">
                     <motion.div
@@ -191,14 +200,20 @@ export default function SwipeVoter() {
                         className="bg-slate-50/80  h-1.5 rounded-full w-1/2"
                     ></motion.div>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="flex items-center justify-center z-10 absolute top-0 right-0 p-14">
+            <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 1.5, duration: 0.3 }}
+                className="flex items-center justify-center z-10 absolute top-0 right-0 p-14"
+            >
                 <div className="w-full text-right text-white">
                     <h1 className="text-xl font-semibold mb-2">EP Valgtest 2024</h1>
                     <p className='leading-snug font-light text-sm'>Swipe til venstre eller højre alt efter <br />om du er uenig eller enig og se hvilke <br />politikere du matcher bedst med.</p>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }

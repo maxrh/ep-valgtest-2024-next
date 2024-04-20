@@ -26,12 +26,12 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                 {current < slides.length && ( 
                     <motion.div
                         key={current}
-                        initial={{ opacity: 0, x: -direction, scale: 0.3}}
-                        animate={{ opacity: 1, x: 0, scale: 1}}
+                        initial={ direction ? { opacity: 0, x: -direction, scale: 0.3} : { opacity: 0, y: -40}}
+                        animate={ direction ? { opacity: 1, x: 0, scale: 1} : { opacity: 1, y: 0}}
                         exit={{ opacity: 1 }}
                         transition={{
-                            opacity: { duration: 0.3 },
-                            x: { type: 'spring', stiffness: 260, damping: 10 }
+                            duration: 0.3,
+                            x: { type: 'spring', stiffness: 260, damping: 10 },
                         }}
                         drag="x"
                         onDragEnd={(e, { offset, velocity }) => {
