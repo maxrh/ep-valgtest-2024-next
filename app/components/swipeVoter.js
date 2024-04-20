@@ -5,6 +5,7 @@ import { useContext, useState, useEffect } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { VoteContext } from '../context/voteContext';
 import SwipeVoterSlides from './swipeVoterSlides';
+import Image from 'next/image';
 
 export default function SwipeVoter() {
     const router = useRouter()
@@ -13,7 +14,7 @@ export default function SwipeVoter() {
     const [direction, setDirection] = useState(0); 
     const [initialized, setInitialized] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false); // State to handle thank you message visibility
-    const [redirectDelay, setRedirectDelay] = useState(4000); // Duration in milliseconds
+    const [redirectDelay, setRedirectDelay] = useState(3000); // Duration in milliseconds
     const [slides, setSlides] = useState([]); 
 
     useEffect(() => {
@@ -34,7 +35,7 @@ export default function SwipeVoter() {
         clearVotes();  
         setTimeout(() => {
             setInitialized(true);
-        }, 3000);
+        }, redirectDelay);
     }, [])
 
     const handleSwipe = (dir, fromButton = false) => {
@@ -69,7 +70,7 @@ export default function SwipeVoter() {
     // const progressPercentage = (current / (slides.length)) * 100; // Calculate progress to be full 100% at the last slide
     const progressPercentage = (current / slides.length) * 100;
     const nextImageIndex = current + 1 < slides.length ? current + 1 : null;
-
+    
     if (!initialized) {
         return (
             <div className="flex flex-col items-center justify-center h-screen w-screen relative overflow-hidden ">
@@ -79,12 +80,31 @@ export default function SwipeVoter() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className='flex flex-col items-center justify-center'
+                        className='flex flex-col items-center justify-center max-w-lg w-full'
                     >
-                        <h1 className="text-lg leading-tight font-semibold mb-2 text-slate-300">EP valgtest 2024</h1>
+                        <h1 className="text-lg leading-tight font-semibold text-slate-300">EP valgtest 2024</h1>
+                        <div className="w-full bg-gray-700 rounded-full h-px my-4">
+                            <motion.div
+                                initial={{ width: '0%' }}
+                                animate={{ width: '100%' }}
+                                transition={{ duration: redirectDelay / 1000, ease: "linear" }}
+                                className="bg-slate-500 h-full rounded-full"
+                            ></motion.div>
+                        </div>
                         <p className='text-xs mb-4 text-slate-500'>Udarbejdet af DEO | Demokrati i Europa Oplysningsforbundet</p>
                     </motion.div>
                 </AnimatePresence>
+
+                {/* Preload next image but keep it invisible */}
+                <Image
+                    src={`/images/slides/1.jpg`}
+                    alt={slides[0]?.text}
+                    width={1440}
+                    height={900}
+                    className='object-cover w-full h-full hidden'
+                    style={{ position: 'absolute', top: 0 }}
+                    priority
+                />
             </div>
         )
     }
@@ -114,6 +134,7 @@ export default function SwipeVoter() {
                         </div>
                     </motion.div>
                 </AnimatePresence>
+             
             </div>
         )
     }
