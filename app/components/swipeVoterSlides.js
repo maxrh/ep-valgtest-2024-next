@@ -106,11 +106,7 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                     <motion.div 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        exit={{ 
-                            opacity: 0, 
-                            transition: { duration: .5 }
-                        }}
-                        transition={{ duration: .2 }}
+                        transition={{ duration: .2, ease: 'easeInOut' }}
                         className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50"
                         onClick={handleClosePopup}
                         style={{ 
@@ -118,15 +114,15 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                         }}
                     >
                         <motion.div 
-                            initial={{ opacity: 0, y: -100}}
+                            initial={{ opacity: 0, y: -50}}
                             animate={{ opacity: 1, y: 0}}
-                            exit={{ opacity: 0, y: -100}}
                             transition={{ 
+                                delay: .2,
                                 type: 'spring',
-                                stiffness: 360,
-                                damping: 20,
+                                stiffness: 1600,
+                                damping: 50,
                             }}
-                            className="p-12 rounded-lg  max-w-lg w-full relative shadow-2xl bg-gray-950/90"
+                            className="p-12 pb-14 rounded-lg  max-w-xl w-full relative shadow-2xl bg-gray-950/95"
                             onClick={(e) => e.stopPropagation()}
                         >  
                             <button 
