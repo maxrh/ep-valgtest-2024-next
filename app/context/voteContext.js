@@ -6,12 +6,12 @@ export const VoteContext = createContext()
 
 const VoteContextProvider = ({ children }) => {
     const [voteData, setVoteData] = useState([]);
-    const [politicianData, setPoliticianData] = useState([]);  // State to store fetched data
+    const [politicianData, setPoliticianData] = useState([]);  
     const [matchResults, setMatchResults] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('/api/politikerstemmer');  
+            const response = await fetch('/api/politicians');  
             if (response.ok) {
                 const jsonResponse = await response.json();
                 setPoliticianData(jsonResponse.data);  // Adjusted to access data property

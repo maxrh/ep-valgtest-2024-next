@@ -48,7 +48,7 @@ export default function Resultat() {
                     <motion.div 
                         key={index}
                         initial={false}
-                        animate={{ marginBottom: expanded === index ? 30 : 5, marginTop: expanded === index ? 30 : 5 }}
+                        animate={{ marginBottom: expanded === index ? 20 : 10, marginTop: expanded === index ? 20 : 0 }}
                         transition={{ duration: 0.2, ease: easeInOut }}
                         className={`${expanded === index ? "" : "" }`}
                     >
@@ -71,11 +71,11 @@ export default function Resultat() {
                                         initial={false}
                                         animate={{ 
                                             scale: expanded === index ? 3 : 1, 
-                                            x: expanded === index ? 40 : 0,
-                                            marginRight: expanded === index ? 32 : 16,
+                                            x: expanded === index ? 30 : 0,
+                                            marginRight: expanded === index ? 28 : 16,
                                         }}
                                         transition={{ duration: 0.2, ease: easeInOut }}
-                                        className={`flex items-center justify-center rounded-full overflow-hidden insert-0 z-10 border`}
+                                        className={`flex items-center justify-center rounded-full overflow-hidden insert-0 z-10 shadow-lg`}
                                         style={{ borderColor: "#0d1220" }}
                                     >
                                         {result.img ? (
@@ -100,11 +100,11 @@ export default function Resultat() {
                                         initial={false}
                                         animate={{ 
                                             x: expanded === index ? 60 : 0,
-                                            fontSize: expanded === index ? "1.125rem" : "0.875rem",
+                                            fontSize: expanded === index ? "1.125rem" : "1rem",
                                             fontWeight: expanded === index ? "600" : "500"
                                         }}
                                         transition={{ duration: 0.2, ease: easeInOut }}
-                                        className={``}
+                                        className={`mt-0.5`}
                                     >{result.name} <span className="font-light">({result.party})</span>
                                     </motion.h2>
                                 </div>
@@ -112,7 +112,7 @@ export default function Resultat() {
                                     initial={false}
                                     animate={{ fontSize: expanded === index ? "1.125rem" : "0.875rem" }}
                                     transition={{ duration: 0.2, ease: easeInOut }}
-                                    className={`font-bold mx-2`}
+                                    className={`font-bold mx-2 mt-0.5`}
                                 >{result.matchPercentage}%</motion.span>
                             </motion.div>
 
