@@ -9,14 +9,11 @@ const VoteContextProvider = ({ children }) => {
     const [politicianData, setPoliticianData] = useState([]);  // State to store fetched data
     const [matchResults, setMatchResults] = useState([]);
 
-    console.log('matchResults', matchResults);
-
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch('/api/politikerstemmer');  
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log("Fetched data:", jsonResponse.data);  // Confirm the structure
                 setPoliticianData(jsonResponse.data);  // Adjusted to access data property
             } else {
                 console.error("Failed to fetch data:", response.statusText);
@@ -25,7 +22,6 @@ const VoteContextProvider = ({ children }) => {
     
         fetchData();
     }, []);
-
 
 
     const calculateMatches = () => {
