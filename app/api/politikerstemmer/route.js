@@ -95,6 +95,781 @@ export async function GET(request) {
             comment: "Der skal i højere grad lyttes til danskernes ønsker og behov. Danmarks selvstændighed skal der værnes om, ligesom de rettigheder som der ved en selvstændig nation, skal beskyttes. Hvert land har sine særegne og forcer, samarbejde og forskellighed nationer imellem er positivt, det skal ikke ødelægges af en udemokratisk stormagt.",
             votes: [1,0,1,0,1,1,0,1,0,0,1,0,1,0,1,0,0,0,0,1,1]
         },
+        {
+            id: 11,
+            navn: "Niels Plum",
+            img: "11.jpg",
+            parti: "V",
+            spidskandidat: 0,
+            comment: "Du skal stemme på mig, hvis du vil have person med en del politisk erfaring, og som vil kæmpe for en ren Østersø, samt gøre det lettere at være Europærer.",
+            votes: [1,0,1,1,1,0,1,0,0,0,0,1,1,1,1,1,1,0,0,0,1]
+        },
+        {
+            id: 12,
+            navn: "Majbritt Birkholm",
+            img: "12.jpg",
+            parti: "DF",
+            spidskandidat: 0,
+            comment: "Jeg vil arbejde kritisk men konstruktivt i parlamentet. Beslutningerne skal gavne Danmark og danskerne og øge tryghed og sikkerheden. Samarbejdet i EU skal være baseret på nationalstaten og ikke på tanken om Europas forenede stater. Jeg vil have mere Danmark mindre EU.",
+            votes: [0,0,1,1,0,0,0,1,0,0,1,0,1,0,1,0,0,0,0,1,1]
+        },
+        {
+            id: 13,
+            navn: "Rune Bønnelykke",
+            img: "13.jpg",
+            parti: "DF",
+            spidskandidat: 0,
+            comment: "Som borgerlig og EU-skeptiker repræsenterer jeg værdier og holdninger, der fokuserer på at sikre vores nations suverænitet, kulturelle identitet og økonomiske selvstændighed. Jeg tror på styrken i vores nationale fællesskab og vægter beskyttelsen af vores nationale interesser højt. Stem på mig som din EU-skeptiker, hvis du ønsker en stemme i Europa-Parlamentet, der vil kæmpe for Danmarks suverænitet, nationale interesser og bevarelse af vores nationale identitet og kultur. Jeg vil være en stemme for dig og for Danmark i EU.",
+            votes: [0,0,1,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0]
+        },
+        {
+            id: 14,
+            navn: "Petar Socevic",
+            img: "14.jpg",
+            parti: "ALT",
+            spidskandidat: 0,
+            comment: "Vær med til at skrive Danmarkshistorie: Stem den første minoritetsdansker nogensinde i Europa-Parlamentet. Jeg hedder Petar Socevic, er uddannet jurist ved Københavns Universitet med speciale i menneskerettigheder og stiller op for Alternativet. Jeg er valgbar i hele Danmark, og er din stemme for mangfoldighed til EU-valget 2024.",
+            votes: [1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,1,0,1,0]
+        },
+        {
+            id: 15,
+            navn: "Inger-Marie Tryde",
+            img: "15.jpg",
+            parti: "DF",
+            spidskandidat: 0,
+            comment: "Jeg er inkarneret fortaler for samarbejde ml. europæiske selvstændige nationer og stor modstander af en europæisk union der agerer som var den én stat.",
+            votes: [1,0,1,0,0,0,0,1,0,0,1,0,1,0,1,0,0,0,0,1,0]
+        },
+        {
+            id: 16,
+            navn: "Julius Schubring",
+            img: "16.jpg",
+            parti: "ALT",
+            spidskandidat: 0,
+            comment: "Et aktivt lokalsamfund i en stærk EU, som handler progressiv og langsigtet. Digital trivsel med en EU, som giver os ejerskab over vores digitale data og rettigheder. En ny EU-landbrugsstøtte, som fremmer gode fødevarer og miljøet. Det vil jeg kæmpe for.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1]
+        },
+        {
+            id: 17,
+            navn: "Sune Nørgaard Jakobsen",
+            img: "17.jpg",
+            parti: "DF",
+            spidskandidat: 0,
+            comment: "Jeg vil arbejde for at styrke dansk suverænitet, sikre bedre vilkår for danske virksomheder og beskytte danske værdier. ",
+            votes: [0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0]
+        },
+        {
+            id: 18,
+            navn: "Andi Helbo Sejersen",
+            img: "18.jpg",
+            parti: "S",
+            spidskandidat: 0,
+            comment: "I en krisetid hvor krig, klimaforandringer og flygtninge fylder debatten, må vi ikke glemme den daglige politiske dagsorden. Jeg kæmper for også at holde social- og arbejdsmarkedspolitik på dagsordenen. For socialt ansvar, retfærdighed og tryghed.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,0,1,0,0,0,0,0,0]
+        },
+        {
+            id: 19,
+            navn: "Charlotte Amdi Burgess",
+            img: "19.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Jeg har en lang erfaring med europæisk samarbejde inden for det liberal-demokratiske parti ALDE og har derfor et stort netværk som jeg kan bruge til at give Radikale Venstre en stærk position i det nye parlament",
+            votes: [1,0.5,0,1,0,1,1,0,1,0,0,1,0,0,1,1,1,1,1,0,0]
+        },
+        {
+            id: 20,
+            navn: "Marianne Vind",
+            img: "20.jpg",
+            parti: "S",
+            spidskandidat: 0,
+            comment: "Jeg stiller op, fordi der er brug for en rød, grøn og dansk arbejderstemme i EU. Der er brug for en politiker, som er klar til at kæmpe med næb og klør for at forsvare den danske arbejdsmarkedsmodel. Og der er brug for en politiker, som ikke er bange for at tage kampen op mod de virksomheder, som udnytter og ødelægger både mennesker og natur.",
+            votes: [1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,0,0,1,0,1,1]
+        },
+        {
+            id: 21,
+            navn: "Finn Hartvig Nielsen",
+            img: "21.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Europa skal gå foran i den grønne omstilling og vores energi skal fremover komme fra sol, vind og vand. Vi skal løse klimakrisen, sikre biodiversiteten og samtidig gøre os uafhængige af Putins Rusland. Ukraines frihedskamp er vores frihedskamp og vi skal fortsat styrke menneskerettigheder i hele EU. Det vil jeg kæmpe for.",
+            votes: [0.5,1,0,1,1,1,1,0,1,0,0,1,0,1,1,1,1,0,1,1,1]
+        },
+        {
+            id: 22,
+            navn: "Sissel van Run-Kvist",
+            img: "22.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Jeg er din stemme for et grønt, stærkt og frit Europa, der sætter fart på den grønne omstilling og som kæmper mod ekstremisterne på yderfløjene der vil tilbagerulle LGBT-rettigheder, går Putins ærinde og ikke tror på vores fælles samarbejde i EU. Jeg har arbejdet professionelt med EU-lovgivning i flere år og bor til dagligt i Bruxelles med min hollandske mand og vores lille søn.",
+            votes: [1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,0.5,1,0,0]
+        },
+        {
+            id: 23,
+            navn: "Anne-Sofie Sadolin Henningsen",
+            img: "23.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Du skal stemme på mig til Europaparlamentsvalget 2024, hvis du vil sikre en kandidat, der kæmper for at en grøn fremtid bliver en realitet i Europa.Jeg har den holdning, at hvis man står overfor et problem, så må man tage ansvar. Vi har et fælles problem i klima- og biodiversitetskriserne, og jeg vil gerne være med til at tage ansvar på vegne af danskerne og finde de løsninger, som skal sikre os en grøn og bæredygtig fremtid.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,0,1]
+        },
+        {
+            id: 24,
+            navn: "Frederik Lau Petersen",
+            img: "24.jpg",
+            parti: "M",
+            spidskandidat: 0,
+            comment: "Jeg kæmper for et trygt og sikkert Europa for unge, fordi tryghed og sikkerhed er afgørende for vores trivsel og frihed. Vi skal gøre det til kernebegreber i EU\'s fremtidige politik for at sikre en endnu bedre fremtid for os, der lever ind i den.",
+            votes: [1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,0,1,0,0,1]
+        },
+        {
+            id: 25,
+            navn: "Søren Hansen",
+            img: "25.jpg",
+            parti: "DF",
+            spidskandidat: 0,
+            comment: "Der er behov for at den helt almindelig dansker er med i kernen og ikke blot højt uddannet som ikke kender til at være på gulvet.",
+            votes: [1,0,1,0,0,0,0,1,0,0,1,0,1,0,1,0,0,0,0,0,1]
+        },
+        {
+            id: 26,
+            navn: "Magnus Flensborg",
+            img: "26.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Vil du have en grøn omstilling hvor det er de rigeste og største udledere der betaler, et parlament der forbyder privatfly og investerer en masse i et grønt, billigt og godt europæisk tognet, og en solidarisk flygtningepolitik? Så stem på mig, og jeg vil gøre mit absolut bedste for at skabe rød, grøn og ung forandring i Europa.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,0,1,1,1,0,1,0,1,0]
+        },
+        {
+            id: 27,
+            navn: "Martin Sibast Laugesen",
+            img: "27.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "",
+            votes: [1,0,1,0,0,0,1,1,0,0,0,0,1,1,1,1,0,0,0,0,0]
+        },
+        {
+            id: 28,
+            navn: "Asser Mortensen",
+            img: "28.jpg",
+            parti: "S",
+            spidskandidat: 0,
+            comment: "Mit navn er Asser Mortensen, jeg er bosat i Aalborg med min kone og vores to børn. Som din kandidat til Europa-Parlamentet brænder jeg for at gøre Europa tryggere og mere sikkert for os alle. Jeg vil arbejde for et stærkere europæisk fællesskab, grundfæstet i de dyrebare værdier af demokrati, menneskerettigheder og retsstatsprincipper. Jeg drømmer om et Europa, hvor hver enkelt af os, kan føle os sikre på vores job og stole på, at vores velfærdssystem står klar til at støtte de mest sårbare iblandt os. Lad os sammen sikre et Europa, hvor tryghed, sikkerhed og fællesskab ikke bare er løfter, men realiteter for hver og en af os.",
+            votes: [1,1,0,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,0,0,0.5]
+        },
+        {
+            id: 29,
+            navn: "Niels Christian Dahl",
+            img: "29.jpg",
+            parti: "S",
+            spidskandidat: 0,
+            comment: "Jeg vil et EU som kan samle hele verden. Som kan vise vejen ud af klimakrisen, og at vores værdier: frihed, retfærdig og fred er et stærkt alternativ til totalitarisme og undertrykkelse. Vi skal have gensidig velstand i verden gennem værdibaseret, og ikke profitbaseret handel.",
+            votes: [0.5,1,0.5,1,1,1,1,0,1,1,0,1,1,0.5,1,1,1,1,0,0,1]
+        },
+        {
+            id: 30,
+            navn: "Allan Søgaard-Andersen",
+            img: "30.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "En stemme på mig, er en stemme på kampen for demokrati. Skal vi lykkedes med de store dagsordenener indenfor klima, indenfor fred i Europa og verdenen og indenfor social og økonomisk ulighed, er samarbejde og demokrati afgørende.",
+            votes: [1,1,0,1,1,1,1,0.5,0.5,0,0,1,0,1,0,1,0,0,0,0,1]
+        },
+        {
+            id: 31,
+            navn: "Rikke Lauritsen",
+            img: "31.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Jeg vil kæmpe for en retfærdig, grøn omstilling i et stærkt europæisk fællesskab. Kun sammen kan vi klare de store udfordringer, vi står overfor. Til dagligt arbejder jeg som rådgiver i Europa-Parlamentet, så jeg kender til lovgivningsarbejdet - og er stolt af at være en del af Den grønne gruppe.",
+            votes: [1,1,0,1,1,1,1,0,1,0,0,1,1,1,1,1,1,1,1,0,0]
+        },
+        {
+            id: 32,
+            navn: "Emil Njor",
+            img: "32.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Man skal stemme på mig til det kommende EP valg hvis man går op i at forlænge levetiden af produkter og i at fremme reparation fremfor nykøb. Derudover bør man stemme på mig hvis man gerne vil have en ekspert i kunstig intelligens med til bordet når der skal forhandles om regulering af dette.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,0,1,1,1,0,1,1,1,0]
+        },
+        {
+            id: 33,
+            navn: "Niels Fuglsang",
+            img: "33.jpg",
+            parti: "S",
+            spidskandidat: 0,
+            comment: "Jeg mener, at vi har brug for en fair og grøn EU-politik, der gør os uafhængige af fremmede magter, som fremmer den grønne omstilling, og som sikrer, at de som har mest også bidrager til de nødvendige investeringer i vores fælles fremtid. Er du enig? Så overvej at give mig din stemme den 9. juni.",
+            votes: [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,1,0,0,0]
+        },
+        {
+            id: 34,
+            navn: "Magnus Barsøe",
+            img: "34.jpg",
+            parti: "S",
+            spidskandidat: 0,
+            comment: "Du skal stemme på mig, fordi jeg i over 10 år som journalist og civiløkonom har kæmpet mod banker, spekulanter, grådighed, kapitalfonde, miljøsvineri, et ulige boligmarked, landbrugets udledning af drivhusgasser og fossil lobbyisme. Og fordi jeg i 10 år har kæmpet for helt almindelige danske lønmodtageres ret til et ordentlig job, et trygt og solidarisk velfærdssamfund, der tager sig af de svageste, og en hverdag uden pesticider i grundvandet, døde fisk i deres fjorde og PFAS i deres børns flyverdragter. Den kamp har jeg tænkt mig at forsætte ufortrødent i Bruxelles. Vi har krav på et grønnere, renere, rigere og mere retfærdigt Europa med fuld beskæftigelse. Et Europa hvor finansiel spekulation og klimaskadelig produktion fylder mindre. Og hvor vi i stedet investerer mere i forskning, uddannelse og arbejde til helt almindelige danske familier.",
+            votes: [1,0,1,1,1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,0,0]
+        },
+        {
+            id: 35,
+            navn: "Thorbjørn Jacobsen",
+            img: "35.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "Til EU-parlamentets største opgaver har jeg unikt indblik og interesse, som kan være til gavn for os alle. Mine nøgleord til arbejdet i EU handler om Fornuft, Frihed og Fremtid. Med liberal politik kan vi gå en lysere fremtid i møde. Læs mere på https://tjliberal.dk/",
+            votes: [1,0,1,0,0,0,1,1,0,0,0,1,1,0.5,1,1,1,0,0,0,0]
+        },
+        {
+            id: 36,
+            navn: "Danny Malkowski",
+            img: "36.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "",
+            votes: [1,0,1,0,0,0,1,1,0,0,0,1,1,0.5,1,1,1,0.5,0,0,0]
+        },
+        {
+            id: 37,
+            navn: "Louise Siv Ebbesen",
+            img: "37.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "Jeg vil kæmpe for, at EU koncentrerer sig om det vigtigste. Det er i min verden militær oprustning, så Europas borgere kan leve i sikkerhed fra et aggressivt Rusland. Derudover skal vi have stærkere ydre grænser, så vi kan forhindre fremtidige flygtningestrømme og uhensigtsmæssig immigration fra særligt Mellemøsten. Jeg vil også kæmpe for, at EU koncentrerer sig om at styrke handlen mellem medlemslandene, og stopper med at blande sig i nationale anliggender som fx barselsfordelingen log kvoter i bestyrelser.",
+            votes: [1,0,1,0,0,0,1,1,1,0,0,1,1,0.5,1,1,1,1,0,0,0]
+        },
+        {
+            id: 38,
+            navn: "Chelle Lilly",
+            img: "38.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "Når vi gerne vil skabe et EU der skal fungere for alle, har vi brug for at alle deltager i samtalen. Det har altid været en drivkraft for mig, at prøve at skabe et bedre i morgen med innovative tanker, nye ideer og perspektiver.",
+            votes: [1,0,1,0,0,0,1,1,0,0,0,1,1,0.5,1,1,1,0.5,0,0,0]
+        },
+        {
+            id: 39,
+            navn: "Nikolaj Steffenauer",
+            img: "39.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "EU skal koncentrere sig om de opgaver, hvor vi medlemslande sammen er stærkere. EU skal derimod ikke blande sig i områder såsom barsels- og ferielovgivning, som medlemslandene sagtens kan finde ud af at varetage selv.",
+            votes: [1,0,1,0,0,0,1,1,0,0,0,1,1,0.5,1,1,1,0.5,0,0,0]
+        },
+        {
+            id: 40,
+            navn: "Carsten Normann",
+            img: "40.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "Jeg er en international dansk statsborger der både har arbejdet og boet i flere medlemslande, bl.a. Polen og Spanien. Jeg kender til fordelene og udfordringerne med et EU der ofte vil for meget på de forkerte områder. Jeg har med min baggrund som topleder over 20 år evnerne til at danne de netværk og kontakter i et internationalt miljø som EU parlamentet så jeg kan påvirke min kommende kollegaer til at lytte til Danmark.",
+            votes: [1,0,1,1,1,0,1,0,0,0,0,0,1,1,1,1,1,1,0.5,0,0]
+        },
+        {
+            id: 41,
+            navn: "Johannes Slyngborg",
+            img: "41.jpg",
+            parti: "ALT",
+            spidskandidat: 0,
+            comment: "En stemme på mig, er en stemme på en progressiv, ambitiøs og ung person som stræber efter at verden bliver et bedre sted at være. Her tales der om en bæredygtig verden for alle, da der altid skal være plads til alle, uanset hvor man kommer fra.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,0,1,1,1,0,1,1,1,1]
+        },
+        {
+            id: 42,
+            navn: "Taner Genc",
+            img: "42.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Jeg stiller op til EU-valg, fordi jeg drømmer om et EU og en verden uden krig og fattigdom, hvor klimakrisen er højt prioriteret. Jeg mener, at EU har brug for et nyt, ambitiøst flertal, der kæmper for en grøn fremtid, demokrati, frihed, solidaritet og internationalt samarbejde. Jeg vil kæmpe for et grønt og socialt Europa, der sætter mennesker før markedet og passer på vores planet.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0.5,1,1,1,1,1,0,0.5,0.5,1,0]
+        },
+        {
+            id: 43,
+            navn: "Andreas Grosbøll",
+            img: "43.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "",
+            votes: [1,0,1,0,0,0,1,1,0,0,0,1,1,0.5,1,1,1,0.5,0,0,0]
+        },
+        {
+            id: 44,
+            navn: "Thue Grum-Schwensen",
+            img: "44.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Valget skal være et klimavalg, men det også vigtigt at sikre et socialt fair Europa. Uligheden er vokset kolossalt i Danmark og i store dele af EU. De rigeste skal være med til at betale for den grønne omstilling, og lønmodtagernes rettigheder skal sikres. Jeg har arbejdet som covid-tester, taxa-chauffør med mere - og kender også de dele af arbejdsmarkedet. Stem en fra virkeligheden i Europa-parlamentet.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,0.5,1,0.5,0,0.5,0,0,0]
+        },
+        {
+            id: 45,
+            navn: "Kristine Amalie Rostgård",
+            img: "45.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Med en fortid i #HvorErDerEnVoksen er jeg motiveret af at passe på Europas børn. Vi skal fokusere på klima, sikkerhedspolitik og sikre rettigheder. Jeg er specialist i russisk herskerkultur, og mener at vi bør sanktionere klogere overfor Rusland. Derudover skal vi sikre børn og unges rettigheder bedre, og ikke mindst forbyde vold mod børn i hele EU.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,1,0.5,1,0.5,0,0,0,0,0]
+        },
+        {
+            id: 46,
+            navn: "Kim Elmose",
+            img: "46.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Jeg kæmper for sociale rettigheder i et EU, hvor borgernes sociale og arbejdsmæssige rettigheder er sikrede, så ingen er økonomisk udsatte, når vi skal gennemføre den nødvendige grønne transformation af samfundet.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0.5,1,0.5,1,1,1,1,1,1,0,0]
+        },
+        {
+            id: 47,
+            navn: "Pia Lieberknecht",
+            img: "47.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Jeg vil arbejde for, at vi gennem EU skaber en bæredygtig verden med væredygtige hverdage.",
+            votes: [1,1,0,1,1,1,1,0,1,1,1,1,0,0.5,1,0.5,0,0.5,0,0,0]
+        },
+        {
+            id: 48,
+            navn: "Karin Liltorp",
+            img: "48.jpg",
+            parti: "M",
+            spidskandidat: 0,
+            comment: "Der er et stort uudnyttet potentiale i EU, og vi kan få meget mere glæde af hinanden end i dag. Bl.a. på sundhedsområdet kan vi lære meget af hinanden, hvis vi får skabt de rigtige systemer. Jeg er dybt optaget af vidensdeling, og netop dette område vil jeg arbejde for at få optimeret - vi er bare klogere sammen.",
+            votes: [1,0.5,1,1,0.5,0.5,1,0,0.5,0,0,0.5,1,1,1,1,0.5,0,0,0,1]
+        },
+        {
+            id: 49,
+            navn: "Karoline Lindgaard",
+            img: "49.jpg",
+            parti: "ALT",
+            spidskandidat: 0,
+            comment: "Man skal stemme på mig, fordi jeg kæmper for ambitiøs klimahandling, et Europa uden giftige kemikalier og et Europa uden diskrimination på baggrund af køn, seksualitet eller etnicitet. Derudover har vi brug for flere unge stemmer i Europa-Parlamentet - jeg vil være en ung, grøn og progressiv stemme i Europa.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,0.5,1,1,1,1,1,1,0,1]
+        },
+        {
+            id: 50,
+            navn: "Villy søvndal",
+            img: "50.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Jeg stiller op fordi jeg anser EU som den vigtigste forandringskraft i forhold tilmed store spørgsmål: klima, miljø og natur,  udenrigspolitik og sikkerhedspolitik samt social sikkerhed og håndtering af immigrationspres. Jeg har meget politisk erfaring og et meget bredt netværk, som jeg tror er både nyttigt og vigtigt. Endelig har jeg lysten og kræfterne til at tage fat på opgaverne. Vh Villy Søvndal",
+            votes: [1,1,0,1,1,1,1,0,1,1,0.5,1,0.5,1,1,1,0,0.5,0.5,0,0]
+        },
+        {
+            id: 51,
+            navn: "Lars Høyer Holmqvist",
+            img: "51.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "Nærhedsprincippet skal være et bærende element i EU. Alle beslutninger skal træffes så tæt på borgerne som muligt.",
+            votes: [1,0,1,0,0,0,0,1,0,0,0,1,1,0,1,0,0,0,0.5,1,1]
+        },
+        {
+            id: 52,
+            navn: "Kim Pagels",
+            img: "52.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Har erfaring med EU-samarbejdet via tidligere ansættelse i EU, brænder for the europæiske samarbejde - vi kan utroligt meget når vi står sammen i Europa, og vi kan være det internationale kraftcenter som driver de nødvendige forbedringer indenfor bl.a. klima/natur, sikkerhed og immigration.",
+            votes: [1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1]
+        },
+        {
+            id: 53,
+            navn: "Tobias Weische",
+            img: "53.jpg",
+            parti: "DF",
+            spidskandidat: 0,
+            comment: "Du skal stemme på mig til Europa-Parlamentsvalget hvis du ønsker færre migranter til Danmark, mindre magt til politikerne i Bruxelles og mere magt til nationalstaterne. Stem nej til EU, Danmark kan godt selv.",
+            votes: [0,0,1,1,1,0,0,1,0,0,1,0,1,0,1,0,0,0,0,1,1]
+        },
+        {
+            id: 54,
+            navn: "Carsten Sørensen",
+            img: "54.jpg",
+            parti: "DF",
+            spidskandidat: 0,
+            comment: "En stemme på mig er en stemme på mere national bestemmelse og mindre magt til EU. Vi skal sætte danskerne først - også i EU.",
+            votes: [0,0,1,0,0.5,0,0,1,0,0,1,0,1,0,0,0,0,0,0,1,1]
+        },
+        {
+            id: 55,
+            navn: "Elias Julius Binggeli",
+            img: "55.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Vi har brug for flere unge europa-parlamentarikere. Og når EU står på tærsklen af klimakatastrofer, krig og et kollaps af havmiljøet, nytter det ikke at det er folk der ikke skal leve i den verden, der laver lovgivning til den.",
+            votes: [1,1,0.5,1,1,1,1,0,1,1,0.5,1,0,0.5,1,0.5,0,0,0,0,0]
+        },
+        {
+            id: 56,
+            navn: "Martin Schepelern",
+            img: "56.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Jeg tror på, at et stærkere EU er svaret for Danmark og Europa på de alvorlige udfordringer som vi står overfor. Klima, sikkerhed og migration hænger sammen og kræver fælles løsninger og ansvar.",
+            votes: [1,0.5,1,1,1,1,1,0,1,0.5,0,1,1,1,1,1,1,1,0,1,1]
+        },
+        {
+            id: 57,
+            navn: "Kira Marie Peter-Hansen",
+            img: "57.jpg",
+            parti: "SF",
+            spidskandidat: 1,
+            comment: "SF er garanten for et grønnere og mere retfærdigt Europa, og har været det i årtier. Vi har presset på for den klimalov, vi nu har fået, og det er os, der presser på for at videreudvikle den grønne omstilling, frem for at bremse den, som dele af højrefløjen ønsker. Vi kæmper dagligt for at sikre bedre arbejds- og levevilkår, og for et demokratisk og solidarisk Europa.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0.5,1,1,1,1,1,0,0,0,0,1]
+        },
+        {
+            id: 58,
+            navn: "Mads Hvid",
+            img: "58.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Jeg vil kæmpe for et Europa som sætter borgernes trivsel og muligheder, kampen for klimahandling og demokrati i centrum for den førte politik. Jeg vil arbejde for at den grønne omstilling kommer flertallet af europæere til gavn ved at skave gode jobs, bedre og billigere boliger og sikre den natur vil lever i og af.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0.5,1]
+        },
+        {
+            id: 59,
+            navn: "Reinout Bosch",
+            img: "59.jpg",
+            parti: "EL",
+            spidskandidat: 0,
+            comment: "Man skal stemme på Enhedslisten for at sende arbejdende stemmer til Bruxelles. Kun en stærk venstrefløj kan tage kampen op med de 45.000 lobbyister som arbejdsgiverne har udstationeret dernede.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,0,0.5,0.5,0.5,0,0,1,1,1]
+        },
+        {
+            id: 60,
+            navn: "Mikael Hertig",
+            img: "60.jpg",
+            parti: "ALT",
+            spidskandidat: 0,
+            comment: "Jeg har blik for at kunne se, hvilke aktører der tidligt påvirker initiativer, der bliver til dansk lov.",
+            votes: [1,1,0,1,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,1]
+        },
+        {
+            id: 61,
+            navn: "Ibrahim Benli",
+            img: "61.jpg",
+            parti: "EL",
+            spidskandidat: 0,
+            comment: "En stærkere venstrefløj i EU-parlamentet er afgørende for et grønt og solidarisk europæisk samarbejde, der prioriterer natur, klima, velfærd og menneskerettigheder over markedet og kapital. Jeg vil være med til at styrke venstrefløjens kamp i EU-parlamentet.",
+            votes: [1,1,0,1,1,1,1,1,1,1,0,0,0.5,1,1,1,0,0,0,1,1]
+        },
+        {
+            id: 62,
+            navn: "John Brandt",
+            img: "62.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Jeg ønsker et Europa der fokuserer på Klima, miljø sikkerhed og menneskerettigheder. Vi har ikke arvet planeten fra vores forældre, men lånt den af vires børn. Det samme gælder for de rettigheder vi har. Vi skal værne om begge ting og aflever det i ordentlig stand til næste generation.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,0,0,0,0]
+        },
+        {
+            id: 63,
+            navn: "Nikolai Tange",
+            img: "",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Jeg er en ung, socialliberal kandidat. Til dagligt studerer jeg på CBS, og så stiller jeg op for Radikale Venstre til EP-valget. Man skal stemme på mig, fordi jeg vil gøre alt jeg kan, for at være de unges socialliberale, fornuftige stemme i Europa-Parlamentet.",
+            votes: [1,1,1,0,1,0,1,0,0,0,0,1,1,1,1,1,1,1,1,0,1]
+        },
+        {
+            id: 64,
+            navn: "Mads Strange",
+            img: "64.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "Som Liberal Alliances unge kandidat kæmper jeg for, at EU kan stå stærkere sikkerhedspolitisk, at vi får sat skub i den grønne omstilling og at vi skaber bedre vilkår for, at der også i fremtiden vil være vækst og velstand på det europæiske kontinent.",
+            votes: [1,0,1,1,0,0,1,0.5,0,0,0,1,1,1,1,1,0,0.5,0,0,0]
+        },
+        {
+            id: 65,
+            navn: "Mathias Niebuhr",
+            img: "65.jpg",
+            parti: "S",
+            spidskandidat: 0,
+            comment: "Fordi der er brug for at blive gennemført en enorm grøn omstilling af hele Europa - men gjort på en måde hvor man også passer på og hjælper de svageste og mest udsatte i vores samfund. Vi skal være grønne mens vi er socialt ansvarlige. Og så er der brug for flere unge medlemmer af parlamentet.",
+            votes: [1,0,0,1,1,1,1,0,1,0,1,1,1,1,1,1,0,0,0,0,1]
+        },
+        {
+            id: 66,
+            navn: "Ludvig Goldschmidt",
+            img: "66.jpg",
+            parti: "EL",
+            spidskandidat: 0,
+            comment: "En stærk venstrefløj kan sikre en solidarisk, grøn og retfærdig fremtid. Sammen kan vi bygge et Europa på flertallets betingelser.",
+            votes: [1,1,1,1,1,1,1,0.5,1,1,0,1,0,1,1,1,0,1,0,1,0]
+        },
+        {
+            id: 67,
+            navn: "Jan Kristoffersen",
+            img: "67.jpg",
+            parti: "ALT",
+            spidskandidat: 1,
+            comment: "Jeg fastholder fokus på, at verden skal producere indenfor de grænser som kloden sætter. Derfor skal der være et globalt sæt spilleregler for produktion. Fremtidens handelsaftaler skal indeholde det regelsæt.",
+            votes: [1,1,1,1,0.5,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1]
+        },
+        {
+            id: 68,
+            navn: "Jens Frost",
+            img: "68.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Bedre interrail skal binde Europa sammen. Det vil give særligt de unge oplevelser for livet af det europæiske fællesskab og dets mange rare mennesker. Det er nu, der skal handles for at sikre klimaet og reducere de alvorlige konsekvenser vi kun har set starten på. Jeg vil med stærke værdier finde alliancerne, forhandle løsningerne og give et bedre Europa videre.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,0,0,0]
+        },
+        {
+            id: 69,
+            navn: "Sofie Groth",
+            img: "69.jpg",
+            parti: "ALT",
+            spidskandidat: 0,
+            comment: "Mine mærkesager til EP-valget er: 1.	En human flygtninge politik - EU skal garantere minoriteters rettigheder. EU er nødt til at være garanten for, at vi løser flygtningeproblematikken ved at bekæmpe de grundlæggende årsager til flugt og migration. Antallet af tabte menneskeliv på Middelhavet er ifølge tal fra FN’s Migrationsorganisation stigende, selvom det fylder mindre og mindre i mediebilledet. Det er en virkelighed, som EU er nødt til at forholde sig til og tage et fælles ansvar for. 2.	Omlæg landbrugsstøtten til at fremme plantebaseret, økologisk og regenerativt landbrug. Den nuværende landbrugsstøtte bør omstruktureres for at støtte mere bæredygtige og miljøvenlige landbrugspraksisser. 3.	Bevar mindst 30% vild natur i hele Europa og opnå tilsvarende målsætning i Danmark. EU har brug for klimahåndværkere – ikke klimahyklere. Og det er en EU-opgave at beskytte naturen og biodiversiteten i Europa. EU skal sikre beskyttede naturområder svarende til mindst 30 procent af EU’s land- og havområder, og plante flere træer – blandt andet ved at omlægge landbrugsarealer til skov. Erfaring: Til dagligt arbejder jeg som klinisk børnepsykolog i Røde Kors, hvor jeg behandler uledsagede og ledsagede børn og unge med traumer samt er politisk rådgiver for Alternativet.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,0,1,0.5,1,1,0,1,1,1]
+        },
+        {
+            id: 70,
+            navn: "Nicklas Verne",
+            img: "70.jpg",
+            parti: "KF",
+            spidskandidat: 0,
+            comment: "Kære vælger. Du skal stemme på mig, hvis du ønsker et mere sikkert Europa, et mere velhavende Europa og et mere grønt Europa. Jeg er forhenværende Vice-generalsekretær for European Democrat Students (EDS), og har haft EU politik meget tæt på mit daglige liv. Jeg vil kæmpe for dig og dine visioner i Europa-parlamentet.",
+            votes: [1,0,1,1,0,0,1,0,0,1,0,1,1,1,1,0.5,0,0,0,0,1]
+        },
+        {
+            id: 71,
+            navn: "Michael egelund Andersen",
+            img: "71.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Folkesundhed i EU, Vi skal satse på mennesker! Vi skal sørge for, at alle europæere har adgang til sundhed. Bekæmpelsen af antimikrobiel resistens, indsats mod kræft og ansvarlig fødevaremærkning. Derfor skal du stemme på mig, for at sikrer en sundere EU, Fyn i EU.",
+            votes: [1,1,1,1,1,1,1,0,1,0.5,0.5,1,1,1,1,1,0,0,0.5,0,0.5]
+        },
+        {
+            id: 72,
+            navn: "Jørn Grønkjær",
+            img: "72.jpg",
+            parti: "ALT",
+            spidskandidat: 0,
+            comment: "Mange års erfaring med nordisk og europæisk samarbejde indenfor turisme, kultur, miljø og e-mobilitet. Desuden er jeg en af de 3 stiftere af miljøkonceptet Den grønne Nøgle, som nu er udviklet til det globale GREEN KEY. Er også debattør.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,0,1,1]
+        },
+        {
+            id: 73,
+            navn: "Flemming Agerskov",
+            img: "73.jpg",
+            parti: "KF",
+            spidskandidat: 0,
+            comment: "For en stærk kommunikator på de store EU sprog, med fokus på det der giver resultater. Klima er meget vigtigt - EU kan gøre en forskel uden at vi taber økonomisk eller sikkerhedsmæssigt på den globale scene. Sikkerhedspolitisk indsigt og forståelse over en bred kam, forsyningssikkerhed, egenproduktion er også forsvarsevne.",
+            votes: [1,0,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,0,0,1]
+        },
+        {
+            id: 74,
+            navn: "Marianne Lynghøj",
+            img: "74.jpg",
+            parti: "V",
+            spidskandidat: 0,
+            comment: "Et sikkert EU er et bæredygtigt EU. Derfor vil jeg bruge min erfaring fra dansk erhvervsliv til at gøre EU\'s klimamål til konkret klimahandling. Vi skal skabe et klimaneutralt EU gennem erhvervslivets innovative, grønne løsninger, hvor bæredygtighed skaber velstand og frihed.",
+            votes: [1,0,1,1,1,0,1,1,1,0,0,1,1,1,1,1,0,1,0,0.5,0.5]
+        },
+        {
+            id: 75,
+            navn: "Sigrid Friis",
+            img: "75.jpg",
+            parti: "RV",
+            spidskandidat: 1,
+            comment: "Jeg ønsker at give et grønnere Europa videre til den næste generation. Derfor skal vi stoppe med at importere sort gas fra Putins Rusland, vi skal i stedet have meget mere grøn energi i unionen. Vi skal knokle for at nå klimamålene og bremse temperaturstigningerne - og så skal vi passe bedre på naturen, både til lands og til vands.",
+            votes: [1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,1,1,0,0]
+        },
+        {
+            id: 76,
+            navn: "Erik Poulsen",
+            img: "76.jpg",
+            parti: "DD",
+            spidskandidat: 0,
+            comment: "Livslang erfaring og sunde synspunkter. Grøn omstilling under udvikling af vores erhverv. EU skal have en højere selvforsyning, kritiske produkter fra bla Kina skal produceres i medlemslandene.  Migrant strømmen skal stoppes og hjælpes mere lokalt, EU skal åben for det arbejdskraft medlemslandene skal bruge.",
+            votes: [1,0,1,0,1,0,1,0,0,0,0,1,1,1,1,1,0,0,0,0,1]
+        },
+        {
+            id: 77,
+            navn: "Per Clausen",
+            img: "77.jpg",
+            parti: "EL",
+            spidskandidat: 1,
+            comment: "Jeg vl fokusere på en effektiv og retfærdig løsning af klima- og miljøudfordringerne, som skaber flere gode arbejdspladser. Regningen skal sendes til de rigeste og de største forurenere. Økonomisk dårligt stillede skal holdes økonomisk skadesløse.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,0,1,1,1,0,1,0,1,0]
+        },
+        {
+            id: 78,
+            navn: "Helle Laursen Petersen",
+            img: "78.jpg",
+            parti: "KF",
+            spidskandidat: 0,
+            comment: "Jeg tænker at det er en god ide at der kommer politikere ind med reel erhvervserfaring og jeg kan bidrage med stor viden på det digitale område som halter i mange europæiske lande. Samtidigt har jeg et stort hjerte for sundhedspolitikken og hvorfor skal vi i DK vente 6-7 år på virksomt medicin som allerede er godkendt i andre europæiske lande? Lad os få en fælles europæisk organisation til fx godkendelse af medicin og fastlæggelse af prisstruktur på samme.",
+            votes: [0.5,0.5,1,1,0.5,0,1,0.5,0,0,0,1,1,0,1,0.5,0,1,0,0,1]
+        },
+        {
+            id: 79,
+            navn: "Mette Sode Hansen",
+            img: "79.jpg",
+            parti: "DF",
+            spidskandidat: 0,
+            comment: "Jeg går ind for, mere Danmark mindre EU. Forstået på den måde, at danskerne skal selv bestemme over eget land og ikke dikteres udefra. Der skal ikke ske flertalsafgørelser, hvor det risikeres at mindre lande får meget lidt af sige. Jeg ønsker ikke, at vi bliver en del af et Europas forenede stater, hvor vi ikke længere vil have selvbestemmelse. Jeg ønsker ikke at sende danske soldater på EU mission under andre landes kommando. I det hele taget synes jeg at EU allerede er blevet så stort og uoverskueligt, at de danske medier ikke engang dækker de mest horrible beslutninger der træffes i EU parlamentet.",
+            votes: [0,0,1,0,0.5,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,1]
+        },
+        {
+            id: 80,
+            navn: "Carsten Kissmeyer",
+            img: "80.jpg",
+            parti: "V",
+            spidskandidat: 0,
+            comment: "Jeg har en meget bred politisk erfaring fra kommunalpolitik (borgmester i 16 år), regionsråd og Folketing - jeg har en solid politisk erfaring også fra en lang række bestyrelser.",
+            votes: [0.5,0.5,1,0.5,1,0.5,1,0,1,0,0,1,1,1,1,1,0.5,1,0,0,1]
+        },
+        {
+            id: 81,
+            navn: "Helle Jensen",
+            img: "81.jpg",
+            parti: "LA",
+            spidskandidat: 0,
+            comment: "EU skal koncentrere sig om, at finde fælles løsninger på de fælles udfordringer vi har. Sikkerhed, klima, migration, styrkelse af det indre marked og mindre bureaukrati. Samtidig skal EU respektere nærhedsprincippet, barsel, kønskvoter og arbejdstidsregistrering er eksempler på, hvad EU ikke skal blande sig i.",
+            votes: [1,0,1,0,0,0,1,0.5,0,0,0,1,1,0,1,1,1,1,0,0,0]
+        },
+        {
+            id: 82,
+            navn: "Manuel Vigilius",
+            img: "82.jpg",
+            parti: "KF",
+            spidskandidat: 0,
+            comment: "Jeg vil arbejde for at sikre vores forsvar og EUs grænser, bekæmpe radikalisering og terror, og for at EU bliver en stærkere stemme for alle slags truede mindretal verden over, herunder jøder og forfulgte kristne, som er næsten usynlige i offentligheden.",
+            votes: [1,0.5,1,1,0.5,0,1,1,0,0,0,1,1,1,1,0.5,0,0,0,0,0.5]
+        },
+        {
+            id: 83,
+            navn: "Jacob Rosenberg",
+            img: "83.jpg",
+            parti: "KF",
+            spidskandidat: 0,
+            comment: "Jeg har god indsigt i sundhedsområdet og kan her bidrage væsentligt udover de mere traditionelle EU-fokusåmråder som forsvar/sikkerhed, migration oh klima.",
+            votes: [1,1,1,1,0,0,1,0.5,0,1,0,1,1,0.5,1,0.5,0.5,1,0,0,1]
+        },
+        {
+            id: 84,
+            navn: "Stine Bosse",
+            img: "84.jpg",
+            parti: "M",
+            spidskandidat: 1,
+            comment: "Mit hjerte banker for Danmark óg Europa. Europa står overfor udfordringer, der kan synes uoverskuelige. Krigen i Ukraine, det endnu uløste migrationsproblem, og voldsomme og altødelæggende klimaforandringer, er noget af det, vi skal løse sammen i vores europæiske fællesskab. For vi kan ikke løse udfordringerne alene. Jeg vil kæmpe for et handlekraftigt, grønt og sikkert Europa.",
+            votes: [1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,0,1,0,0,1]
+        },
+        {
+            id: 85,
+            navn: "Vladimir Stanic",
+            img: "85.jpg",
+            parti: "KF",
+            spidskandidat: 0,
+            comment: "Som borgerlig går jeg op i personlig frihed og vil arbejde for at vi bevarer vores ret til selvbestemmelse, men kan samtidig også se fordelen i det vi kan udrette i fællesskab med EU.",
+            votes: [1,0.5,1,1,0,1,0,0.5,0,0,0,0.5,1,0.5,0.5,1,0,1,0,0.5,0.5]
+        },
+        {
+            id: 86,
+            navn: "Barikan Solecki",
+            img: "86.jpg",
+            parti: "M",
+            spidskandidat: 0,
+            comment: "Jeg vil betale tilbage til Danmark ved værne om vores demokratiske værdier i Europa. Jeg er en midtersøgende politiker, der fagligt, erhvervsmæssigt og med stærke personlige erfaringer vil bidrage til et tryggere Danmark og et stærkere EU gennem en fælles forsvarspolitik og en reguleret, balanceret migrationspolitik. Jeg sigter efter en tilgang, hvor kontrol og sikkerhed går hånd i hånd med humanitet og solidaritet. Derfor er mit fokus at fremme vækst og velfærd ved at sikre kvalificeret arbejdskraft til danske virksomheder.",
+            votes: [1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,0,1,0,0,1]
+        },
+        {
+            id: 87,
+            navn: "Irina Bjørnø",
+            img: "87.jpg",
+            parti: "ALT",
+            spidskandidat: 0,
+            comment: "I dag står jeg her som en stolt borger, der engang kom fra Rusland og nu kalder Europa mit hjem. For nogle år siden tog jeg den afgørende beslutning om at flytte til Europa. Jeg søgte efter muligheder, kulturel mangfoldighed og en dybere forståelse af verden omkring mig. Jeg fandt alt dette og mere i Europa. Min rejse har lært mig, hvor vigtigt det er at værdsætte de værdier, der er grundlaget for Europa. Her handler det ikke kun om at dele et kontinent, men også om at dele værdier som frihed, demokrati og respekt for menneskerettigheder. Jeg vil gerne opfordre jer alle til at deltage i dagens valg. Europa har åbnet sine døre for mig, og jeg er stolt over at kunne udtrykke min mening og forme fremtiden sammen med jer alle. Europa er mere end blot en geografisk placering; det er en følelse af fællesskab og samhørighed. Lad os fortsætte med at bygge et Europa, der er åbent, mangfoldigt og inkluderende. Lad os værne om de værdier, der gør dette kontinent til et hjem for os alle. Gå ud og stem, og lad os sammen forme vores fælles fremtid. Tak for jeres støtte og for at give mig muligheden for at kalde Europa mit hjem.",
+            votes: [1,1,1,1,0.5,0.5,0,0.5,0,1,0,1,0,0.5,1,1,0,0,1,0.5,1]
+        },
+        {
+            id: 88,
+            navn: "Abdinoor Adam Hassan",
+            img: "88.jpg",
+            parti: "M",
+            spidskandidat: 0,
+            comment: "Derfor skal du stemme personligt på mig. Jeg ved i kraft af min ikke ubetydelige erfaring, at vi mennesker, i overvejende grad, ligner hinanden mere, end vi måske går og tror. Derfor kan jeg se fornuften i Moderaternes projekt om at samle danskerne om dét vi deler, fremfor dét der adskiller os. Det samme gør sig gældende i Europa. Sammen er vi stærkest.",
+            votes: [1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,0,1,0,0,1]
+        },
+        {
+            id: 89,
+            navn: "Rasmus Nordqvist",
+            img: "90.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Igen ved dette valg står vi over for et vigtigt spørgsmål - skal vi handle på klima- og biodiversitetskrisen og sikre social balance i Europa, eller skal ‘business as usual’ forsvares? Jeg vil kæmpe hver dag for, at den grønne omstilling bliver overskrift på dagsorden i Europa. Vi kan forhandle med hinanden - ikke med kloden.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,0.5,1,1,1,0,1,1,0,0.5]
+        },
+        {
+            id: 90,
+            navn: "Tobias William Marney",
+            img: "90.jpg",
+            parti: "M",
+            spidskandidat: 0,
+            comment: "Mit efternavn Marney stammer fra Sydafrika, hvor min fars familie var en del af det farvede mindretal. Jeg har en dyb tro på demokrati og frihed. Som Moderat mener jeg, at politik handler om resultater. Så stem på sikkerhed, klimahandling og styr på sociale medier.",
+            votes: [1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,1,1,0,0,0]
+        },
+        {
+            id: 91,
+            navn: "Selma Bolø",
+            img: "91.jpg",
+            parti: "EL",
+            spidskandidat: 0,
+            comment: "Jeg kæmper et bedre EU, der går forrest og viser hvordan ambitiøs klimahandling, der skaber grønne jobs og gode arbejdsvilkår, ser ud. EU skal passe bedre på naturen og lave omfattende naturgenopretning, så vores skove og have igen kan trække vejret. Og så skal vi sikre at mennesker på flugt får en ordentlig behandling, når de kommer til vores kontinent - ingen flygter for sjov. Stem på mig for en ung, grøn og solidarisk stemme i Europa-Parlamentet.",
+            votes: [1,1,0,1,1,1,1,0,1,0,0,1,0,1,1,1,0,1,0,1,0]
+        },
+        {
+            id: 92,
+            navn: "Frederikke Hellemann",
+            img: "92.jpg",
+            parti: "EL",
+            spidskandidat: 0,
+            comment: "Med buldrende klimaforandringer og en natur på tilbagegang er der ingen tvivl om, at vejen til et trygt Europa går gennem et grønt Europa. Skal vi lykkes med den store opgave skal vi have alle med. Derfor vil jeg sætte turbo under den grønne omstilling og sende regningen til forureneren.",
+            votes: [1,1,0,1,1,1,1,0,1,1,1,1,0,1,1,1,0,1,0,1,0]
+        },
+        {
+            id: 93,
+            navn: "Jakob Dyrman",
+            img: "93.jpg",
+            parti: "V",
+            spidskandidat: 0,
+            comment: "Jeg er dybt optaget af af de muligheder Danmark har gennem EU. Sammen står vi stærkere mod de udfordringer der allerede er og som kommer. Det gælder både indenfor Klimasituationen og sikkerhedspolitikken. Følg mig på min hjemmeside https://jakobdyrman.dk",
+            votes: [1,0,1,1,1,1,1,0,0,0,0,0,1,1,1,1,0,1,0,0,1]
+        },
+        {
+            id: 94,
+            navn: "Asta Kofod",
+            img: "94.jpg",
+            parti: "EL",
+            spidskandidat: 0,
+            comment: "Hvis man ønsker en ung stemme i EU, der vil skabe en sikrere og bedre fremtid for de kommende generationer. Både når det handler om Klima, rettigheder, demokrati og velfærd - alle sammen essentielle ting for en god fremtid!",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,0,1,1,1,0,1,0,1,0]
+        },
+        {
+            id: 95,
+            navn: "Clara Turms",
+            img: "95.jpg",
+            parti: "EL",
+            spidskandidat: 0,
+            comment: "EU skal sætte menneskerettigheder, ligestilling og klimahandling før kortsigtet profit. Jeg kæmper for en solidarisk flygtningepolitik, ambitiøs klimahandling og et feministisk EU.",
+            votes: [1,1,0,1,1,1,1,0,1,1,0,1,0,1,1,1,0,0,0,1,0]
+        },
+        {
+            id: 96,
+            navn: "Melina Andersen",
+            img: "96.jpg",
+            parti: "SF",
+            spidskandidat: 0,
+            comment: "Uligheden stiger, fordi de rige stikker af fra resten af os. Men vi kan bruge EU til at indføre en fælles formueskat, så de rige faktisk betaler deres andel. Uligheden bliver mindre, sammenhængskraften større og vi holder hånden under velfærden i Europa. Det er mit vigtigste fokus.",
+            votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,0,0,0,0]
+        },
+        
     ];
 
 
