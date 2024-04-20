@@ -42,7 +42,9 @@ export default function SwipeVoter() {
 
     useEffect(() => {
         clearVotes();  
-        setInitialized(true);
+        setTimeout(() => {
+            setInitialized(true);
+        }, 3000);
     }, []);
 
     const handleSwipe = (dir, fromButton = false) => {
@@ -84,13 +86,25 @@ export default function SwipeVoter() {
     const nextImageIndex = current + 1 < qlist.length ? current + 1 : null;
 
     if (!initialized) {
-        return null; // Render nothing until the component is ready
+        return (
+                <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className='h-screen w-screen flex flex-col items-center justify-center'
+                >
+                    <h1 className="text-lg leading-tight font-semibold mb-2 text-slate-300">EP valgtest 2024</h1>
+                    <p className='text-xs mb-4 text-slate-500'>Udarbejdet af DEO | Demokrati i Europa Oplysningsforbundet</p>
+                </motion.div>
+        )
     }
 
     return (
         <div className="flex flex-col items-center justify-center h-screen w-screen relative overflow-hidden ">
-            <AnimatePresence mode="wait">
+            
                 {showThankYou ? (
+                    <AnimatePresence mode="wait">
                         <motion.div 
                             initial={{ opacity: 0, x: -direction}}
                             animate={{ opacity: 1, x: 0}}
@@ -111,10 +125,15 @@ export default function SwipeVoter() {
                                 ></motion.div>
                             </div>
                         </motion.div>
-                    ) : (
-                        <>
-                        <motion.div key={current}>
+                    </AnimatePresence>
+
+                ) : (
+
+                    <>
+                       
+                        <AnimatePresence >
                             <motion.div
+                                key={current}
                                 initial={{ opacity: 0, x: -direction, scale: 0.3}}
                                 animate={{ opacity: 1, x: 0, scale: 1}}
                                 exit={{ opacity: 0 }}
@@ -137,14 +156,17 @@ export default function SwipeVoter() {
                                     </div>
                                 </div>
                             </motion.div>
-                            {qlist[current] && (
+                        </AnimatePresence>
+
+                        {qlist[current] && (
+                            <AnimatePresence mode="sync">
                                 <motion.div
+                                    key={`slide-${current}`}
                                     initial={{ opacity: 0,  x: -direction  }}
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: 0 }}
                                     transition={{
-                                        opacity: { duration: 1},
-                                        x: { type: 'spring', stiffness: 560, damping: 60 }
+                                        type: 'spring', stiffness: 560, damping: 60 
                                     }}
                                     className='h-full w-full absolute top-0 left-0 pointer-events-none z-'
                                 >
@@ -154,7 +176,7 @@ export default function SwipeVoter() {
                                         width={1440}
                                         height={900}
                                         className='object-cover w-full h-full opacity-60'
-                                        priority
+                                        priority={true}
                                     />
 
                                     {/* Preload next image but keep it invisible */}
@@ -164,30 +186,28 @@ export default function SwipeVoter() {
                                             alt={qlist[nextImageIndex].text}
                                             width={1440}
                                             height={900}
-                                            className='object-cover w-full h-full'
+                                            className='object-cover w-full h-full hidden'
                                             style={{ visibility: 'hidden', position: 'absolute', top: 0 }}
-                                            priority // also prioritize this, but it's hidden
-                                        />
+                                            priority={true}
+                                            />
                                     )}
 
                                 </motion.div>
-                            )}
+                            </AnimatePresence>
+                        )}
 
-                        </motion.div>
-                   
                         <motion.button 
                             initial={{ opacity: 0, x: -100 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -100 }}
                             transition={{
-                                opacity: { duration: 0.3 },
-                                x: { type: 'spring', stiffness: 260, damping: 10 }
+                                type: 'spring', stiffness: 260, damping: 10 
                             }}
                             onClick={() => handleSwipe('uenig')} 
                             className="pointer-events-auto items-center justify-center absolute left-0 hidden md:flex z-10 -ml-4"
                         >
-                            <svg className="w-52 h-52 text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.729 5.575c1.304-1.074 3.27-.146 3.27 1.544v9.762c0 1.69-1.966 2.618-3.27 1.544l-5.927-4.881a2 2 0 0 1 0-3.088l5.927-4.88Z" clip-rule="evenodd"/></svg>
-                            <svg className="w-8 h-8 text-white absolute ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M8.97 14.316H5.004c-.322 0-.64-.08-.925-.232a2.022 2.022 0 0 1-.717-.645 2.108 2.108 0 0 1-.242-1.883l2.36-7.201C5.769 3.54 5.96 3 7.365 3c2.072 0 4.276.678 6.156 1.256.473.145.925.284 1.35.404h.114v9.862a25.485 25.485 0 0 0-4.238 5.514c-.197.376-.516.67-.901.83a1.74 1.74 0 0 1-1.21.048 1.79 1.79 0 0 1-.96-.757 1.867 1.867 0 0 1-.269-1.211l1.562-4.63ZM19.822 14H17V6a2 2 0 1 1 4 0v6.823c0 .65-.527 1.177-1.177 1.177Z" clip-rule="evenodd"/></svg>
+                            <svg className="w-52 h-52 text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M13.729 5.575c1.304-1.074 3.27-.146 3.27 1.544v9.762c0 1.69-1.966 2.618-3.27 1.544l-5.927-4.881a2 2 0 0 1 0-3.088l5.927-4.88Z" clipRule="evenodd"/></svg>
+                            <svg className="w-8 h-8 text-white absolute ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M8.97 14.316H5.004c-.322 0-.64-.08-.925-.232a2.022 2.022 0 0 1-.717-.645 2.108 2.108 0 0 1-.242-1.883l2.36-7.201C5.769 3.54 5.96 3 7.365 3c2.072 0 4.276.678 6.156 1.256.473.145.925.284 1.35.404h.114v9.862a25.485 25.485 0 0 0-4.238 5.514c-.197.376-.516.67-.901.83a1.74 1.74 0 0 1-1.21.048 1.79 1.79 0 0 1-.96-.757 1.867 1.867 0 0 1-.269-1.211l1.562-4.63ZM19.822 14H17V6a2 2 0 1 1 4 0v6.823c0 .65-.527 1.177-1.177 1.177Z" clipRule="evenodd"/></svg>
                             <span className='absolute right-3 uppercase font-bold tracking-widest text-white -rotate-90'>Uenig</span>
                         </motion.button>
 
@@ -202,15 +222,13 @@ export default function SwipeVoter() {
                             onClick={() => handleSwipe('enig')} 
                             className="pointer-events-auto items-center justify-center absolute right-0 hidden md:flex z-10 -mr-4"
                         >
-                            <svg className="w-52 h-52 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clip-rule="evenodd"/></svg>
-                            <svg className="w-8 h-8 text-white absolute mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15.03 9.684h3.965c.322 0 .64.08.925.232.286.153.532.374.717.645a2.109 2.109 0 0 1 .242 1.883l-2.36 7.201c-.288.814-.48 1.355-1.884 1.355-2.072 0-4.276-.677-6.157-1.256-.472-.145-.924-.284-1.348-.404h-.115V9.478a25.485 25.485 0 0 0 4.238-5.514 1.8 1.8 0 0 1 .901-.83 1.74 1.74 0 0 1 1.21-.048c.396.13.736.397.96.757.225.36.32.788.269 1.211l-1.562 4.63ZM4.177 10H7v8a2 2 0 1 1-4 0v-6.823C3 10.527 3.527 10 4.176 10Z" clip-rule="evenodd"/></svg>
+                            <svg className="w-52 h-52 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clipRule="evenodd"/></svg>
+                            <svg className="w-8 h-8 text-white absolute mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M15.03 9.684h3.965c.322 0 .64.08.925.232.286.153.532.374.717.645a2.109 2.109 0 0 1 .242 1.883l-2.36 7.201c-.288.814-.48 1.355-1.884 1.355-2.072 0-4.276-.677-6.157-1.256-.472-.145-.924-.284-1.348-.404h-.115V9.478a25.485 25.485 0 0 0 4.238-5.514 1.8 1.8 0 0 1 .901-.83 1.74 1.74 0 0 1 1.21-.048c.396.13.736.397.96.757.225.36.32.788.269 1.211l-1.562 4.63ZM4.177 10H7v8a2 2 0 1 1-4 0v-6.823C3 10.527 3.527 10 4.176 10Z" clipRule="evenodd"/></svg>
                             <span className='absolute left-5 uppercase font-bold tracking-widest text-white rotate-90'>Enig</span>
                         </motion.button>
 
                         <div className="flex flex-col items-end justify-center w-full z-10 mt-4 absolute bottom-0 p-14">
-                            <div className="font-semibold mb-4 text-slate-50">{current + 1 > qlist.length ? qlist.length : current + 1} af {qlist.length}
-                        </div>
-
+                            <div className="font-semibold mb-4 text-slate-50">{current + 1 > qlist.length ? qlist.length : current + 1} af {qlist.length}</div>
                             <div className="w-full bg-slate-50/20 rounded-full h-1.5">
                                 <motion.div
                                     initial={{ width: '0%' }}
@@ -231,7 +249,6 @@ export default function SwipeVoter() {
                         </div>
                     </>
                 )}
-            </AnimatePresence>
         </div>
     )
 }

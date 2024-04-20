@@ -61,8 +61,9 @@ export default function Resultat() {
                                     <Image 
                                         src={`/images/kandidater/${result.img}`} 
                                         alt={result.name} 
-                                        layout="fill"
-                                        objectFit="cover"
+                                        width={40}
+                                        height={40}
+                                        className="object-cover"
                                     />
                                 </div>
                                 <h2 className="font-semibold ">{result.name} <span className="font-light">({result.party})</span></h2>
