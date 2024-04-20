@@ -38,7 +38,7 @@ export default function SwipeVoter() {
     const [direction, setDirection] = useState(0); 
     const [initialized, setInitialized] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false); // State to handle thank you message visibility
-    const [redirectDelay, setRedirectDelay] = useState(3000); // Duration in milliseconds
+    const [redirectDelay, setRedirectDelay] = useState(4000); // Duration in milliseconds
 
     useEffect(() => {
         clearVotes();  
@@ -104,7 +104,7 @@ export default function SwipeVoter() {
         <div className="flex flex-col items-center justify-center h-screen w-screen relative overflow-hidden ">
             
                 {showThankYou ? (
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence>
                         <motion.div 
                             initial={{ opacity: 0, x: -direction}}
                             animate={{ opacity: 1, x: 0}}
@@ -131,12 +131,11 @@ export default function SwipeVoter() {
 
                     <>
                        
-                        <AnimatePresence >
                             <motion.div
                                 key={current}
                                 initial={{ opacity: 0, x: -direction, scale: 0.3}}
                                 animate={{ opacity: 1, x: 0, scale: 1}}
-                                exit={{ opacity: 0 }}
+                                exit={{ opacity: 1 }}
                                 transition={{
                                     opacity: { duration: 0.3 },
                                     x: { type: 'spring', stiffness: 260, damping: 10 }
@@ -156,26 +155,34 @@ export default function SwipeVoter() {
                                     </div>
                                 </div>
                             </motion.div>
-                        </AnimatePresence>
+                            <AnimatePresence>
 
-                        {qlist[current] && (
-                            <AnimatePresence mode="sync">
+                            {qlist[current] && (
                                 <motion.div
                                     key={`slide-${current}`}
                                     initial={{ opacity: 0,  x: -direction  }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: 0 }}
+                                    exit={{ 
+                                        opacity: 0, 
+                                        transition: { 
+                                            ease: 'easeIn', 
+                                            duration: 0.3,
+                                            delay: .3,
+                                        }
+                                     }}
                                     transition={{
-                                        type: 'spring', stiffness: 560, damping: 60 
+                                        type: 'spring', stiffness: 560, damping: 40,
+                                        delay: .1,
                                     }}
-                                    className='h-full w-full absolute top-0 left-0 pointer-events-none z-'
+                                    className='h-full w-full absolute top-0 left-0 pointer-events-none z-0'
+                                    style={{ backgroundColor: 'rgb(17 24 39)' }}
                                 >
                                     <Image  
                                         src={`/images/slides/${qlist[current]?.img}`}
                                         alt={qlist[current]?.text}
                                         width={1440}
                                         height={900}
-                                        className='object-cover w-full h-full opacity-60'
+                                        className='object-cover w-full h-full opacity-50'
                                         priority={true}
                                     />
 
@@ -189,12 +196,14 @@ export default function SwipeVoter() {
                                             className='object-cover w-full h-full hidden'
                                             style={{ visibility: 'hidden', position: 'absolute', top: 0 }}
                                             priority={true}
-                                            />
+                                        />
                                     )}
 
                                 </motion.div>
-                            </AnimatePresence>
-                        )}
+                            )}
+                       </AnimatePresence>
+
+                            
 
                         <motion.button 
                             initial={{ opacity: 0, x: -100 }}

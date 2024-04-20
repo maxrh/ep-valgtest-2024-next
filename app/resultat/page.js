@@ -24,7 +24,6 @@ export default function Resultat() {
     const { matchResults } = useContext(VoteContext); 
     const [expanded, setExpanded] = useState(0); 
 
-    console.log(expanded)
     const sortedResults = matchResults.sort((a, b) => b.matchPercentage - a.matchPercentage);
 
     // Toggle accordion item
@@ -61,8 +60,8 @@ export default function Resultat() {
                                     <Image 
                                         src={`/images/kandidater/${result.img}`} 
                                         alt={result.name} 
-                                        width={40}
-                                        height={40}
+                                        width={100}
+                                        height={100}
                                         className="object-cover"
                                     />
                                 </div>
@@ -79,7 +78,7 @@ export default function Resultat() {
                                 ></div>
                             </div>
                         </motion.header>
-                        <AnimatePresence mode="wait "initial={false}>
+                        <AnimatePresence >
                             {expanded === index && (
                                 <motion.section
                                     key="content"
