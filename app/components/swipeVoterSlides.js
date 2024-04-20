@@ -114,15 +114,15 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                         }}
                     >
                         <motion.div 
-                            initial={{ opacity: 0, y: -60}}
+                            initial={{ opacity: 0, y: -50}}
                             animate={{ opacity: 1, y: 0}}
                             transition={{ 
                                 delay: .2,
                                 type: 'spring',
-                                stiffness: 600,
-                                damping: 20,
+                                stiffness: 1600,
+                                damping: 50,
                             }}
-                            className="p-12 rounded-lg  max-w-xl w-full relative shadow-2xl bg-gray-950/90"
+                            className="p-12 pb-14 rounded-lg  max-w-xl w-full relative shadow-2xl bg-gray-950/95"
                             onClick={(e) => e.stopPropagation()}
                         >  
                             <button 
