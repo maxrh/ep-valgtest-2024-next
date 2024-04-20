@@ -3,77 +3,125 @@
 import { VoteContext } from "../context/voteContext";
 import { useContext, useState, useEffect } from "react";
 import Image from 'next/image';
-import { motion, AnimatePresence, easeIn, easeInOut } from 'framer-motion';
+import { motion, AnimatePresence, easeIn, easeInOut, easeOut } from 'framer-motion';
 
 
 const partyColors = {
-    'ALT': '#2e863c',
-    'DF':'#eac93e',
-    'DD':'#7996d2',
-    'KF':'#8fb220',
-    'EL':'#e2821e',
-    'M':'#af8bd3',  
-    'LA':'#3db3bf',
-    'RV':'#753080',
-    'SF':'#de7fa9',
-    'S':'#a7291d',
-    'V':'#1e475d',
+    'ALT': '46, 134, 60',
+    'DF': '234, 201, 62',
+    'DD': '121, 150, 210',
+    'KF': '143, 178, 32',
+    'EL': '226, 130, 30',
+    'M': '175, 139, 211',  
+    'LA': '61, 179, 191',
+    'RV': '117, 48, 128',
+    'SF': '222, 127, 169',
+    'S': '167, 41, 29',
+    'V': '30, 71, 93',
 }
 
 export default function Resultat() {
-    const { matchResults } = useContext(VoteContext); 
-    const [expanded, setExpanded] = useState(0); 
+    const { matchResults } = useContext(VoteContext)
+    const [expanded, setExpanded] = useState(0)
+    const [itemCount, setItemCount] = useState(10) // Display initial 10 items
 
-    const sortedResults = matchResults.sort((a, b) => b.matchPercentage - a.matchPercentage);
+    const loadMoreItems = () => {
+        setItemCount(prevItemCount => prevItemCount + 10); // Load 10 more items
+    }
 
-    // Toggle accordion item
+    const sortedResults = matchResults.sort((a, b) => b.matchPercentage - a.matchPercentage)
+
     const toggleItem = (index) => {
-        // Only allow changing if another accordion is opened
-        if (expanded !== index) {
-            setExpanded(index);
-        }
-    };
+        if (expanded !== index) setExpanded(index)
+    }
     
-    // Animation variants
     const variants = {
         open: { opacity: 1, height: 'auto' },
         collapsed: { opacity: 0, height: 0 }
-    };
+    }
 
 	return (
 		<main className="flex flex-col items-center min-h-screen px-14 py-32">
 			<h1 className="text-7xl font-bold mb-8 text-gray-700">Resultat</h1>
-
-            <div id="accordion-collapse" data-accordion="collapse" className="w-full max-w-2xl overflow-hidden rounded-lg">
-                {sortedResults.map((result, index) => (
-                    <div key={index} className="overflow-hidden">
+            <div id="accordion-collapse" data-accordion="collapse" className="w-full max-w-2xl flex flex-col items-stretch">
+                {sortedResults.slice(0, itemCount).map((result, index) => (
+                    <motion.div 
+                        key={index}
+                        initial={false}
+                        animate={{ marginBottom: expanded === index ? 30 : 5, marginTop: expanded === index ? 30 : 5 }}
+                        transition={{ duration: 0.2, ease: easeInOut }}
+                        className={`${expanded === index ? "" : "" }`}
+                    >
                         <motion.header
                             initial={false}
                             animate={{ 
                                 backgroundColor: expanded === index ? "#0d1220" : "#0d1220",
                             }}
                             onClick={() => toggleItem(index)}
-                            className="w-full flex items-center justify-between px-4 py-4 cursor-pointer relative text-gray-50"
+                            className={`w-full flex flex-col items-center cursor-pointer relative text-gray-50  `}
                         >
-                            <div className="flex items-center">
-                                <div className="rounded-full h-10 w-10 overflow-hidden relative mr-6 mb-1">
-                                    <Image 
-                                        src={`/images/kandidater/${result.img}`} 
-                                        alt={result.name} 
-                                        width={100}
-                                        height={100}
-                                        className="object-cover"
-                                    />
+                            <motion.div 
+                                initial={false}
+                                animate={{ height: expanded === index ? "64px" : "56px", paddingLeft: expanded === index ? "24px" : "16px", paddingRight: expanded === index ? "24px" : "16px"}}
+                                transition={{ duration: 0.2, ease: easeInOut }}
+                                className={`w-full flex items-center justify-between py-3`}
+                            >
+                                <div className="flex items-center h-full ">
+                                    <motion.div
+                                        initial={false}
+                                        animate={{ 
+                                            scale: expanded === index ? 3 : 1, 
+                                            x: expanded === index ? 40 : 0,
+                                            marginRight: expanded === index ? 32 : 16,
+                                        }}
+                                        transition={{ duration: 0.2, ease: easeInOut }}
+                                        className={`flex items-center justify-center rounded-full overflow-hidden insert-0 z-10 border`}
+                                        style={{ borderColor: "#0d1220" }}
+                                    >
+                                        {result.img ? (
+                                            <Image 
+                                                src={`/images/kandidater/${result.img}`} 
+                                                alt={result.name} 
+                                                width={100}
+                                                height={100}
+                                                className={`object-cover h-8 w-8 `}
+                                            />
+                                        ) : (                                        
+                                            <Image 
+                                                src={`/images/kandidater/placeholder.jpg`} 
+                                                alt={result.name} 
+                                                width={100}
+                                                height={100}
+                                                className={`object-cover h-8 w-8 `}
+                                            />
+                                        )}
+                                    </motion.div>
+                                    <motion.h2 
+                                        initial={false}
+                                        animate={{ 
+                                            x: expanded === index ? 60 : 0,
+                                            fontSize: expanded === index ? "1.125rem" : "0.875rem",
+                                            fontWeight: expanded === index ? "600" : "500"
+                                        }}
+                                        transition={{ duration: 0.2, ease: easeInOut }}
+                                        className={``}
+                                    >{result.name} <span className="font-light">({result.party})</span>
+                                    </motion.h2>
                                 </div>
-                                <h2 className="font-semibold ">{result.name} <span className="font-light">({result.party})</span></h2>
-                            </div>
-                            <span className="font-bold mx-2">{result.matchPercentage}%</span>
-                            <div className="w-full h-1 absolute bottom-0 left-0 z-0 bg-gray-950/50 ">
+                                <motion.span 
+                                    initial={false}
+                                    animate={{ fontSize: expanded === index ? "1.125rem" : "0.875rem" }}
+                                    transition={{ duration: 0.2, ease: easeInOut }}
+                                    className={`font-bold mx-2`}
+                                >{result.matchPercentage}%</motion.span>
+                            </motion.div>
+
+                            <div className="w-full h-1 z-0 bg-gray-950/50 ">
                                 <div 
                                     className="h-full rounded-r-lg" 
                                     style={{
-                                        backgroundColor: partyColors[result.party] || 'rgb(31 41 55)',  // Default to '#333' if the party color is not found
-                                        width: `${result.matchPercentage}%`
+                                        width: `${result.matchPercentage}%`,
+                                        backgroundImage: `linear-gradient(90deg, rgba(${partyColors[result.party]}, 0.5) , rgba(${partyColors[result.party]}, 1) )`
                                     }}
                                 ></div>
                             </div>
@@ -86,12 +134,12 @@ export default function Resultat() {
                                     animate="open"
                                     exit="collapsed"
                                     variants={variants}
-                                    transition={{ duration: 0.3, ease: easeInOut }}
+                                    transition={{ duration: 0.2, ease: easeInOut }}
                                     className=" bg-gray-950/15 text-gray-200"
                                 >
                                     <motion.div
                                         layout  // Adding layout can help manage size changes more smoothly
-                                        className="p-8 pb-12 "
+                                        className="p-10 pb-12 pt-10"
                                     >
                                         <p className="mb-4 text-sm">Hvorfor man skal stemme på {result.name} til det kommende EP-valg?</p>
                                         <p className="font-medium">{`"${result.comment}"`}</p>
@@ -99,8 +147,18 @@ export default function Resultat() {
                                 </motion.section>
                             )}
                         </AnimatePresence>
-                    </div>
+                    </motion.div>
                 ))}
+
+                {itemCount < sortedResults.length && (
+                    <button 
+                        className="mt-6 px-8 py-4 bg-gray-800 text-white rounded  transition duration-300" 
+                        onMouseOver={(e) => e.target.style.backgroundColor = "#002176"}
+                        onMouseOut={(e) => e.target.style.backgroundColor = "#1F2937"}
+                        onClick={loadMoreItems}>
+                        Se flere
+                    </button>
+                )}
             </div>
 		</main>
 	);
