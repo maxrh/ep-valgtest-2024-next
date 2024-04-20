@@ -23,6 +23,11 @@ const partyColors = {
 export default function Resultat() {
     const { matchResults } = useContext(VoteContext)
     const [expanded, setExpanded] = useState(0)
+    const [itemCount, setItemCount] = useState(10) // Display initial 10 items
+
+    const loadMoreItems = () => {
+        setItemCount(prevItemCount => prevItemCount + 10); // Load 10 more items
+    }
 
     const sortedResults = matchResults.sort((a, b) => b.matchPercentage - a.matchPercentage)
 
@@ -38,12 +43,12 @@ export default function Resultat() {
 	return (
 		<main className="flex flex-col items-center min-h-screen px-14 py-32">
 			<h1 className="text-7xl font-bold mb-8 text-gray-700">Resultat</h1>
-            <div id="accordion-collapse" data-accordion="collapse" className="w-full max-w-2xl  rounded-lg">
-                {sortedResults.map((result, index) => (
+            <div id="accordion-collapse" data-accordion="collapse" className="w-full max-w-2xl flex flex-col items-stretch">
+                {sortedResults.slice(0, itemCount).map((result, index) => (
                     <motion.div 
                         key={index}
                         initial={false}
-                        animate={{ marginBottom: expanded === index ? 40 : 10, marginTop: expanded === index ? 40 : 10 }}
+                        animate={{ marginBottom: expanded === index ? 30 : 5, marginTop: expanded === index ? 30 : 5 }}
                         transition={{ duration: 0.2, ease: easeInOut }}
                         className={`${expanded === index ? "" : "" }`}
                     >
@@ -144,6 +149,16 @@ export default function Resultat() {
                         </AnimatePresence>
                     </motion.div>
                 ))}
+
+                {itemCount < sortedResults.length && (
+                    <button 
+                        className="mt-6 px-8 py-4 bg-gray-800 text-white rounded  transition duration-300" 
+                        onMouseOver={(e) => e.target.style.backgroundColor = "#002176"}
+                        onMouseOut={(e) => e.target.style.backgroundColor = "#1F2937"}
+                        onClick={loadMoreItems}>
+                        Se flere
+                    </button>
+                )}
             </div>
 		</main>
 	);
