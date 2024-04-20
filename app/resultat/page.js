@@ -85,6 +85,7 @@ export default function Resultat() {
                                                 width={100}
                                                 height={100}
                                                 className={`object-cover h-8 w-8 `}
+                                                priority
                                             />
                                         ) : (                                        
                                             <Image 
@@ -93,6 +94,7 @@ export default function Resultat() {
                                                 width={100}
                                                 height={100}
                                                 className={`object-cover h-8 w-8 `}
+                                                priority
                                             />
                                         )}
                                     </motion.div>
