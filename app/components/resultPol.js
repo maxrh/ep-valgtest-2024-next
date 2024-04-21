@@ -35,12 +35,22 @@ export default function ResultPol({ sortedResults, partyColors }) {
             {sortedResults.slice(0, itemCount).map((result, index) => (
                 <motion.div 
                     key={index}
-                    initial={false}
-                    animate={{ 
-                        marginBottom: expanded === index ? 20 : 10, 
-                        marginTop: expanded === index && index !== 0 ? 20 : 0  // Check if it's expanded and not the first item
+                    initial={{ 
+                        opacity:0, 
+                        marginBottom: 10, 
+                        marginTop: 0,
                     }}
-                    transition={{ duration: 0.2, ease: easeInOut }}
+                    animate={{ 
+                        opacity: 1,
+                        marginBottom: expanded === index ? 20 : 10, 
+                        marginTop: expanded === index && index !== 0 ? 20 : 0, 
+                    }}
+                    transition={{ 
+                        opacity: { duration: .5, ease: easeInOut, delay: index * 0.1 },
+                        marginBottom: { duration: 0.2, ease: easeInOut },
+                        marginTop: { duration: 0.2, ease: easeInOut }
+                    }}
+
                     className={`${expanded === index ? "" : "" }`}
                 >
                     <motion.header
@@ -48,6 +58,7 @@ export default function ResultPol({ sortedResults, partyColors }) {
                         animate={{ 
                             backgroundColor: expanded === index ? "#0d1220" : "#0d1220",
                         }}
+                        transition={{ duration: 0.2, ease: easeInOut }}
                         onClick={() => toggleItem(index)}
                         className={`w-full flex flex-col items-center cursor-pointer relative text-gray-50  `}
                     >
@@ -59,9 +70,8 @@ export default function ResultPol({ sortedResults, partyColors }) {
                         >
                             <div className="flex items-center h-full ">
                                 <motion.div
-                                    initial={{ opacity: 0 }}
+                                    initial={false}
                                     animate={{ 
-                                        opacity: 1,
                                         scale: expanded === index ? 3 : 1, 
                                         x: expanded === index ? 30 : 0,
                                         marginRight: expanded === index ? 28 : 16,

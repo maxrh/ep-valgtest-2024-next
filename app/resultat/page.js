@@ -41,12 +41,28 @@ export default function Resultat() {
                 </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+
                 <div className="column w-full h-full">
-                    <h2 className="text-lg font-semibold mb-8 pb-3 text-gray-200 ">Kandidater <span className="font-light text-gray-500">({sortedResults ? sortedResults.length : ''})</span></h2>
+                    <motion.h2 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.2, ease: easeInOut}}
+                        className="text-lg font-semibold mb-8 pb-3 text-gray-200 "
+                    >
+                        Kandidater <span className="font-light text-gray-500 ">({sortedResults ? sortedResults.length : ''})</span>
+                    </motion.h2>
                     <ResultPol sortedResults={sortedResults} partyColors={partyColors} />
                 </div>
+
                 <div className="column w-full">
-                    <h2 className="text-lg font-semibold mb-8 pb-3 text-gray-200">Partier <span className="font-light text-gray-500" >({sortedPartyResults.length})</span></h2>
+                    <motion.h2 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.2, ease: easeInOut}}
+                        className="text-lg font-semibold mb-8 pb-3 text-gray-200 "
+                    >
+                        Partier <span className="font-light text-gray-500" >({sortedPartyResults.length})</span>
+                    </motion.h2>
                     <ResultParty sortedPartyResults={sortedPartyResults} partyColors={partyColors} />
                 </div>
             </div>
