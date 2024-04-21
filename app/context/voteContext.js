@@ -38,33 +38,28 @@ const VoteContextProvider = ({ children }) => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        if (matchResults.length > 0) {
+            calculatePartyMatches();
+        }
+    }, [matchResults]); // Dependency on matchResults
 
-    const calculateMatches = () => {
-        const partyResults = {};
-    
-        const individualResults = politicianData.map(politician => {
-            const { votes } = politician;
+    const calculatePoliticianMatches = () => {
+        const results = politicianData.map(politician => {
+            const { votes } = politician;  // Directly access the votes array from each politician object
             let matchCount = 0;
             let validQuestions = 0;
     
             votes.forEach((vote, index) => {
-                if (vote !== null && voteData[index] !== undefined) {  // Ensure the vote is valid and user has voted
+                if (vote !== 0.5 && voteData[index]) {  // Ensure to check that the user vote exists
                     validQuestions++;
-                    if (vote === voteData[index].vote) {
+                    if (vote === voteData[index].vote) {  // Compare against the vote part of userVotes entries
                         matchCount++;
                     }
                 }
             });
     
-            const matchPercentage = validQuestions > 0 ? Math.round((matchCount / validQuestions) * 100) : 0;
-    
-            // Collect data for party results
-            if (!partyResults[politician.parti]) {
-                partyResults[politician.parti] = { totalMatchPercentage: 0, politicians: 0 };
-            }
-            partyResults[politician.parti].totalMatchPercentage += matchPercentage;
-            partyResults[politician.parti].politicians++;
-    
+            const matchPercentage = Math.round((matchCount / validQuestions) * 100);  // Calculate and round the match percentage
             return {
                 id: politician.id,
                 name: politician.navn,
@@ -76,21 +71,32 @@ const VoteContextProvider = ({ children }) => {
             };
         });
     
-        // Calculate party match percentages
-        const partyMatchResults = Object.entries(partyResults).map(([parti, data]) => {
+        setMatchResults(results);
+    };
+
+    const calculatePartyMatches = () => {
+        const partyResults = {};
+
+        matchResults.forEach(result => {
+            const { party, matchPercentage } = result;
+            if (!partyResults[party]) {
+                partyResults[party] = { totalMatchPercentage: 0, politicians: 0 };
+            }
+            partyResults[party].totalMatchPercentage += matchPercentage;
+            partyResults[party].politicians++;
+        });
+
+        const results = Object.entries(partyResults).map(([party, data]) => {
             const averageMatchPercentage = data.politicians > 0 ? Math.round(data.totalMatchPercentage / data.politicians) : 0;
             return {
-                parti,
-                partiNavn: partiInfo[parti] || parti, // Use party info or default to party code
+                party,
+                partyName: partiInfo[party],
                 matchPercentage: averageMatchPercentage,
                 politiciansCount: data.politicians
             };
         });
-    
-        setMatchResults(individualResults);
-        setPartyMatchResults(partyMatchResults);
-    
-        return individualResults;
+
+        setPartyMatchResults(results);
     };
     
 
@@ -100,15 +106,15 @@ const VoteContextProvider = ({ children }) => {
         setVoteData(updatedVotes);
 
         // Check if this was the last vote, then calculate matches
-        if (updatedVotes.length === 21 ) { // Define TOTAL_QUESTIONS appropriately
-            const results = calculateMatches(updatedVotes.map(v => v.vote)); // Assumes voteData is an array of { questionId, vote }
-            setMatchResults(results);
+       if (updatedVotes.length === 21) {
+            calculatePoliticianMatches();
         }
     };
 
     const clearVotes = () => {
         setVoteData([]);
         setMatchResults([]);
+        setPartyMatchResults([]);
     };
 
     return (
