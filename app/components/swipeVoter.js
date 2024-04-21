@@ -108,7 +108,7 @@ export default function SwipeVoter() {
                 {/* Preload next image but keep it invisible */}
                 <Image
                     src={`/images/slides/1.jpg`}
-                    alt={slides[0]?.text}
+                    alt={'preload'}
                     width={1440}
                     height={900}
                     className='object-cover w-full h-full hidden'

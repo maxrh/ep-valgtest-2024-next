@@ -4,10 +4,25 @@ import { createContext, useState, useEffect } from 'react'
 
 export const VoteContext = createContext()
 
+const partiInfo = {
+	'ALT':'Alternativet',
+	'DF':'Dansk Folkeparti',
+	'DD':'Danmarksdemokraterne',
+	'KF':'Det Konservative Folkeparti',
+	'EL':'Enhedslisten',
+	'M':'Moderaterne',
+	'LA':'Liberal Alliance',
+	'RV':'Radikale Venstre',
+	'SF':'SF',
+	'S':'Socialdemokratiet',
+	'V':'Venstre'
+};
+
 const VoteContextProvider = ({ children }) => {
     const [voteData, setVoteData] = useState([]);
     const [politicianData, setPoliticianData] = useState([]);  
     const [matchResults, setMatchResults] = useState([]);
+    const [partyMatchResults, setPartyMatchResults] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,21 +40,31 @@ const VoteContextProvider = ({ children }) => {
 
 
     const calculateMatches = () => {
-        const results = politicianData.map(politician => {
-            const { votes } = politician;  // Directly access the votes array from each politician object
+        const partyResults = {};
+    
+        const individualResults = politicianData.map(politician => {
+            const { votes } = politician;
             let matchCount = 0;
             let validQuestions = 0;
     
             votes.forEach((vote, index) => {
-                if (vote !== 0.5 && voteData[index]) {  // Ensure to check that the user vote exists
+                if (vote !== null && voteData[index] !== undefined) {  // Ensure the vote is valid and user has voted
                     validQuestions++;
-                    if (vote === voteData[index].vote) {  // Compare against the vote part of userVotes entries
+                    if (vote === voteData[index].vote) {
                         matchCount++;
                     }
                 }
             });
     
-            const matchPercentage = Math.round((matchCount / validQuestions) * 100);  // Calculate and round the match percentage
+            const matchPercentage = validQuestions > 0 ? Math.round((matchCount / validQuestions) * 100) : 0;
+    
+            // Collect data for party results
+            if (!partyResults[politician.parti]) {
+                partyResults[politician.parti] = { totalMatchPercentage: 0, politicians: 0 };
+            }
+            partyResults[politician.parti].totalMatchPercentage += matchPercentage;
+            partyResults[politician.parti].politicians++;
+    
             return {
                 id: politician.id,
                 name: politician.navn,
@@ -51,8 +76,23 @@ const VoteContextProvider = ({ children }) => {
             };
         });
     
-        return results;
+        // Calculate party match percentages
+        const partyMatchResults = Object.entries(partyResults).map(([parti, data]) => {
+            const averageMatchPercentage = data.politicians > 0 ? Math.round(data.totalMatchPercentage / data.politicians) : 0;
+            return {
+                parti,
+                partiNavn: partiInfo[parti] || parti, // Use party info or default to party code
+                matchPercentage: averageMatchPercentage,
+                politiciansCount: data.politicians
+            };
+        });
+    
+        setMatchResults(individualResults);
+        setPartyMatchResults(partyMatchResults);
+    
+        return individualResults;
     };
+    
 
     const addVote = (questionId, vote) => {
         const newVote = { questionId, vote };
@@ -72,7 +112,7 @@ const VoteContextProvider = ({ children }) => {
     };
 
     return (
-        <VoteContext.Provider value={{ voteData, addVote, clearVotes, matchResults }}>
+        <VoteContext.Provider value={{ voteData, addVote, clearVotes, matchResults, partyMatchResults }}>
                 {children}
         </VoteContext.Provider>
     )
