@@ -48,7 +48,7 @@ export default function Resultat() {
 	return (
 		<main className=" min-h-screen px-14 py-32">
             <div className="w-full flex items-center justify-between mt-4 mb-6 pb-6  border-b border-gray-800">
-			    <h1 className="text-4xl font-bold   text-gray-700  -indent-0.5">Resultat</h1>
+			    <h1 className="text-5xl font-bold text-gray-700 -indent-0.5 -mb-3">Resultat</h1>
                 <button 
                     className="group flex items-center justify-center ml-4 text-sm font-medium text-gray-400 hover:text-gray-300 hover:shadow-xl border border-gray-800 hover:border-gray-700 transition-all py-3 px-6 rounded-full duration-300"
                     onClick={() => router.push('/')}
