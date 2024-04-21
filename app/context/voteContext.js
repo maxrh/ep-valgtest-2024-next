@@ -34,15 +34,27 @@ const VoteContextProvider = ({ children }) => {
                 console.error("Failed to fetch data:", response.statusText);
             }
         };
-    
         fetchData();
     }, []);
 
+    // Set results to local storage, so they persist on page reload
     useEffect(() => {
-        if (matchResults.length > 0) {
-            calculatePartyMatches();
+        if ( matchResults.length === 0 || partyMatchResults.length === 0 ) return;
+        localStorage.setItem('matchResults', JSON.stringify(matchResults));
+        localStorage.setItem('partyMatchResults', JSON.stringify(partyMatchResults));
+    }, [matchResults, partyMatchResults]);
+
+    useEffect(() => {
+        const storedMatchResults = localStorage.getItem('matchResults');
+        const storedPartyMatchResults = localStorage.getItem('partyMatchResults');
+        if (storedMatchResults && storedPartyMatchResults) {
+            setMatchResults(JSON.parse(storedMatchResults));
+            setPartyMatchResults(JSON.parse(storedPartyMatchResults));
         }
-    }, [matchResults]); // Dependency on matchResults
+    }, []);
+
+    console.log('matchResults:', matchResults);
+    console.log('partyMatchResults:', partyMatchResults);
 
     const calculatePoliticianMatches = () => {
         const results = politicianData.map(politician => {
@@ -72,12 +84,13 @@ const VoteContextProvider = ({ children }) => {
         });
     
         setMatchResults(results);
+        calculatePartyMatches(results);  // Pass the results to the party match calculation function
     };
 
-    const calculatePartyMatches = () => {
+    const calculatePartyMatches = (results) => {
         const partyResults = {};
 
-        matchResults.forEach(result => {
+        results.forEach(result => {
             const { party, matchPercentage } = result;
             if (!partyResults[party]) {
                 partyResults[party] = { totalMatchPercentage: 0, politicians: 0 };
@@ -86,7 +99,7 @@ const VoteContextProvider = ({ children }) => {
             partyResults[party].politicians++;
         });
 
-        const results = Object.entries(partyResults).map(([party, data]) => {
+        const calculatedPartyMatchResults = Object.entries(partyResults).map(([party, data]) => {
             const averageMatchPercentage = data.politicians > 0 ? Math.round(data.totalMatchPercentage / data.politicians) : 0;
             return {
                 party,
@@ -95,8 +108,7 @@ const VoteContextProvider = ({ children }) => {
                 politiciansCount: data.politicians
             };
         });
-
-        setPartyMatchResults(results);
+        setPartyMatchResults(calculatedPartyMatchResults);
     };
     
 
@@ -115,6 +127,8 @@ const VoteContextProvider = ({ children }) => {
         setVoteData([]);
         setMatchResults([]);
         setPartyMatchResults([]);
+        localStorage.removeItem('matchResults');
+        localStorage.removeItem('partyMatchResults');
     };
 
     return (
