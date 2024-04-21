@@ -53,9 +53,6 @@ const VoteContextProvider = ({ children }) => {
         }
     }, []);
 
-    console.log('matchResults:', matchResults);
-    console.log('partyMatchResults:', partyMatchResults);
-
     const calculatePoliticianMatches = () => {
         const results = politicianData.map(politician => {
             const { votes } = politician;  // Directly access the votes array from each politician object
