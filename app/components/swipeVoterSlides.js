@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, delay } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
 
@@ -10,6 +10,7 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
         return Math.abs(offset) * velocity;
     }
 
+    console.log('current', current)
    // Function to close the popup and disable pointer events
    const handleClosePopup = () => {
     setShowPopup(false);
@@ -26,8 +27,8 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                 {current < slides.length && ( 
                     <motion.div
                         key={current}
-                        initial={ direction ? { opacity: 0, x: -direction, scale: 0.3} : { opacity: 0, y: -40}}
-                        animate={ direction ? { opacity: 1, x: 0, scale: 1} : { opacity: 1, y: 0}}
+                        initial={ current !== 0 ? { opacity: 0, x: -direction, scale: 0.3} : { opacity: 0, y: -40}}
+                        animate={ current !== 0 ? { opacity: 1, x: 0, scale: 1} : { opacity: 1, y: 0}}
                         exit={{ opacity: 1 }}
                         transition={{
                             duration: 0.3,
