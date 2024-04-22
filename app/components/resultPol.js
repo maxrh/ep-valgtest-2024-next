@@ -149,7 +149,7 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
                                                 <button 
                                                     key={detail.questionId}                                                    
                                                     className={`h-8 w-8 m-1 rounded-full flex items-center justify-center shrink-0 relative transition-all duration-300
-                                                    ${detail.politicianVote === 0 ? 'bg-red-500/40 hover:bg-red-500/60' : detail.politicianVote === 1 ? 'bg-green-500/40 hover:bg-green-500/60' : 'bg-gray-700'}`}
+                                                    ${detail.politicianVote === 0 ? 'bg-red-500/40 hover:bg-red-500/60' : detail.politicianVote === 1 ? 'bg-green-500/40 hover:bg-green-500/60' : 'bg-gray-700 hover:bg-gray-500'}`}
                                                     onClick={() => handleOpenPopup(detail.questionId)}
                                                 >   
                                                     {detail.matched ? (
