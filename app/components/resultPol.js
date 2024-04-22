@@ -34,8 +34,8 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
             {sortedResults.slice(0, itemCount).map((result, index) => (
                 <motion.div 
                     key={index}
-                    initial={{  opacity:0, marginBottom: 10,  marginTop: 0 }}
-                    animate={{ opacity: 1, marginBottom: expanded === index ? 10 : 10, marginTop: expanded === index && index !== 0 ? 10 : 0 }}
+                    initial={{  opacity:0, marginBottom: 8,  marginTop: 0 }}
+                    animate={{ opacity: 1, marginBottom: expanded === index ? 8 : 8, marginTop: expanded === index && index !== 0 ? 8 : 0 }}
                     transition={{ 
                         opacity: { duration: 0.4, ease: easeInOut, delay: (index % 15) * 0.05 }, // Delay resets every 15 items
                         marginBottom: { duration: 0.2, ease: easeInOut },
@@ -63,7 +63,7 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
                                     initial={false}
                                     layout  // This enables automatic size animation
                                     transition={{ duration: 0.2, ease: easeInOut }}
-                                    className={`flex items-center justify-center rounded-full overflow-hidden insert-0 shadow-lg shrink-0 ${expanded === index ? "h-8 w-8 md:h-20 md:w-20" : "h-8 w-8"} ${expanded === index ? "mr-4" : "mr-4"}`}
+                                    className={`flex items-center justify-center rounded-full overflow-hidden insert-0 shadow-lg shrink-0 ${expanded === index ? "h-10 w-10 md:h-20 md:w-20" : "h-8 w-8"} ${expanded === index ? "mr-4" : "mr-4"}`}
                                     style={{ borderColor: "#0d1220" }}
                                 >
                                         {result.img ? (
@@ -72,7 +72,7 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
                                                 alt={result.name} 
                                                 width={100}
                                                 height={100}
-                                                className={`object-cover  ${expanded === index ? "h-8 w-8 md:h-20 md:w-20" : "h-8 w-8"} `}
+                                                className={`object-cover  ${expanded === index ? "h-10 w-10 md:h-20 md:w-20" : "h-8 w-8"} `}
                                                 priority
                                             />
                                         ) : (                                        
@@ -81,7 +81,7 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
                                                 alt={result.name} 
                                                 width={100}
                                                 height={100}
-                                                className={`object-cover  ${expanded === index ? "h-8 w-8 md:h-20 md:w-20" : "h-8 w-8"}`}
+                                                className={`object-cover  ${expanded === index ? "h-10 w-10 md:h-20 md:w-20" : "h-8 w-8"}`}
                                                 priority
                                             />
                                         )}
