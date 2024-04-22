@@ -104,18 +104,18 @@ export default function Resultat() {
                                 stiffness: 1600,
                                 damping: 50,
                             }}
-                            className="p-12 pb-14 rounded-lg  max-w-3xl w-full relative shadow-2xl bg-gray-950/95"
+                            className="p-8 md:p-12 pb-14 rounded-lg max-w-3xl w-full relative shadow-2xl bg-gray-950/95"
                             onClick={(e) => e.stopPropagation()}
                         >  
                             <button 
                                 onClick={() => setShowPopup(false)}
                                 className="flex items-center justify-center w-16 h-16 absolute top-0 right-0"
                             >
-                                <svg class="w-6 h-6 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                <svg class="w-6 h-6 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
                             </button>
 
-                            <h2 className="text-base font-normal text-slate-500 mb-3">Udsagn #{popupContent.id}</h2>
-                            <p className="text-gray-200 text-2xl font-bold leading-snug">{popupContent.text}</p>
+                            <h2 className="text-base md:text-lg font-normal text-slate-500 mb-3">Udsagn #{popupContent.id}</h2>
+                            <p className="text-gray-50 text-lg md:text-xl font-semibold leading-snug">{popupContent.text}</p>
 
                         </motion.div>
 

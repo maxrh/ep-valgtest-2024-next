@@ -35,7 +35,7 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
                 <motion.div 
                     key={index}
                     initial={{  opacity:0, marginBottom: 10,  marginTop: 0 }}
-                    animate={{ opacity: 1, marginBottom: expanded === index ? 20 : 10, marginTop: expanded === index && index !== 0 ? 20 : 0 }}
+                    animate={{ opacity: 1, marginBottom: expanded === index ? 10 : 10, marginTop: expanded === index && index !== 0 ? 10 : 0 }}
                     transition={{ 
                         opacity: { duration: 0.4, ease: easeInOut, delay: (index % 15) * 0.05 }, // Delay resets every 15 items
                         marginBottom: { duration: 0.2, ease: easeInOut },
