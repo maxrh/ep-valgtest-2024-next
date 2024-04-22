@@ -23,10 +23,28 @@ const partyColors = {
 
 export default function Resultat() {
     const router = useRouter()
-    const { matchResults, partyMatchResults } = useContext(VoteContext)
+    const { matchResults, partyMatchResults, slides } = useContext(VoteContext)
+    const [showPopup, setShowPopup] = useState(false);  // State to control popup visibility
+    const [popupContent, setPopupContent] = useState(null);
 
     const sortedResults = matchResults ?  matchResults.sort((a, b) => b.matchPercentage - a.matchPercentage) : []
     const sortedPartyResults = partyMatchResults ? partyMatchResults.sort((a, b) => b.matchPercentage - a.matchPercentage) : []
+
+    const handleOpenPopup = (id) => {
+        const slide = slides.find(slide => slide.id === id + 1);
+        if (slide) {
+            setPopupContent({
+                id: slide.id,
+                text: slide.text
+            }); 
+            setShowPopup(true);
+        }
+    };
+
+    const handleClosePopup = () => {
+        setShowPopup(false);
+        setPopupContent(null); // Clear popup content on close
+    };
 
 	return (
 		<main className="min-h-screen px-14 py-32">
@@ -51,7 +69,7 @@ export default function Resultat() {
                     >
                         Kandidater <span className="font-light text-gray-500 ">({sortedResults ? sortedResults.length : ''})</span>
                     </motion.h2>
-                    <ResultPol sortedResults={sortedResults} partyColors={partyColors} />
+                    <ResultPol sortedResults={sortedResults} partyColors={partyColors} handleOpenPopup={handleOpenPopup} />
                 </div>
 
                 <div className="column w-full">
@@ -66,6 +84,43 @@ export default function Resultat() {
                     <ResultParty sortedPartyResults={sortedPartyResults} partyColors={partyColors} />
                 </div>
             </div>
+            {showPopup && (
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: .2, ease: easeInOut }}
+                        className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 p-8"
+                        onClick={handleClosePopup}
+                        style={{ 
+                            backgroundColor: 'rgba(17, 24, 39, .9)', 
+                        }}
+                    >
+                        <motion.div 
+                            initial={{ opacity: 0, y: -50}}
+                            animate={{ opacity: 1, y: 0}}
+                            transition={{ 
+                                delay: .2,
+                                type: 'spring',
+                                stiffness: 1600,
+                                damping: 50,
+                            }}
+                            className="p-12 pb-14 rounded-lg  max-w-3xl w-full relative shadow-2xl bg-gray-950/95"
+                            onClick={(e) => e.stopPropagation()}
+                        >  
+                            <button 
+                                onClick={() => setShowPopup(false)}
+                                className="flex items-center justify-center w-16 h-16 absolute top-0 right-0"
+                            >
+                                <svg class="w-6 h-6 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                            </button>
+
+                            <h2 className="text-base font-normal text-slate-500 mb-3">Udsagn #{popupContent.id}</h2>
+                            <p className="text-gray-200 text-2xl font-bold leading-snug">{popupContent.text}</p>
+
+                        </motion.div>
+
+                    </motion.div>
+                )}
 		</main>
 	);
 }

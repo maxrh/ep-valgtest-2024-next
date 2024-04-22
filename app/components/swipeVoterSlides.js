@@ -9,8 +9,6 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
     const swipePower = (offset, velocity) => {
         return Math.abs(offset) * velocity;
     }
-
-    console.log('current', current)
    // Function to close the popup and disable pointer events
    const handleClosePopup = () => {
     setShowPopup(false);
