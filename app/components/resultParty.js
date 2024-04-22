@@ -23,7 +23,7 @@ export default function ResultParty({ sortedPartyResults, partyColors }) {
                             style={{ backgroundColor: `rgba(${partyColors[result.party]}, 1)` }}
                         
                         >{result.party}</div>
-                        <div className="h-full flex flex-col md:flex-row items-start md:items-center font-medium">{result.partyName} <span className="font-light text-xs text-gray-300 ml-0 md:ml-4 ">{result.politiciansCount} deltagere </span></div>
+                        <div className="h-full flex flex-col md:flex-row items-start md:items-center font-medium">{result.partyName} <span className="font-light text-xs text-gray-50 ml-0 md:ml-4 opacity-70"><span className='font-mediu'>{result.politiciansCount}</span> deltagene kandidater </span></div>
                     </div>
                     <div className={`flex items-center justify-center font-medium h-full z-10 px-4`}>
                         {result.matchPercentage}%

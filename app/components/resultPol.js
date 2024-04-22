@@ -127,7 +127,7 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
                                     layout  // Adding layout can help manage size changes more smoothly
                                     className="px-5 py-7 md:p-10 "
                                 >
-                                    <h4 className="mb-4 pb-4 text-sm font-normal text-gray-300 border-b border-gray-800">Derfor skal man stemme på {result.name} til det kommende EP-valg</h4>
+                                    <h4 className="mb-4 pb-4 text-sm font-normal text-gray-300 border-b border-gray-800">Hvorfor skal man stemme på {result.name}?</h4>
                                     <p className="font-normal text-base md:text-lg mb-4">{`"${result.comment}"`}</p>
 
                                     <h4 className="mb-5 pb-4 text-sm font-normal text-gray-300 mt-10 border-b border-gray-800">Sådan matchede dine og {result.name}&apos;s stemmer</h4>

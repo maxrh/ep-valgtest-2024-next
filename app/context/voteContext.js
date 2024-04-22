@@ -13,7 +13,7 @@ const partiInfo = {
 	'M':'Moderaterne',
 	'LA':'Liberal Alliance',
 	'RV':'Radikale Venstre',
-	'SF':'SF',
+	'SF':'Socialistisk Folkeparti',
 	'S':'Socialdemokratiet',
 	'V':'Venstre'
 };
