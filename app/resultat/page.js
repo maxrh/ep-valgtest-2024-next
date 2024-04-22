@@ -47,8 +47,8 @@ export default function Resultat() {
     };
 
 	return (
-		<main className="min-h-screen px-8 md:px-14 py-28 md:py-32">
-            <div className="w-full flex items-center justify-between mb-4 md:mb-6 pb-3 md:pb-6  border-b border-gray-800">
+		<main className="min-h-screen h-full px-8 md:px-14 py-28 md:py-32">
+            <div className="w-full flex items-center justify-between mb-4 md:mb-6 pb-3 md:pb-6 border-b border-gray-800">
 			    <h1 className="text-3xl md:text-5xl font-bold text-gray-700 -indent-0.5 md:-mb-3">Resultat</h1>
                 <button 
                     className="group flex items-center justify-center ml-4 text-xs md:text-sm font-medium text-gray-400 hover:text-gray-300 hover:shadow-xl border border-gray-800 hover:border-gray-700 transition-all py-1 md:py-3 px-4 md:px-6 rounded-full duration-300"
@@ -58,7 +58,7 @@ export default function Resultat() {
                     Tag testen igen
                 </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 h-full">
 
                 <div className="column w-full h-full">
                     <motion.h2 
@@ -72,7 +72,7 @@ export default function Resultat() {
                     <ResultPol sortedResults={sortedResults} partyColors={partyColors} handleOpenPopup={handleOpenPopup} />
                 </div>
 
-                <div className="column w-full">
+                <div className="column w-full h-full">
                     <motion.h2 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
