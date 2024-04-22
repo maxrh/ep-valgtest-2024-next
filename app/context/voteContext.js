@@ -23,6 +23,23 @@ const VoteContextProvider = ({ children }) => {
     const [politicianData, setPoliticianData] = useState([]);  
     const [matchResults, setMatchResults] = useState([]);
     const [partyMatchResults, setPartyMatchResults] = useState([]);
+    const [slides, setSlides] = useState([]); 
+
+    console.log('voteData', voteData);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch('/api/slides');  
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                setSlides(jsonResponse.data);  
+            } else {
+                console.error("Failed to fetch data:", response.statusText);
+            }
+        };
+    
+        fetchData();
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -36,6 +53,13 @@ const VoteContextProvider = ({ children }) => {
         };
         fetchData();
     }, []);
+
+    useEffect(() => {
+        // Only calculate matches when all votes are in
+        if (voteData.length === 21) {
+            calculatePoliticianMatches();
+        }
+    }, [voteData.length]); // Depend on the length of voteData
 
     // Set results to local storage, so they persist on page reload
     useEffect(() => {
@@ -58,13 +82,25 @@ const VoteContextProvider = ({ children }) => {
             const { votes } = politician;  // Directly access the votes array from each politician object
             let matchCount = 0;
             let validQuestions = 0;
-    
+            let detailedMatches = [];  // Array to store detailed match information
+
             votes.forEach((vote, index) => {
-                if (vote !== 0.5 && voteData[index]) {  // Ensure to check that the user vote exists
-                    validQuestions++;
-                    if (vote === voteData[index].vote) {  // Compare against the vote part of userVotes entries
-                        matchCount++;
+                if (voteData[index]) {
+                    const isMatch = vote !== 0.5 && vote === voteData[index].vote;
+                    if (vote !== 0.5) {
+                        validQuestions++;
+                        if (isMatch) {
+                            matchCount++;
+                        }
                     }
+
+                    // Store detailed match information
+                    detailedMatches.push({
+                        questionId: voteData[index].questionId,
+                        userVote: voteData[index].vote,
+                        politicianVote: vote,
+                        matched: isMatch
+                    });
                 }
             });
     
@@ -76,12 +112,14 @@ const VoteContextProvider = ({ children }) => {
                 party: politician.parti,
                 spidskandidat: politician.spidskandidat,
                 comment: politician.comment,
-                matchPercentage
+                matchPercentage,
+                details: detailedMatches  // Include detailed match information in the results
             };
         });
-    
+
+        console.log('Match Results:', results);
         setMatchResults(results);
-        calculatePartyMatches(results);  // Pass the results to the party match calculation function
+        calculatePartyMatches(results); 
     };
 
     const calculatePartyMatches = (results) => {
@@ -111,13 +149,7 @@ const VoteContextProvider = ({ children }) => {
 
     const addVote = (questionId, vote) => {
         const newVote = { questionId, vote };
-        const updatedVotes = [...voteData, newVote];
-        setVoteData(updatedVotes);
-
-        // Check if this was the last vote, then calculate matches
-       if (updatedVotes.length === 21) {
-            calculatePoliticianMatches();
-        }
+        setVoteData(prevVotes => [...prevVotes, newVote]); // Functional update to ensure we capture all updates
     };
 
     const clearVotes = () => {
@@ -129,7 +161,7 @@ const VoteContextProvider = ({ children }) => {
     };
 
     return (
-        <VoteContext.Provider value={{ voteData, addVote, clearVotes, matchResults, partyMatchResults }}>
+        <VoteContext.Provider value={{ voteData, addVote, clearVotes, matchResults, partyMatchResults, slides }}>
                 {children}
         </VoteContext.Provider>
     )

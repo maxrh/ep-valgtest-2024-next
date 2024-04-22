@@ -3,7 +3,7 @@ import { motion, AnimatePresence, easeInOut, delay } from 'framer-motion';
 
 export default function ResultParty({ sortedPartyResults, partyColors }) {
 
-    const delay = (sortedPartyResults.length - 1) * 0.1 + 1.5 ; // Adds 0.5 seconds after the last item's animation starts
+    const delay = (sortedPartyResults.length - 1) * 0.1 + 0.75 
 
     return (
         <div className="w-full flex flex-col items-stretch mb-5">
@@ -12,8 +12,8 @@ export default function ResultParty({ sortedPartyResults, partyColors }) {
                 <motion.div 
                     key={index} 
                     initial={{ opacity:0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: .5, ease: easeInOut, delay: index * 0.1 }}
+                    animate={{ opacity: 1}}
+                    transition={{ duration: .4, ease: easeInOut, delay: index * 0.05 }}
                     className="w-full flex items-center text-sm justify-between text-gray-50 h-10 bg-slate-950/20 mb-2 relative"
                     style={{ backgroundColor: `#0d1220`  }}
                 >
@@ -41,7 +41,7 @@ export default function ResultParty({ sortedPartyResults, partyColors }) {
             <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: .5, ease: easeInOut, delay: delay  }}
+                transition={{ duration: .4, ease: easeInOut, delay: delay  }}
                 className="text-sm text-gray-400 font-light border-t border-gray-800 pt-6 mt-6"
             >
                 * Vi tager højde for potentielle skævheder, som kan opstå, hvis et parti har mange flere deltagende politikere end andre partier. Dette sikres ved gennemsnitsberegningen, som normaliserer overensstemmelsen baseret på antal deltagere fra hvert parti.

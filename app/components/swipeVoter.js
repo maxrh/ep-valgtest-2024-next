@@ -9,29 +9,14 @@ import Image from 'next/image';
 
 export default function SwipeVoter() {
     const router = useRouter()
-    const { addVote, clearVotes } = useContext(VoteContext);  // Destructure the addVote function
+    const { addVote, clearVotes, slides } = useContext(VoteContext);  // Destructure the addVote function
     const [current, setCurrent] = useState(0);
     const [direction, setDirection] = useState(0); 
     const [initialized, setInitialized] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false); // State to handle thank you message visibility
     const [redirectDelay, setRedirectDelay] = useState(3000); // Duration in milliseconds
-    const [slides, setSlides] = useState([]); 
     const [flashEnig, setFlashEnig] = useState(false);
     const [flashUenig, setFlashUenig] = useState(false);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch('/api/slides');  
-            if (response.ok) {
-                const jsonResponse = await response.json();
-                setSlides(jsonResponse.data);  
-            } else {
-                console.error("Failed to fetch data:", response.statusText);
-            }
-        };
-    
-        fetchData();
-    }, []);
 
     useEffect(() => {
         clearVotes();  
