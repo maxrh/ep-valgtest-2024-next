@@ -58,7 +58,7 @@ export default function Resultat() {
                     Tag testen igen
                 </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
 
                 <div className="column w-full h-full">
                     <motion.h2 
