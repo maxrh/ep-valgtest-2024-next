@@ -40,7 +40,6 @@ export default function Resultat() {
             setShowPopup(true);
         }
     };
-    console.log('popupContent', popupContent);
 
     const handleClosePopup = () => {
         setShowPopup(false);
@@ -89,7 +88,7 @@ export default function Resultat() {
                     <motion.div 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: .2, ease: 'easeInOut' }}
+                        transition={{ duration: .2, ease: easeInOut }}
                         className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 p-8"
                         onClick={handleClosePopup}
                         style={{ 
@@ -110,13 +109,13 @@ export default function Resultat() {
                         >  
                             <button 
                                 onClick={() => setShowPopup(false)}
-                                className="flex items-center justify-center w-16 h-16 absolute top-0 right-0 "
+                                className="flex items-center justify-center w-16 h-16 absolute top-0 right-0"
                             >
                                 <svg class="w-6 h-6 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
                             </button>
 
                             <h2 className="text-base font-normal text-slate-500 mb-3">Udsagn #{popupContent.id}</h2>
-                            <p className='text-gray-200 text-2xl font-bold leading-snug'>{popupContent.text}</p>
+                            <p className="text-gray-200 text-2xl font-bold leading-snug">{popupContent.text}</p>
 
                         </motion.div>
 

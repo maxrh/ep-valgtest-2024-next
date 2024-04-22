@@ -25,8 +25,6 @@ const VoteContextProvider = ({ children }) => {
     const [partyMatchResults, setPartyMatchResults] = useState([]);
     const [slides, setSlides] = useState([]); 
 
-    console.log('voteData', voteData);
-
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch('/api/slides');  
