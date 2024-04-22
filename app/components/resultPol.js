@@ -139,25 +139,25 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
                                     <h4 className="mb-4 pb-4 text-sm font-normal text-gray-300 border-b border-gray-800">Hvorfor man skal stemme på {result.name} til det kommende EP-valg?</h4>
                                     <p className="font-normal text-lg mb-4">{`"${result.comment}"`}</p>
 
-                                    <h4 className="mb-3 pb-4 text-sm font-normal text-gray-300 mt-10 border-b border-gray-800">Sådan matchede dine og {result.name}'s stemmer</h4>
+                                    <h4 className="mb-4 pb-4 text-sm font-normal text-gray-300 mt-10 border-b border-gray-800">Sådan matchede dine og {result.name}'s stemmer</h4>
                                     <div className="flex items-center justify-start mb-6">
-                                    <svg class="w-4 h-4 text-gray-700 mr-1.5 -ml-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M18.425 10.271C19.499 8.967 18.57 7 16.88 7H7.12c-1.69 0-2.618 1.967-1.544 3.271l4.881 5.927a2 2 0 0 0 3.088 0l4.88-5.927Z" clipRule="evenodd"/></svg>
-                                        <p className="font-normal text-xs  text-gray-400 ">Klik for at se teksten igen</p>
-                                    </div>
-                                    <div className='flex items-center justify-start -mx-2 flex-wrap'>
-                                        {result.details.map(detail => (
-                                            <button 
-                                                key={detail.questionId}                                                    
-                                                className={`h-8 w-8 m-1 rounded-full flex items-center justify-center shrink-0 relative transition-all duration-300
-                                                ${detail.politicianVote === 0 ? 'bg-red-500/40 hover:bg-red-500/60' : detail.politicianVote === 1 ? 'bg-green-500/40 hover:bg-green-500/60' : 'bg-gray-700'}`}
-                                                onClick={() => handleOpenPopup(detail.questionId)}
-                                            >   
-                                                {detail.matched ? (
-                                                    <svg class="w-4 h-4 text-gray-300 absolute -top-1 -right-1 shadow-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clipRule="evenodd"/></svg>
-                                                ) : null}     
-                                                <span className='text-sm text-gray-900 font-black'>{detail.questionId + 1}</span>
-                                            </button>
-                                         ))}
+                                        <svg class="w-4 h-4 text-gray-700 mr-1.5 -ml-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M18.425 10.271C19.499 8.967 18.57 7 16.88 7H7.12c-1.69 0-2.618 1.967-1.544 3.271l4.881 5.927a2 2 0 0 0 3.088 0l4.88-5.927Z" clipRule="evenodd"/></svg>
+                                            <p className="font-normal text-xs  text-gray-400 ">Klik et nummer for at se udsagn igen</p>
+                                        </div>
+                                        <div className='flex items-center justify-start -mx-1 flex-wrap'>
+                                            {result.details.map(detail => (
+                                                <button 
+                                                    key={detail.questionId}                                                    
+                                                    className={`h-8 w-8 m-1 rounded-full flex items-center justify-center shrink-0 relative transition-all duration-300
+                                                    ${detail.politicianVote === 0 ? 'bg-red-500/40 hover:bg-red-500/60' : detail.politicianVote === 1 ? 'bg-green-500/40 hover:bg-green-500/60' : 'bg-gray-700'}`}
+                                                    onClick={() => handleOpenPopup(detail.questionId)}
+                                                >   
+                                                    {detail.matched ? (
+                                                        <svg class="w-4 h-4 text-gray-300 absolute -top-1 -right-1 shadow-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clipRule="evenodd"/></svg>
+                                                    ) : null}     
+                                                    <span className='text-sm text-gray-900 font-black'>{detail.questionId + 1}</span>
+                                                </button>
+                                            ))}
 
                                     </div>
 
