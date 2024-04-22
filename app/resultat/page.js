@@ -47,14 +47,14 @@ export default function Resultat() {
     };
 
 	return (
-		<main className="min-h-screen px-14 py-32">
-            <div className="w-full flex items-center justify-between mt-4 mb-6 pb-6  border-b border-gray-800">
-			    <h1 className="text-5xl font-bold text-gray-700 -indent-0.5 -mb-3">Resultat</h1>
+		<main className="min-h-screen px-8 md:px-14 py-28 md:py-32">
+            <div className="w-full flex items-center justify-between mb-4 md:mb-6 pb-3 md:pb-6  border-b border-gray-800">
+			    <h1 className="text-3xl md:text-5xl font-bold text-gray-700 -indent-0.5 md:-mb-3">Resultat</h1>
                 <button 
-                    className="group flex items-center justify-center ml-4 text-sm font-medium text-gray-400 hover:text-gray-300 hover:shadow-xl border border-gray-800 hover:border-gray-700 transition-all py-3 px-6 rounded-full duration-300"
+                    className="group flex items-center justify-center ml-4 text-xs md:text-sm font-medium text-gray-400 hover:text-gray-300 hover:shadow-xl border border-gray-800 hover:border-gray-700 transition-all py-1 md:py-3 px-4 md:px-6 rounded-full duration-300"
                     onClick={() => router.push('/')}
                 >
-                    <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-500 mr-3 transition-all duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/></svg>
+                    <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-500 mr-1 md:mr-3 transition-all duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/></svg>
                     Tag testen igen
                 </button>
             </div>
@@ -65,7 +65,7 @@ export default function Resultat() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.2, ease: easeInOut}}
-                        className="text-lg font-semibold mb-8 pb-3 text-gray-200 "
+                        className="text-lg font-semibold mb-5 md:mb-8 text-gray-200"
                     >
                         Kandidater <span className="font-light text-gray-500 ">({sortedResults ? sortedResults.length : ''})</span>
                     </motion.h2>
@@ -77,7 +77,7 @@ export default function Resultat() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.2, ease: easeInOut}}
-                        className="text-lg font-semibold mb-8 pb-3 text-gray-200 "
+                        className="text-lg font-semibold mb-5 md:mb-8 text-gray-200"
                     >
                         Partier <span className="font-light text-gray-500" >({sortedPartyResults.length})</span>
                     </motion.h2>
