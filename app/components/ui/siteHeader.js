@@ -6,10 +6,10 @@ import { motion } from "framer-motion"
 
 export default function SiteHeader() {
     return (
-        <header className="px-14 pt-14 pb-5 flex flex-col items-center absolute top-0 left-0 w-full z-50  ">
+        <header className="px-8 pt-8 md:px-14 md:pt-14 pb-5 flex flex-col items-center absolute top-0 left-0 w-full z-50  ">
             <div className="flex justify-between items-center max-w-screen-3xl w-full h-full">
                 <div className="site-logo flex items-center flex-shrink-0 mr-auto">
-                    <Link href="/" className="flex items-center w-28 h-10">
+                    <Link href="/" className="flex items-center w-24 h-8 md:w-28 md:h-10">
                         <motion.svg 
                             version="1.1" 
                             id="Layer_1" 
@@ -17,7 +17,7 @@ export default function SiteHeader() {
                             x="0px" 
                             y="0px" 
                             viewBox="0 0 500 175" 
-                            className="w-28 h-10 fill-white"
+                            className="w-24 h-8 md:w-28 md:h-10 fill-white"
                         >
                             <g>
                                 <path className="st0" d="M3.99,171.77h68.61c18.8,0,34.94-3.35,48.41-10.04c13.47-6.69,23.75-16.38,30.84-29.05
