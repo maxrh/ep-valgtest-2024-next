@@ -1,15 +1,26 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
 import { motion } from "framer-motion"
+import { useRouter } from 'next/navigation'
 
 export default function SiteHeader() {
+    const router = useRouter();
+
+    const handleLogoClick = (e) => {
+        // Check if the current pathname is the homepage
+        if (router.pathname === '/') {
+            e.preventDefault();  // Prevent default if it's a link
+            router.reload(); // Reload the current page
+        } else {
+            router.push('/');  // Use router to navigate to homepage
+        }
+    };
+
     return (
-        <header className="px-8 pt-8 md:px-14 md:pt-14 pb-5 flex flex-col items-center absolute top-0 left-0 w-full z-50  ">
+        <header className="px-8 pt-8 md:px-14 md:pt-14 pb-5 flex flex-col items-center absolute top-0 left-0 w-full z-50 ">
             <div className="flex justify-between items-center max-w-screen-3xl w-full h-full">
                 <div className="site-logo flex items-center flex-shrink-0 mr-auto">
-                    <Link href="/" className="flex items-center w-24 h-8 md:w-28 md:h-10">
+                    <a href="/" onClick={handleLogoClick} className="flex items-center w-24 h-8 md:w-28 md:h-10 pointer-events-auto">
                         <motion.svg 
                             version="1.1" 
                             id="Layer_1" 
@@ -35,7 +46,7 @@ export default function SiteHeader() {
                                     C434.57,135.71,424.6,140.22,411.85,140.22L411.85,140.22L411.85,140.22z"/>
                             </g>
                         </motion.svg>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </header>
