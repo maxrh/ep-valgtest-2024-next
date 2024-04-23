@@ -22,16 +22,16 @@ export default function Home() {
 		visible: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.2  
+				staggerChildren: 0.1  
 			}
 		}
 	};
 
 	const childVariants = {
-		hidden: { opacity: 0, y: -20 },  // Start from transparent and slightly down
+		hidden: { opacity: 0, x: -50 },  // Start from transparent and slightly down
 		visible: { 
 			opacity: 1, 
-			y: 0,                // Move to original position
+			x: 0,
 			transition: {
 				duration: 0.2,
 				ease: easeInOut
