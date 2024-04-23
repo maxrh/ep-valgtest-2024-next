@@ -48,7 +48,7 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                                 <svg class="w-3 h-3 ml-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clipRule="evenodd"/></svg>
 
                             </span>
-                            <h1 className=" leading-tight font-bold text-slate-50 my-6 md:my-8">{slides[current]?.text}</h1>
+                            <h1 className="md:leading-tight font-bold text-slate-50 mt-6 mb-8 ">{slides[current]?.text}</h1>
                             <button onClick={handleOpenPopup} className="text-sm font-medium px-8 py-4 border border-gray-200/40 rounded-full hover:bg-slate-200/10 hover:shadow-lg duration-500 transition-all ease-in-out ">
                                 Se argumenter for og imod
                             </button>
