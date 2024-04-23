@@ -19,7 +19,7 @@ export default function ResultParty({ sortedPartyResults, partyColors }) {
                 >
                     <div className="h-full flex items-center z-10">
                         <div 
-                            className="h-full w-10 flex items-center justify-center mr-5 font-black uppercase text-gray-50"
+                            className="h-full w-10 flex items-center justify-center mr-5 font-black uppercase text-gray-50 shrink-0"
                             style={{ backgroundColor: `rgba(${partyColors[result.party]}, 1)` }}
                         
                         >{result.party}</div>
