@@ -21,13 +21,13 @@ export default function Home() {
 		visible: {
 			opacity: 1,          // Parent stays fully visible
 			transition: {
-				staggerChildren: 0.1  // Stagger the animation of child elements
+				staggerChildren: 0.2  // Stagger the animation of child elements
 			}
 		}
 	};
 
 	const childVariants = {
-		hidden: { opacity: 0, y: -30 },  // Start from transparent and slightly down
+		hidden: { opacity: 0, y: -20 },  // Start from transparent and slightly down
 		visible: { 
 			opacity: 1, 
 			y: 0,                // Move to original position
