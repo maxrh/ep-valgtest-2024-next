@@ -47,7 +47,7 @@ export default function ResultParty({ sortedPartyResults, partyColors }) {
                 className="border-t border-gray-800 pt-5 mt-5 relative"
             >
                 <svg className="w-4 h-4 text-gray-700 -ml-0.5 absolute left-0 top-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M5.575 13.729C4.501 15.033 5.43 17 7.12 17h9.762c1.69 0 2.618-1.967 1.544-3.271l-4.881-5.927a2 2 0 0 0-3.088 0l-4.88 5.927Z" clipRule="evenodd"/></svg>
-                <p className="font-normal text-xs text-gray-400 pl-5 leading-snug">Antallet af deltagende kandidater fra hvert parti er angivet i parentes. <br />Vi tager højde for eventuelle skævheder, der kan opstå på grund af forskellige antal deltagere fra partierne, ved at anvende en gennemsnitsberegning der sikrer en normalisering af resultaterne, så de retfærdigt afspejler overensstemmelsen.</p>
+                <p className="font-normal text-xs text-gray-400 pl-5 leading-snug">Antallet af deltagende kandidater fra hvert parti er angivet i parentes. <br />Vi kompenserer for skævheder, der opstår med forskellige antal deltagere fra partierne, ved at anvende en gennemsnitsberegning, der sikrer et normaliseret og retfærdigt resultat.</p>
             </motion.div>
         </div>
     )
