@@ -48,6 +48,7 @@ export default function Resultat() {
 
 	return (
 		<main className="min-h-screen h-full px-8 md:px-14 py-28 md:py-32">
+
             <div className="w-full flex items-center justify-between mb-4 md:mb-6 pb-3 md:pb-6 border-b border-gray-800">
 			    <h1 className="text-3xl md:text-5xl font-bold text-gray-700 -indent-0.5 md:-mb-3">Resultat</h1>
                 <button 
