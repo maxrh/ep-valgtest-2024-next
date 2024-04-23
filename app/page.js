@@ -54,8 +54,8 @@ export default function Home() {
 						>
 							<Spinner />
 						</motion.div>
-						<motion.span variants={childVariants} className="text-base font-semibold text-gray-300 mb-4 md:mb-8 flex border-b pb-4 border-gray-700 px-4">EP Valgtest 2024</motion.span>
-						<motion.h1 variants={childVariants} className="text-xl md:text-4xl font-bold mb-4 md:mb-8 leading-tighter md:leading-snug text-amber-300">Hvem skal du stemme på til Europa-Parlamentsvalget 2024?</motion.h1>
+						<motion.span variants={childVariants} className="text-base font-semibold text-gray-200 mb-4 md:mb-8 flex border-b pb-4 border-gray-700 px-4">EP Valgtest 2024</motion.span>
+						<motion.h1 variants={childVariants} className="text-xl md:text-4xl font-bold mb-4 md:mb-8 leading-tighter md:leading-snug text-gray-50">Hvem skal du stemme på til Europa-Parlamentsvalget 2024?</motion.h1>
 						<motion.p variants={childVariants} className="font-light text-gray-300 text-sm md:text-base leading-normal md:leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</motion.p>
 						<motion.div variants={childVariants} className="flex items-center justify-center mt-8 md:mt-16">
 							<button 
