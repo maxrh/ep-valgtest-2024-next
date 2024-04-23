@@ -42,10 +42,10 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                         className="h-full w-full absolute top-0 left-0 cursor-grab z-10 px-8 py-32 md:px-14 flex flex-col items-center justify-center"
                     >
                         <div className="pb-24 md:pb-0 max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-4xl text-center text-xl md:text-3xl lg:text-4xl xl:text-5xl ">
-                            <span className='flex items-center justify-center text-xs font-mediumn  tracking-wide'> 
-                                <svg className="w-4 h-4 text-gray-200 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/></svg>
+                            <span className='flex items-center justify-center text-xs font-mediumn  tracking-wide  text-gray-50'> 
+                                <svg class="w-3 h-3 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M13.729 5.575c1.304-1.074 3.27-.146 3.27 1.544v9.762c0 1.69-1.966 2.618-3.27 1.544l-5.927-4.881a2 2 0 0 1 0-3.088l5.927-4.88Z" clipRule="evenodd"/></svg>
                                 Træk/Swipe
-                                <svg class="w-4 h-4 text-gray-200 ml-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+                                <svg class="w-3 h-3 ml-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clipRule="evenodd"/></svg>
 
                             </span>
                             <h1 className=" leading-tight font-bold text-slate-50 my-6 md:my-8">{slides[current]?.text}</h1>
@@ -53,7 +53,7 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                                 Se argumenter for og imod
                             </button>
                         </div>
-                        
+
                     </motion.div>
                 )}
             </AnimatePresence>
