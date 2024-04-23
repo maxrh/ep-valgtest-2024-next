@@ -1,4 +1,4 @@
-import { motion, AnimatePresence, delay } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
 

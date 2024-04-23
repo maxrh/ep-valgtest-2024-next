@@ -2,17 +2,12 @@
 
 import SwipeVoter from "./components/swipeVoter";
 import { useState } from "react";
-import { useRouter } from 'next/navigation'
-import { motion, AnimatePresence, easeInOut, delay } from "framer-motion";
-import { VoteContext } from "./context/voteContext";
-import { useContext } from "react";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import Spinner from "./components/spinner";
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Home() {
-	const router = useRouter()
-	const { politicianData } = useContext(VoteContext)
 	const [startTest, setStartTest] = useState(false)
 
 	const handleStartTest = () => {
@@ -46,7 +41,7 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen">
 			{!startTest ? (
-				<div className="flex flex-col items-center justify-center h-screen w-screen px-8 pt-32 pb-24">
+				<div className="flex flex-col items-center justify-center h-screen w-screen px-8 pt-32 pb-24 md:pb-32">
 					<motion.div 
 						variants={containerVariants}
 						initial="hidden"
@@ -80,11 +75,7 @@ export default function Home() {
 								Besøg deo.dk
 							</Link>
 						</motion.div>
-
-						
-
 					</motion.div>
-					
 					
 					<motion.div 
 						initial={{ opacity: 0 }}
@@ -93,25 +84,21 @@ export default function Home() {
 							duration: .3,
 							ease: easeInOut
 						}}
-
-							className="absolute top-0 left-0 w-full h-full -z-10 mix-blend-multiply"
-						>
-							<Image 
-								src="/images/front.jpg"
-								alt="EP Valg 2024"
-								width={1440}
-								height={900}
-								className="object-cover w-full h-full opacity-40 "
-								priority
-							/>
-
-
-						</motion.div>
+						className="absolute top-0 left-0 w-full h-full -z-10 mix-blend-multiply"
+					>
+						<Image 
+							src="/images/front.jpg"
+							alt="EP Valg 2024"
+							width={1440}
+							height={900}
+							className="object-cover w-full h-full opacity-40 "
+							priority
+						/>
+					</motion.div>
 				</div>
 			) : (
 				<SwipeVoter />
 			)}
-
 		</main>
 	);
 }

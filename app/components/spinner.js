@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
 export default function Spinner() {
     const numberOfStars = 12;
