@@ -39,15 +39,19 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                                 handleSwipe(offset.x > 0 ? 'enig' : 'uenig');
                             }
                         }}
-                        className="h-full w-full absolute top-0 left-0 cursor-grab z-10 px-8 py-24 md:px-14"
+                        className="h-full w-full absolute top-0 left-0 cursor-grab z-10 px-8 py-32 md:px-14 flex flex-col items-center justify-center"
                     >
-                        <div className="h-full w-full flex flex-col items-center justify-center pb-20 md:pb-0">
-                            <div className="my-6 md:my-10 max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-4xl text-center text-xl md:text-3xl lg:text-4xl xl:text-5xl ">
-                                <h1 className=" leading-tight font-bold text-slate-50">{slides[current]?.text}</h1>
-                            </div>
+                        <div className="pb-24 md:pb-0 max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-4xl text-center text-xl md:text-3xl lg:text-4xl xl:text-5xl ">
+                            <span className='flex items-center justify-center text-xs font-mediumn  tracking-wide'> 
+                                <svg className="w-4 h-4 text-gray-200 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/></svg>
+                                Træk/Swipe
+                                <svg class="w-4 h-4 text-gray-200 ml-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+
+                            </span>
+                            <h1 className=" leading-tight font-bold text-slate-50 my-6 md:my-8">{slides[current]?.text}</h1>
                             <button onClick={handleOpenPopup} className="text-sm font-medium px-8 py-4 border border-gray-200/40 rounded-full hover:bg-slate-200/10 hover:shadow-lg duration-500 transition-all ease-in-out ">
                                 Se argumenter for og imod
-                            </button>                        
+                            </button>
                         </div>
                         
                     </motion.div>
