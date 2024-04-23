@@ -41,7 +41,7 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen">
 			{!startTest ? (
-				<div className="flex flex-col items-center justify-center h-screen w-screen px-8 pt-32 pb-24">
+				<div className="flex flex-col items-center justify-center h-screen w-screen px-8 pt-32 pb-24 md:pb-32">
 					<motion.div 
 						variants={containerVariants}
 						initial="hidden"
