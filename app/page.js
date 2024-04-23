@@ -46,7 +46,7 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen">
 			{!startTest ? (
-				<div className="flex flex-col items-center justify-center h-screen w-screen px-8 pt-32 pb-32">
+				<div className="flex flex-col items-center justify-center h-screen w-screen px-8 pt-32 pb-24">
 					<motion.div 
 						variants={containerVariants}
 						initial="hidden"
@@ -59,16 +59,16 @@ export default function Home() {
 						>
 							<Spinner />
 						</motion.div>
-						<motion.span variants={childVariants} className="text-base font-semibold text-gray-300 mb-8 flex border-b pb-4 border-gray-700 px-4">EP Valgtest 2024</motion.span>
-						<motion.h1 variants={childVariants} className="text-xl md:text-4xl font-bold mb-8 leading-tighter md:leading-snug text-gray-50">Hvem skal du stemme på til Europa-Parlamentsvalget 2024?</motion.h1>
+						<motion.span variants={childVariants} className="text-base font-semibold text-gray-300 mb-4 md:mb-8 flex border-b pb-4 border-gray-700 px-4">EP Valgtest 2024</motion.span>
+						<motion.h1 variants={childVariants} className="text-xl md:text-4xl font-bold mb-4 md:mb-8 leading-tighter md:leading-snug text-gray-50">Hvem skal du stemme på til Europa-Parlamentsvalget 2024?</motion.h1>
 						<motion.p variants={childVariants} className="font-light text-gray-300 text-sm md:text-base leading-normal md:leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</motion.p>
-						<motion.div variants={childVariants} className="flex items-center justify-center mt-16">
+						<motion.div variants={childVariants} className="flex items-center justify-center mt-8 md:mt-16">
 							<button 
-								className="mx-1 md:mx-3 group flex items-center justify-center text-xs md:text-sm font-medium text-amber-300 hover:text-amber-300 hover:shadow-xl border-2 border-amber-300/20 hover:border-amber-300/40 transition-all py-3 md:py-4 px-6 md:px-8 rounded-full duration-300"
+								className="relative mx-1 md:mx-3 group flex items-center justify-center text-xs md:text-sm font-medium text-amber-300 hover:text-amber-300 hover:shadow-xl border-2 border-amber-300/20 hover:border-amber-300/40 transition-all py-3 md:py-4 pl-6 pr-10 md:pl-8 md:pr-12 rounded-full duration-300"
 								onClick={handleStartTest}
 							>
 								Start test
-								<svg className="w-5 h-5 text-amber-300/50 group-hover:text-amber-300/80 ml-2 -mr-3  transition-all duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z" clipRule="evenodd"/></svg>
+								<svg className="w-5 h-5 text-amber-300/50 group-hover:text-amber-300/80 absolute mr-4 md:mr-5 right-0 transition-all duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z" clipRule="evenodd"/></svg>
 
 							</button>
 							<Link 
