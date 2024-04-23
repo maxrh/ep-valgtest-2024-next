@@ -49,7 +49,7 @@ export default function Spinner() {
                                 opacity: 1,
                                 transition: {
                                     repeat: 0,
-                                    delay: 2 + index * .1,
+                                    delay: 1.5 + index * .1,
                                     duration: duration,
                                     ease: "linear"
                                 }
