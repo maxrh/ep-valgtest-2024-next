@@ -39,17 +39,21 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                                 handleSwipe(offset.x > 0 ? 'enig' : 'uenig');
                             }
                         }}
-                        className="h-full w-full absolute top-0 left-0 cursor-grab z-10 px-8 py-24 md:px-14"
+                        className="h-full w-full absolute top-0 left-0 cursor-grab z-10 px-8 py-32 md:px-14 flex flex-col items-center justify-center"
                     >
-                        <div className="h-full w-full flex flex-col items-center justify-center pb-20 md:pb-0">
-                            <div className="my-6 md:my-10 max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-4xl text-center text-xl md:text-3xl lg:text-4xl xl:text-5xl ">
-                                <h1 className=" leading-tight font-bold text-slate-50">{slides[current]?.text}</h1>
-                            </div>
+                        <div className="pb-24 md:pb-0 max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-4xl text-center text-xl md:text-3xl lg:text-4xl xl:text-5xl ">
+                            <span className='flex items-center justify-center text-xs font-mediumn  tracking-wide  text-gray-50'> 
+                                <svg class="w-3 h-3 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M13.729 5.575c1.304-1.074 3.27-.146 3.27 1.544v9.762c0 1.69-1.966 2.618-3.27 1.544l-5.927-4.881a2 2 0 0 1 0-3.088l5.927-4.88Z" clipRule="evenodd"/></svg>
+                                Træk/Swipe
+                                <svg class="w-3 h-3 ml-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clipRule="evenodd"/></svg>
+
+                            </span>
+                            <h1 className=" leading-tight font-bold text-slate-50 my-6 md:my-8">{slides[current]?.text}</h1>
                             <button onClick={handleOpenPopup} className="text-sm font-medium px-8 py-4 border border-gray-200/40 rounded-full hover:bg-slate-200/10 hover:shadow-lg duration-500 transition-all ease-in-out ">
                                 Se argumenter for og imod
-                            </button>                        
+                            </button>
                         </div>
-                        
+
                     </motion.div>
                 )}
             </AnimatePresence>
