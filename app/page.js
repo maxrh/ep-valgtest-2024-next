@@ -87,7 +87,7 @@ export default function Home() {
 						className="absolute top-0 left-0 w-full h-full -z-10 "
 					>
 						<Image 
-							src="/images/front-comp.jpg"
+							src="/images/front2.jpg"
 							alt="EP Valg 2024"
 							width={1440}
 							height={900}
