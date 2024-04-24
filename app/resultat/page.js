@@ -6,6 +6,7 @@ import { motion, AnimatePresence, easeIn, easeInOut, easeOut } from 'framer-moti
 import { useRouter } from 'next/navigation'
 import ResultParty from "../components/resultParty";
 import ResultPol from "../components/resultPol";
+import Image from "next/image";
 
 const partyColors = {
     'ALT': '46, 134, 60',
@@ -47,7 +48,7 @@ export default function Resultat() {
     };
 
 	return (
-		<main className="min-h-screen h-full px-8 md:px-14 py-28 md:py-32">
+		<main className="min-h-screen h-full px-8 md:px-14 pt-28 md:pt-32">
 
             <div className="w-full flex items-center justify-between mb-4 md:mb-6 pb-3 md:pb-6 border-b border-gray-800">
 			    <h1 className="text-3xl md:text-5xl font-bold text-gray-700 -indent-0.5 md:-mb-3">Resultat</h1>
@@ -122,6 +123,56 @@ export default function Resultat() {
 
                     </motion.div>
                 )}
+
+                <div className="mt-16 md:mt-24 h-80 flex flex-col items-center justify-center text-center text-xs text-gray-300 border-t border-gray-800">
+                    <div className="flex items-center justify-center h-12 gap-2 mb-4">
+                        <div className="flex items-center justify-center bg-gray-100 h-full">
+                            <Image  
+                                src="/images/EP-logo.png"
+                                alt="EU logo"
+                                width={100}
+                                height={100}
+                                className="h-full  w-full object-contain p-2"                            
+
+                            />
+                        </div>
+                        <div className="flex items-center justify-center bg-gray-100 h-full">
+
+                            <Image  
+                                src="/images/logo_eunaevnet.png"
+                                alt="EU Naevnet"
+                                width={100}
+                                height={100}
+                                className="h-full w-full object-contain p-3"                            
+
+                            />
+
+                        </div>
+
+                        <div className="flex items-center justify-center h-full">
+                            <Image  
+                                src="/images/EU-emblem.jpg"
+                                alt="EU Emblem"
+                                width={100}
+                                height={100}
+                                className="h-full w-full object-contain "                            
+
+                            />
+                        </div>
+
+                        <div className="flex items-center justify-center bg-gray-100 h-full">
+                            <Image  
+                                src="/images/Dansk-Folkeoplysnings-Samråd.png"
+                                alt="Dansk Folkeoplysnings Samråd"
+                                width={100}
+                                height={100}
+                                className="h-full  w-full object-contain  p-2"                            
+                            />
+                        </div>
+
+                    </div>
+                    <p className="text-xs text-gray-400">Valgtesten er medfinansieret af Europa-Parlamentet, Europa-Nævnet og Dansk Folkeoplysnings Samråd.</p>
+                </div>
 		</main>
 	);
 }
