@@ -50,11 +50,11 @@ export default function Home() {
 					>
 						<motion.div 
 							variants={childVariants}
-							className="mb-6 flex items-center justify-center"
+							className="mb-6 flex items-center justify-center "
 						>
 							<Spinner />
 						</motion.div>
-						<motion.span variants={childVariants} className="text-base font-semibold text-gray-200 mb-4 md:mb-8 flex border-b pb-4 border-gray-700 px-4">EP Valgtest 2024</motion.span>
+						<motion.span variants={childVariants} className="text-base font-semibold text-gray-300 mb-4 md:mb-8 flex border-b pb-4 border-gray-300/20 px-2">EP Valgtest 2024</motion.span>
 						<motion.h1 variants={childVariants} className="text-xl md:text-4xl font-bold mb-4 md:mb-8 leading-tighter md:leading-snug text-gray-50">Hvem skal du stemme på til Europa-Parlamentsvalget 2024?</motion.h1>
 						<motion.p variants={childVariants} className="font-light text-gray-300 text-sm md:text-base leading-normal md:leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</motion.p>
 						<motion.div variants={childVariants} className="flex items-center justify-center mt-8 md:mt-16">
@@ -77,24 +77,24 @@ export default function Home() {
 						</motion.div>
 					</motion.div>
 					
-					<motion.div 
+					{/* <motion.div 
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ 
 							duration: .3,
 							ease: easeInOut
 						}}
-						className="absolute top-0 left-0 w-full h-full -z-10 mix-blend-multiply"
+						className="absolute top-0 left-0 w-full h-full -z-10 "
 					>
 						<Image 
 							src="/images/front-comp.jpg"
 							alt="EP Valg 2024"
 							width={1440}
 							height={900}
-							className="object-cover w-full h-full opacity-40 "
+							className="object-cover w-full h-full opacity-10"
 							priority
 						/>
-					</motion.div>
+					</motion.div> */}
 				</div>
 			) : (
 				<SwipeVoter />

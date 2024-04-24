@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, easeInOut } from 'framer-motion';
 
 export default function Spinner() {
     const numberOfStars = 12;
@@ -14,7 +14,6 @@ export default function Spinner() {
             return {
                 x: centerX + radius * Math.cos(angle),
                 y: centerY + radius * Math.sin(angle),
-                scale: 1 // Static scale, change this for dynamic scaling
             };
         });
     };
@@ -36,7 +35,6 @@ export default function Spinner() {
                             initial={{
                                 translateX: keyframes[0].x - 5,
                                 translateY: keyframes[0].y - 5,
-                                scale: keyframes[0].scale,
                                 opacity: 0,
                                 
 
@@ -44,13 +42,12 @@ export default function Spinner() {
                             animate={{
                                 translateX: keyframes.map(kf => kf.x - 5),
                                 translateY: keyframes.map(kf => kf.y - 5),
-                                scale: keyframes.map(kf => kf.scale),
                                 opacity: 1,
                                 transition: {
                                     repeat: 0,
-                                    delay: 1.5 + index * .1,
-                                    duration: duration,
-                                    ease: "linear"
+                                    delay: 1.5 + (index * numberOfStars) * 0.009 ,  
+                                    duration: duration,  
+                                    ease: easeInOut
                                 }
                             }}
                         />
