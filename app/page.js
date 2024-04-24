@@ -54,15 +54,15 @@ export default function Home() {
 						>
 							<Spinner />
 						</motion.div>
-						<motion.span variants={childVariants} className="text-base font-semibold text-gray-300 mb-4 md:mb-8 flex border-b pb-4 border-gray-300/20 px-2">EP Valgtest 2024</motion.span>
-						<motion.h1 variants={childVariants} className="text-xl md:text-4xl font-bold mb-4 md:mb-8 leading-tighter md:leading-snug text-gray-50">Hvem skal du stemme på til Europa-Parlamentsvalget 2024?</motion.h1>
+						<motion.span variants={childVariants} className="text-base font-semibold text-gray-300 mb-4 md:mb-6 flex border-b pb-4 border-gray-300/20 px-2">EP Valgtest 2024</motion.span>
+						<motion.h1 variants={childVariants} className="text-xl md:text-4xl font-bold mb-4 md:mb-6 leading-tighter md:leading-snug text-gray-50">Hvem skal du stemme på til Europa-Parlamentsvalget 2024?</motion.h1>
 						<motion.p 
 							variants={childVariants} 
 							className="font-light text-gray-300 text-sm md:text-base leading-normal md:leading-relaxed"
 						>
 							Se hvilke kandidater og partier der bedst stemmer overens med dine politiske holdninger, så du kan træffe et velinformeret valg ved Europa-Parlamentsvalget i 2024..
 						</motion.p>
-						<motion.div variants={childVariants} className="flex items-center justify-center mt-8 md:mt-16">
+						<motion.div variants={childVariants} className="flex items-center justify-center mt-8 md:mt-14">
 							<button 
 								className="relative mx-1 md:mx-3 group flex items-center justify-center text-xs md:text-sm font-medium text-amber-300 hover:text-amber-300 hover:shadow-xl border-2 border-amber-300/20 hover:border-amber-300/40 transition-all py-3 md:py-4 pl-6 pr-10 md:pl-8 md:pr-12 rounded-full duration-300"
 								onClick={handleStartTest}
