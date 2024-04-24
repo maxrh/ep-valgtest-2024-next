@@ -205,7 +205,7 @@ export default function SwipeVoter() {
                 className="flex items-center justify-center z-10 absolute top-0 right-0 p-8 md:p-14 pointer-events-none"
             >
                 <div className="w-full text-right text-white">
-                    <h1 className="text-base md:text-xl font-semibold mb-1">EP Valgtest 2024</h1>
+                    <h1 className="text-base font-semibold mb-1">EP Valgtest 2024</h1>
                 </div>
             </motion.div>
         </div>
