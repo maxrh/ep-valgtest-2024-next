@@ -201,12 +201,11 @@ export default function SwipeVoter() {
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0 }}
-                transition={{ delay: 1.5, duration: 0.3 }}
-                className="flex items-center justify-center z-10 absolute top-1 right-0 p-8 md:p-14 pointer-events-none"
+                transition={{ delay: 1.2, duration: 0.3 }}
+                className="flex items-center justify-center z-10 absolute top-0 right-0 p-8 md:p-14 pointer-events-none"
             >
                 <div className="w-full text-right text-white">
-                    <h1 className="text-base md:text-xl font-semibold mb-2">EP Valgtest 2024</h1>
-                    <p className='leading-snug font-light text-xs md:text-sm hidden md:flex'>Swipe til venstre eller højre alt efter <br />om du er uenig eller enig og se hvilke <br />politikere du matcher bedst med.</p>
+                    <h1 className="text-base md:text-xl font-semibold mb-1">EP Valgtest 2024</h1>
                 </div>
             </motion.div>
         </div>
