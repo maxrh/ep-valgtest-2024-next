@@ -869,6 +869,70 @@ export async function GET(request) {
             comment: "Uligheden stiger, fordi de rige stikker af fra resten af os. Men vi kan bruge EU til at indføre en fælles formueskat, så de rige faktisk betaler deres andel. Uligheden bliver mindre, sammenhængskraften større og vi holder hånden under velfærden i Europa. Det er mit vigtigste fokus.",
             votes: [1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,0,0,0,0]
         },
+        {
+            id: 97,
+            navn: "Ulla Tørnæs",
+            parti: "Venstre",
+            spidskandidat: 0,
+            comment: "Jeg vil kæmpe for et trygt og sikkert Europa med fred og frihed. At klimaudfordringerne og den grønne omstilling løses i fællesskab, kun derved når vi klimamålene. Jeg vil sætte en stopper for den illegale invandring til Europa.",
+            votes: [1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0],
+            img: "97.jpg"
+        },
+        {
+            id: 98,
+            navn: "Nilas Baya-Foged",
+            parti: "Alternativet",
+            spidskandidat: 0,
+            comment: "Jeg vil arbejde for EU går forrest i den grønne omstilling, at vi styrker det indre marked til at være fair og bæredygtigt, og at der gives støtte til medlemslandendes grønne omstilling ift. landbrug, produktion og forbrug. For 10 år siden lancerede vi Alternativet, for dansk politik manglede grønne visioner og større inddragelse af borgere. Nu er turen kommet til EU!",
+            votes: [1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0],
+            img: "98.jpg"
+        },
+        {
+            id: 99,
+            navn: "Vivi Altenburg",
+            parti: "Danmarksdemokraterne",
+            spidskandidat: 0,
+            comment: "Jeg synes du skal stemme på mig, da jeg kommer med en profil som folk er flest. Sund fornuft og masser af erhvervserfaring og en balanceret tilgang til livet og politikken, ikke en kandidat der skal leve af EU. Jeg vil gerne gøre EU slankere.",
+            votes: [0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0],
+            img: "99.jpg"
+        },
+        {
+            id: 100,
+            navn: "Alexandra Sasha",
+            parti: "Venstre",
+            spidskandidat: 0,
+            comment: "Som iværksætter, der står for handling frem for ord, har jeg personlig erfaring med, hvordan EU-politik påvirker virksomheder. Jeg vil arbejde for at forbedre rammerne for europæiske virksomheder og sikre, at vi står stærkt i den globale konkurrence. Jeg kæmper for en fair og ambitiøs klimapolitik, der både tager højde for de store udfordringer og styrker energiinfrastrukturen og sikkerheden. Mit mål er at fremme markedsbaseret bæredygtighed, beskytte miljøet og skabe nye arbejdspladser. Med mit slogan, 'Folk taler, jeg gør noget ved det,' er jeg engageret i at sikre konkrete resultater, der gør EU stærkt og fremtidssikret.",
+            votes: [1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0],
+            img: "100.jpg"
+        },
+        {
+            id: 101,
+            navn: "Niels Flemming Hansen",
+            parti: "Konservative",
+            spidskandidat: 1,
+            comment: "Jeg stiller op, fordi jeg ønsker at være en afgørende stemme. Det Konservative Folkeparti sidder i parlamentets største gruppe, EPP, og det er vigtigt for Danmark at der sidder danskere i den gruppe. Jeg er en grøn, borgerlig stemme der arbejder.",
+            votes: [1.0, 0.5, 1.0, 1.0, 1.0, 0.0, 1.0, 0.5, 0.0, 0.0, 0.0, 1.0, 1.0, 0.5, 1.0, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0],
+            img: "101.jpg"
+        },
+        {
+            id: 102,
+            navn: "Morten Løkkegaard",
+            parti: "Venstre",
+            spidskandidat: 1,
+            comment: "Jeg vil gøre en forskel for Danmark. Vi skal have et stærkt Danmark i et sikkert Europa. Samtidig er det min mission at være med til at styrke kendskabet til vores europæiske fællesskab ved at fortælle om vores arbejde i Europa-Parlamentet. Vi skal skabe tryghed i Europa. Krigen i Ukraine, presserende klimaforandringer og kampen for at sikre vores fremtidige velstand og vækst i EU er alle udfordringer, vi skal løse for at skabe tryghed for danskere og vores virksomheder. Dét handler valget om.",
+            votes: [1.0, 0.5, 1.0, 1.0, 1.0, 0.5, 1.0, 0.0, 0.5, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.0, 0.0, 0.0, 0.0],
+            img: "102.jpg"
+        },
+        {
+            id: 103,
+            navn: "Joan Kragh",
+            parti: "Socialistisk Folkeparti",
+            spidskandidat: 0,
+            comment: "Jeg brænder for klima og den sociale dagsorden. Det er grænseoverskridende udfordringer. Jeg kæmper for et EU, hvor grøn energi, biodiversitet, grønt landbrug og rent vandmiljø går hånd i hånd med en intensiv kamp for sundhed, velfærd og ordentlige arbejdsforhold.",
+            votes: [1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.5, 0.5, 0.0, 1.0, 1.0],
+            img: "103.jpg"
+        }
+        
         
     ];
 
