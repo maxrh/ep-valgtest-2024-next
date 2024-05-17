@@ -566,7 +566,7 @@ export async function GET(request) {
         {
             id: 63,
             navn: "Nikolai Tange",
-            img: "",
+            img: "63.jpg",
             parti: "RV",
             spidskandidat: 0,
             comment: "Jeg er en ung, socialliberal kandidat. Til dagligt studerer jeg på CBS, og så stiller jeg op for Radikale Venstre til EP-valget. Man skal stemme på mig, fordi jeg vil gøre alt jeg kan, for at være de unges socialliberale, fornuftige stemme i Europa-Parlamentet.",
@@ -931,9 +931,16 @@ export async function GET(request) {
             comment: "Jeg brænder for klima og den sociale dagsorden. Det er grænseoverskridende udfordringer. Jeg kæmper for et EU, hvor grøn energi, biodiversitet, grønt landbrug og rent vandmiljø går hånd i hånd med en intensiv kamp for sundhed, velfærd og ordentlige arbejdsforhold.",
             votes: [1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.5, 0.5, 0.0, 1.0, 1.0],
             img: "103.jpg"
+        },
+        {
+            id: 104,
+            navn: "Kathrine Olldag",
+            img: "104.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: "Jeg har altid villet det europæiske fællesskab. Fordi jeg føler, jeg er lige så meget europæer, som jeg er dansker. Fordi jeg er barn af den kolde krig og murens fald. Fordi Danmark er en del af det europæiske værdi-, kultur- og skæbnefællesskab, som vi stadig har til gode at stemple fuld og helt ind i. Fordi alle veje fører gennem Europa, hvis vi skal komme helskindede gennem klima-, migrations-, biodiversitets- og forsyningskrisen sammen.",
+            votes: [1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1]
         }
-        
-        
     ];
 
 
