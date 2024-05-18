@@ -125,7 +125,7 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                                 stiffness: 1600,
                                 damping: 50,
                             }}
-                            className="p-8 md:p-12 pb-14 rounded-lg max-w-3xl w-full relative shadow-2xl bg-gray-950/95"
+                            className="p-6 md:p-12 pt-8 rounded-lg max-w-3xl w-full relative shadow-2xl bg-gray-950/95"
                             onClick={(e) => e.stopPropagation()}
                         >  
                             <button 
@@ -136,9 +136,9 @@ export default function SwipeVoterSlides({ current, direction, handleSwipe, next
                             </button>
 
                             <h2 className="text-base md:text-lg font-normal text-slate-500 mb-3">For</h2>
-                            <p className='text-gray-50 text-base md:text-xl font-semibold md:font-bold leading-snug'>{slides[current]?.for}</p>
+                            <p className='text-gray-50 text-sm md:text-xl font-semibold md:font-bold'>{slides[current]?.for}</p>
                             <h2 className="text-base md:text-lg font-normal text-slate-500 mb-3 mt-6">Imod</h2>
-                            <p className='text-gray-50 text-base md:text-xl font-semibold md:font-bold leading-snug'>{slides[current]?.imod}</p>
+                            <p className='text-gray-50 text-sm md:text-xl font-semibold md:font-bold'>{slides[current]?.imod}</p>
                         </motion.div>
 
                     </motion.div>
