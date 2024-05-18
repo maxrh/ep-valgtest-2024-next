@@ -151,7 +151,7 @@ export default function SwipeVoter() {
                             ease: 'easeInOut'
                         }}
                         onClick={() => handleSwipe('uenig')} 
-                        className={`pointer-events-auto flex items-center justify-center absolute left-0 bottom-14 md:bottom-auto z-10 -ml-4 `}
+                        className={`pointer-events-auto flex items-center justify-center absolute left-0 bottom-20 md:bottom-auto z-10 -ml-4 h-32 md:h-52 overflow-hidden`}
                     >
                         <svg className={`w-44 md:w-52 h-44 md:h-52 text-red-500 ${flashUenig ? 'flashUenig' : ''}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M13.729 5.575c1.304-1.074 3.27-.146 3.27 1.544v9.762c0 1.69-1.966 2.618-3.27 1.544l-5.927-4.881a2 2 0 0 1 0-3.088l5.927-4.88Z" clipRule="evenodd"/></svg>
                         <svg className="w-8 h-8 text-slate-100 absolute ml-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M8.97 14.316H5.004c-.322 0-.64-.08-.925-.232a2.022 2.022 0 0 1-.717-.645 2.108 2.108 0 0 1-.242-1.883l2.36-7.201C5.769 3.54 5.96 3 7.365 3c2.072 0 4.276.678 6.156 1.256.473.145.925.284 1.35.404h.114v9.862a25.485 25.485 0 0 0-4.238 5.514c-.197.376-.516.67-.901.83a1.74 1.74 0 0 1-1.21.048 1.79 1.79 0 0 1-.96-.757 1.867 1.867 0 0 1-.269-1.211l1.562-4.63ZM19.822 14H17V6a2 2 0 1 1 4 0v6.823c0 .65-.527 1.177-1.177 1.177Z" clipRule="evenodd"/></svg>
@@ -168,7 +168,7 @@ export default function SwipeVoter() {
                             ease: 'easeInOut'
                         }}
                         onClick={() => handleSwipe('enig')} 
-                        className={`pointer-events-auto flex items-center justify-center absolute right-0 bottom-14 md:bottom-auto  z-10 -mr-4`}
+                        className={`pointer-events-auto flex items-center justify-center absolute right-0 bottom-20 md:bottom-auto  z-10 -mr-4 h-32 md:h-52 overflow-hidden`}
                     >
                         <svg className={`w-44 md:w-52 h-44 md:h-52 text-green-600 ${flashEnig ? 'flashEnig' : ''}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clipRule="evenodd"/></svg>
                         <svg className="w-8 h-8 text-slate-100 absolute mr-4 -mt-px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M15.03 9.684h3.965c.322 0 .64.08.925.232.286.153.532.374.717.645a2.109 2.109 0 0 1 .242 1.883l-2.36 7.201c-.288.814-.48 1.355-1.884 1.355-2.072 0-4.276-.677-6.157-1.256-.472-.145-.924-.284-1.348-.404h-.115V9.478a25.485 25.485 0 0 0 4.238-5.514 1.8 1.8 0 0 1 .901-.83 1.74 1.74 0 0 1 1.21-.048c.396.13.736.397.96.757.225.36.32.788.269 1.211l-1.562 4.63ZM4.177 10H7v8a2 2 0 1 1-4 0v-6.823C3 10.527 3.527 10 4.176 10Z" clipRule="evenodd"/></svg>
