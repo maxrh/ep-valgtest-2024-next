@@ -1172,7 +1172,7 @@ export async function GET(request) {
             img: "130.jpg",
             parti: "DF",
             spidskandidat: 0,
-            comment: "nan",
+            comment: "Klima, økonomi, demokrati og retsstat.",
             votes: [0.5, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1]
         },
         {
