@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "EP Valgtest 2024 | DEO",
-	description: "Hvem skal du stemme på til EP-valget 2024? Find ud af det her!",
+	description: "Hvem skal du stemme på til EP-valget 2024? Prøv vores kandidattest her!",
 }
 
 export default function RootLayout({ children }) {
