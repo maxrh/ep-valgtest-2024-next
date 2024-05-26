@@ -8,12 +8,12 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-	title: "Hvem skal du stemme på til EP-valget 2024?",
+	title: "Hvem skal du stemme på til Europa-Parlamentsvalget 2024?",
   	description: "Tag DEO's kandidattest og træf et velinformeret valg!",
   	applicationName: "EP Valgtest 2024 | DEO",
 	keywords: ['Europa-Parlamentet', 'Europa-Parlamentsvalg', 'Kandidattest', 'Valgtest', 'EU-valg', 'EP-valget'],
  	openGraph: {
-		title: "Hvem skal du stemme på til EP-valget 2024?",
+		title: "Hvem skal du stemme på til Europa-Parlamentsvalget 2024?",
 		description: "Tag DEO's kandidattest og træf et velinformeret valg!",
 		site_name: "EP Valgtest 2024 | DEO",
 		url: "https://www.ep-valgtest2024.dk"
