@@ -1228,8 +1228,25 @@ export async function GET(request) {
             spidskandidat: 0,
             comment: "Jeg kan med min solide erfaring i fagbevægelsen styrke netop arbejdstager rettighed i EU, jeg tror på grøn omstilling og at den skal foregå socialt retfærdigt, vi skal gøre mere for, at vores samlede arbejdsstyrke er klar til den omstilling som vi skal og må lave og det er et stort EU anliggende i den kommende periode.",
             votes: [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0]
-        }
-        
+        },
+        {
+            id: 137,
+            navn: "Lartey Lawson",
+            img: "137.jpg",
+            parti: "RV",
+            spidskandidat: 0,
+            comment: " Klimavenlig bæredygtighed. En balanceret immigrationspolitik der beskytter menesker. Økonomisk vækst via digital innovation.",
+            votes: [1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1]
+        },
+        {
+            id: 138,
+            navn: "Christel Schaldemose",
+            img: "138.jpg",
+            parti: "S",
+            spidskandidat: 1,
+            comment: " Jeg genopstiller til Europa-Parlamentet for at fortsætte mit arbejde med at gøre EU tryggere, grønnere og mere retfærdigt. Det er det behov for i denne tid, hvor krigen i Ukraine har forandret vores tilværelse og vist os at fred ikke er noget vi kan tage for givet. Der er brug for, at nogen skaber tryghed i en usikker tid. Det er Socialdemokratiets ønske. En stemme på mig, er en stemme på kampen for et tryggere EU.",
+            votes: [1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1]
+        }, 
     ];
 
 
