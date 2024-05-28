@@ -61,7 +61,7 @@ export default function Home() {
 							className="font-light text-gray-300 text-sm md:text-base leading-normal md:leading-relaxed"
 						>
 							Se hvilke kandidater og partier der bedst stemmer overens med dine politiske holdninger, så du kan træffe et velinformeret valg ved Europa-Parlamentsvalget i 2024. <br />
-							<span className="text-xs mt-4 block">Opdateret den 28.05.24 med svar fra yderligere kandidater.</span>
+							<span className="text-xs mt-4 block">Opdateret den 28.05.24 med svar fra endnu flere kandidater.</span>
 						</motion.p>
 						<motion.div variants={childVariants} className="flex items-center justify-center mt-8 md:mt-14">
 							<button 
