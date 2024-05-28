@@ -60,9 +60,7 @@ export default function Home() {
 							variants={childVariants} 
 							className="font-light text-gray-300 text-sm md:text-base leading-normal md:leading-relaxed"
 						>
-							Se hvilke kandidater og partier der bedst stemmer overens med dine politiske holdninger, så du kan træffe et velinformeret valg ved Europa-Parlamentsvalget i 2024. <br />
-							<span className="text-xs mt-4 block">Opdateret den 28.05.24 med svar fra endnu flere kandidater.</span>
-						</motion.p>
+							Se hvilke kandidater og partier der bedst stemmer overens med dine politiske holdninger, så du kan træffe et velinformeret valg ved Europa-Parlamentsvalget i 2024.						</motion.p>
 						<motion.div variants={childVariants} className="flex items-center justify-center mt-8 md:mt-14">
 							<button 
 								className="relative mx-1 md:mx-3 group flex items-center justify-center text-xs md:text-sm font-medium text-amber-300 hover:text-amber-300 hover:shadow-xl border-2 border-amber-300/20 hover:border-amber-300/40 transition-all py-3 md:py-4 pl-6 pr-10 md:pl-8 md:pr-12 rounded-full duration-300"
