@@ -23,7 +23,9 @@ export const metadata = {
  	openGraph: {
 		title: "Hvem skal du stemme på til Europa-Parlamentsvalget 2024? | EP Valgtest 2024 | DEO",
 		description: "Tag DEO's kandidattest og træf et velinformeret valg!",
-		site_name: "EP Valgtest 2024 | DEO",
+		siteName: "EP Valgtest 2024 | DEO",
+		type: 'website',
+		locale: 'da_DK',
 		url: "https://www.ep-valgtest2024.dk"
 	}
 }
