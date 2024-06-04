@@ -29,6 +29,8 @@ export default function ResultPol({ sortedResults, partyColors, handleOpenPopup 
         collapsed: { opacity: 0, height: 0 }
     }
 
+    console.log(sortedResults)
+
     return (
         <div id="accordion-collapse" data-accordion="collapse" className="w-full flex flex-col items-stretch">
             {sortedResults.slice(0, itemCount).map((result, index) => (
