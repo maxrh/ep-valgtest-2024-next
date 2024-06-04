@@ -120,7 +120,31 @@ export async function GET(request) {
             parti: "DF",
             spidskandidat: 0,
             comment: "Som borgerlig og EU-skeptiker repræsenterer jeg værdier og holdninger, der fokuserer på at sikre vores nations suverænitet, kulturelle identitet og økonomiske selvstændighed. Jeg tror på styrken i vores nationale fællesskab og vægter beskyttelsen af vores nationale interesser højt. Stem på mig som din EU-skeptiker, hvis du ønsker en stemme i Europa-Parlamentet, der vil kæmpe for Danmarks suverænitet, nationale interesser og bevarelse af vores nationale identitet og kultur. Jeg vil være en stemme for dig og for Danmark i EU.",
-            votes: [0,0,1,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0]
+            votes: [0,0,1,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0],
+            voteComments: 
+                [
+                    { id: 1, voteComment: "Uenig, Dette politikområde skal prioriteres på lige fod med andre, når tiden tillader det, og når handlingerne udføres i passende dosering, og takt for at opnå målbare positive resultater. Danmark skal fortsat være et forgangsland når det handler om klima. Men vi skal gøre det på den kloge måde. Gennem investeringer i nye grønne teknologier vi kan eksportere til hele verden." },
+                    { id: 2, voteComment: "Uenig, Klimaindsatsen bør følge den økonomiske vækst og prioriteres i overensstemmelse med mulighederne. Danmark står for mindre end 0,1% af verdens samlede CO2-udslip. Kina står for 25." },
+                    { id: 3, voteComment: "Enig, Kernekraft er CO2-neutral og repræsenterer den mest stabile energiforsyning, hvilket muliggør opretholdelsen af et stabilt prisniveau på strøm. Kernekraft er en effektiv energikilde mod klimaforandringer og gør samtidig Europa uafhængig af russisk gas og saudisk olie." },
+                    { id: 4, voteComment: "Uenig, Landbruget udgør allerede en af verdens mest innovative sektorer og bidrager væsentligt til forbedring af klimaet." },
+                    { id: 5, voteComment: "Uenig, At stramme reguleringen af Big Tech og kunstig intelligens er ikke en opgave, der bør overlades til EU; det er et nationalt og et NATO anliggende." },
+                    { id: 6, voteComment: "Uenig, Beskatning af virksomheder med stor indtjening i Europa ikke er en opgave for EU, da beskatning er et nationalt anliggende." },
+                    { id: 7, voteComment: "Uenig, Det er afgørende at, Danmark, bevarer suveræn selvbestemmelse. Så længe Danmark forbliver medlem af EU, vil Dansk Folkeparti modsætte sig enhver overførsel af beslutningskraft fra Danmark til EU. Vi ønsker ikke at give EU yderligere magt, faktisk mener vi at magten på en lang række områder skal tilbage til medlemsstaterne." },
+                    { id: 8, voteComment: "Enig, Det er da en naturlig tanke, at Danmark skal bidrage mindre til EU, da vi er i stand til at forvalte vores egne penge på en mere effektiv måde." },
+                    { id: 9, voteComment: "Uenig, Forældrene skal selv bestemme, hvordan de ønsker at fordele barslen mellem mor og far. Desuden mener jeg, at det bør være Danmark – og ikke EU - der bestemmer danskernes barselsregler." },
+                    { id: 10, voteComment: "Uenig, Det er en stor økonomisk byrde for et medlemsland at modtage flygtninge." },
+                    { id: 11, voteComment: "Enig, Danmark har verdens bedste arbejdsmarked, på grund af vores velfungerende trepartssamarbejde mellem lønmodtagere, arbejdsgivere og staten. Dette samarbejde sikrer, at arbejdsmarkedsreguleringen er fleksibel og tilpasset danske forhold, og det bør ikke undermineres af EU-lovgivning." },
+                    { id: 12, voteComment: "Dansk Folkeparti vil indføre stærk og permanent grænsekontrol mod de lande, hvor der er problemer med kriminalitet." },
+                    { id: 13, voteComment: "Enig, Grænsekontrollen skal imidlertid også nationaliseres." },
+                    { id: 14, voteComment: "Uenig, Både kulturelt, demokratisk og samfundsmæssigt passer Albanien, Serbien og de andre balkanlande ikke ind i EU." },
+                    { id: 15, voteComment: "Uenig, Danmark står nu med døren helt åben, vi har doneret alt væk og mangler selv de mest basale ting i forsvaret." },
+                    { id: 16, voteComment: "Uenig, Korruptionsniveauet er tårnhøjt i de omtalte lande. EU bør ikke udvide sig til korruptionsramte lande." },
+                    { id: 17, voteComment: "Uenig, Dansk Folkeparti mener ikke, at EU skal udvikle sig til en reel forsvarsunion med en reel EU-hær og militære beføjelser, som EU aktuelt udvikler sig henimod at blive. EU skal i stedet fokusere på sit oprindelige formål, nemlig at fremme økonomisk samarbejde mellem europæiske stater på et frivilligt grundlag. Dertil skal NATO fortsat udgøre rygraden i Vestens forsvars- og sikkerhedspolitik, herunder militære aktiviteter." },
+                    { id: 18, voteComment: "Uenig, Vores vision for det europæiske samarbejde bygger på et mellemstatsligt niveau. Medlemsstaterne samarbejder om de politiske områder der skal løses i fællesskab, men når det kommer til udlændingepolitik, socialpolitik, finanspolitik mm, så skal medlemsstaterne kunne håndtere det selv uden indblanding fra EU." },
+                    { id: 19, voteComment: "Uenig, Indførelsen af tværnationale partier og stemmelister betyder et tab af national identitet og suverænitet, idet vælgerne vil opleve en mindre forbindelse med deres nationale repræsentanter og en øget distancering fra EU-systemet som helhed. Derudover vil vi se en klar tendens til at prioritere europæiske spørgsmål på bekostning af nationale interesser." },
+                    { id: 20, voteComment: "Uenig, Love samt lovforslag skal være nationale." },
+                    { id: 21, voteComment: "EU i en rolle som fredsmægler, kan skabe spændinger og misforståelser blandt medlemslandene, især hvis nogle medlemsstater føler, at deres nationale interesser ikke bliver tilstrækkeligt repræsenteret eller prioriteret i EU's fredsmæglingsbestræbelser. Dette kan føre til intern splittelse og underminere EU's evne til at handle effektivt som en samlet enhed i internationale konflikter." }
+                ]
         },
         {
             id: 14,
