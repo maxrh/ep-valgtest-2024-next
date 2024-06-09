@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SiteHeader from "./components/ui/siteHeader";
+import SiteHeader from "./components/siteHeader";
 import VoteContextProvider from "./context/voteContext";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"

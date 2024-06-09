@@ -2,8 +2,8 @@
 
 import SwipeVoter from "./components/swipeVoter";
 import { useState } from "react";
-import { motion, AnimatePresence, easeInOut } from "framer-motion";
-import Spinner from "./components/spinner";
+import { motion, easeInOut } from "framer-motion";
+import StarSpinner from "./components/starSpinner";
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -52,7 +52,7 @@ export default function Home() {
 							variants={childVariants}
 							className="mb-6 flex items-center justify-center "
 						>
-							<Spinner />
+							<StarSpinner />
 						</motion.div>
 						<motion.span variants={childVariants} className="text-base font-semibold text-gray-300 mb-4 md:mb-6 flex border-b pb-4 border-gray-300/20 px-2">EP Valgtest 2024</motion.span>
 						<motion.h1 variants={childVariants} className="text-xl md:text-4xl font-bold mb-4 md:mb-6 leading-tighter md:leading-snug text-gray-50">Hvem skal du stemme på til Europa-Parlamentsvalget 2024?</motion.h1>

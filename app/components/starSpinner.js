@@ -1,6 +1,6 @@
 import { motion, easeInOut } from 'framer-motion';
 
-export default function Spinner() {
+export default function StarSpinner() {
     const numberOfStars = 12;
     const radius = 40;
     const centerX = 50;

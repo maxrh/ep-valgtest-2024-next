@@ -1,8 +1,8 @@
 "use client"
 
 import { VoteContext } from "../context/voteContext";
-import { useContext, useState, useEffect } from "react";
-import { motion, AnimatePresence, easeIn, easeInOut, easeOut } from 'framer-motion';
+import { useContext, useState } from "react";
+import { motion, easeInOut } from 'framer-motion';
 import { useRouter } from 'next/navigation'
 import ResultParty from "../components/resultParty";
 import ResultPol from "../components/resultPol";

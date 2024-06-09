@@ -1,4 +1,4 @@
-import { motion, AnimatePresence, easeInOut, delay } from 'framer-motion';
+import { motion, easeInOut } from 'framer-motion';
 
 
 export default function ResultParty({ sortedPartyResults, partyColors }) {
